@@ -1,1 +1,1 @@
-Welcome to my notes page. These are preliminary notes I take when studying. Final notes are again created and added to my Confluence server.
+Welcome to my notes page. These are preliminary notes I take when studying. Final notes are created and added to my Confluence server. This is so I can better remember the material and have nicer looking notes in an official documentation place.
