@@ -1,0 +1,70 @@
+What is Apache?
+
+Web server
+
+CentOS 7
+
+Old course but general info still applies. Specific details though may not.
+https://app.pluralsight.com/player?course=apache-web-server-install-config&author=chris-brown&name=apache-web-server-install-config-m3-config&clip=2&mode=live
+----------------------
+Installing and Starting Apache Web Server
+
+Easy to install because it's in the default repos.
+
+1. sudo yum install httpd
+
+Set service to start at boot.
+2. systemctl enable httpd
+
+3. Start the service (not on by default)
+systemctl start httpd
+
+Check errors in httpd. Check here if errors in the install for Apache.
+sudo /var/log/httpd/error_log
+
+4. Disable SELinux
+
+Check SELinux status. Do temporarily to prevent install conflicts.
+sestatus
+
+setenforce 0
+
+Look for status:
+Current mode:                   permissive
+
+5. Install httpd documentation. Review this to learn how to do basically anything in Apache.
+
+sudo yum install httpd-manual
+
+6. Restart Apache as documentation does make config changes.
+sudo systemctl restart httpd
+
+------------------------------
+Basic Apache Config
+
+Config file location: /etc/httpd/conf/httpd.conf
+
+Document root directive in httpd.conf: tells apache what's the root directory for web content
+
+User/group apache: the service account used by apache to control permissions for apache.
+
+Container directives - directives apache perform if apache serves a file specified within a container.
+
+DirectoryIndex
+
+--------------------------------
+Virtual Hosting
+
+Method for hosting multiple domain names on a single servers. Single installation of Apache can serve all of the sites.
+
+Name-based virtual hosting - All sites resolve to the same IP address. Apache separates requests to appropriate sites.
+
+ServerName = Name of site
+
+DocumentRoot = Root of site.
+
+Once a virtual host is created, default host must be redefined explicitly as a virtual host.
+
+--------------------------------
+
+https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-centos-7#step-4-%E2%80%94-setting-up-virtual-hosts-(recommended)

@@ -1,0 +1,65 @@
+Each ESX host has two drives. One SSD for VMs, other is spinning disk for general data. Should not use these for backups.
+Need more disks!!!
+
+We'll want to create the NAS first before going ahead for backup purposes.
+Will want about 12TB total.
+
+Expandibility. This is for future use.
+
+
+Links:
+https://www.reddit.com/r/DataHoarder/wiki/index
+https://www.reddit.com/r/buildapcsales/
+https://slickdeals.net/
+
+https://old.reddit.com/r/DataHoarder/comments/7fx0i0/wd_easystore_8tb_compendium/
+
+
+
+NAS project:
+
+1. Scope out net for recommendations, compile parts list.
+
+
+Buy NAS case, or use old AZZA case? How many bays does AZZA case have?
+http://www.u-nas.com/xcart/home.php?cat=249
+
+Chassis:
+https://www.ebay.com/itm/U-NAS-Mini-4-Bay-NAS-Chassis-Mini-ITX-Form-Factor-with-PSU-and-Backplane/192801878692?hash=item2ce3e332a4:g:kXEAAOSw~atcSblm
+http://www.ipcdirect.net/itx-s8-black-mini-itx-form-computer-storage-case/ (Maybe in the future)
+https://www.reddit.com/r/DataHoarder/comments/7vx6bv/diy_nas_server/
+
+Maybe just a hot swap cage instead? Wait for Ebay offer before going down this route.
+https://www.reddit.com/r/DataHoarder/comments/46twzs/best_hotswap_drive_cage/
+
+Will want "NAS" quality drives. No cheap drives. Buy cheap, buy it twice.
+
+May want to wait for a sale. 
+WD Easystores frequently go on sale. Will want 8TB models. Get two of them? Shuck
+
+
+
+Mobo:
+https://www.ixsystems.com/community/resources/
+https://linustechtips.com/main/topic/593401-good-itx-board-with-ecc-memory-support/
+
+ASRock C2550D4I (Strict memory validation)
+https://www.ebay.com/itm/ASRock-C2550D4I-Mini-ITX-Server-Motherboard-with-Intel-Avoton-Atom-C2550-CPU/113662332855?ssPageName=STRK%3AMEBIDX%3AIT&_trksid=p2060353.m2763.l2649
+https://www.ebay.com/itm/ASRock-Rack-C2550D4I-Intel-C2550-Motherboard-Mini-ITX-with-8GB-DDR3-1600-QVL-RAM/254149554132?hash=item3b2c7e6fd4:g:xNwAAOSwu2tcfIA~
+
+
+
+
+RAM
+1600Mhz dual channel ECC. Pref 16GB for FreeNAS.
+Crucial CT1024728D160B.18FED for ASRock C2550D4I.
+
+
+
+2. Purchase parts.
+
+Remember to test parts first before messing with them. Need to RMA broken stuff!
+
+3. Build
+
+4. Configure.

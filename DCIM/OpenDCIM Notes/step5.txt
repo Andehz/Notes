@@ -1,0 +1,5 @@
+http://www.htaccesstools.com/articles/htpasswd/
+
+/opt/openDCIM/opendcim/.htpasswd
+
+cp /opt/openDCIM/opendcim/.htpasswd /opt/openDCIM/openDCIM-19.01

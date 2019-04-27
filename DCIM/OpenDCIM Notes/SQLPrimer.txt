@@ -1,0 +1,436 @@
+https://linuxacademy.com/cp/courses/lesson/course/439/lesson/1/module/52
+
+Running RHEL 7 instance on Linux Academy Playground
+
+
+------
+Vid1
+SQL - Structured Query Language - Language used to manage/communicate with database engine.
+
+
+------
+Vid2
+
+sudo -i
+
+
+<!--Download yum repo for MySQL -->
+wget https://dev.mysql.com/get/mysql80-community-release-el7-2.noarch.rpm
+
+<!-- Create MySQL repo info for OS -->
+rpm -Uvh mysql80-community-release-el7-2.noarch.rpm
+
+yum update
+
+yum install mysql-community-server
+
+<!-- Make MySQL start at startup. -->
+systemctl enable mysqld
+
+<!-- Start mysql daemon -->
+systemctl start mysqld
+
+<!-- Check MySQL daemon process status -->
+systemctl status mysqld
+
+<!-- Alternative installation Information.-->
+
+https://dev.mysql.com/doc/refman/8.0/en/linux-installation-yum-repo.html
+
+<!-- find default temporary password in logs for root accountsys. MySQL starts with root db account by default -->
+sudo grep 'temporary password' /var/log/mysqld.log
+
+<!-- Change password as default password is available in logs -->
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass4!';
+(password: p@ssw0rdTH3r312345.)
+
+<!-- Exit mysql -->
+quit
+
+<!-- Run this to better secure mysql. Lots of dev stuff on there that should be removed. -->
+/usr/bin/mysql_secure_installation
+
+go through prompts
+
+systemctl restart mysqld
+
+/etc/selinux/config - disable selinux for startup at least. May cause issues if it's on.
+
+mysql -u root
+
+SHOW DATABASES;
+
+quit
+
+mysql -u root -p mysql
+
+SHOW DATABASES;
+
+mysql has default databases that are needed for system data.
+
+SQL statements at the command line are in all caps as convention.
+
+CREATE DATABASE dbCustomerInfo; All sql statements end w/ a semicolon
+
+add 'db' at the beginning of a database.
+
+DROP DATABASE <database name>; Dropping a database is NOT recoverable. Period.
+
+
+---------
+Create Table
+
+USE dbCustomerInfo;
+
+SHOW TABLES;
+
+(This creates tables with columns)
+CREATE TABLE tblCustomerInfo (<Column Name> <Type>(Size),...) no spaces between each field as some database engines don't strip off spaces properly
+
+Remember to be careful when using DROP if you're logged in as root.
+
+DROP TABLE; will drop everything immediately, don't forget this!
+
+
+
+CREATE Tables with Constraints - Six constraints: use to specify rules for data.
+
+SHOW FIELDS FROM tblCustomerInfo; Shows values in a database, and types of fields it's expecting.
+
+place constraints at the end of a field during creation.
+
+CREATE TABLE tblCustomerIDInfo (custID varchar(10) PRIMARY KEY,custinfoFirstName varchar(50),custInfoLastName varchar(50),custInfoAddr1 varchar(50),custInfoAddr2 varchar(50),cus
+tInfoCityName varchar(50),custInfoState varchar(10),custInfoZipCode varchar(10),custInfoPhone varchar(12));
+
+the six constraints:
+NOT NULL - value isn't null
+UNIQUE - no two values are the same
+PRIMARY KEY - UNIQUE + NOT NULL
+FOREIGN KEY - Ensures referential integrity between two different tables
+CHECK - Ensures a value in a column meets a specific condition, ex value is greater than 5.
+DEFAULT - Specifies a default value when none is specified.
+
+NOTE: MariaDB is essentially MySQL as it's fundamentally the same at its base.
+
+
+
+------------
+Insert Into
+
+INSERT INTO tblCustomerInfo (selected table columns comma delimited no spaces);
+
+INSERT INTO tblCustomerInfo (custInfoFirstName,custInfoLastName,custInfoAddr1,custInfoAddr2,custInfoCityNam
+e,custInfoState,custInfoZipCode,custInfoPhone) VALUES ('John','Smith','111 Main St','','Anytown','NY','43211','212
+3445);
+
+SELECT * FROM tblCustomerInfo;
+
+<!-- Doesn't overwrite, adds new records if they're not the same. Similar to how MySQL does database backups -->
+INSERT INTO tblCustomerInfoBackup SELECT * FROM tblCustomerInfo;
+
+
+-----------------
+SELECT FROM
+
+SHOW DATABASES;
+USE dbCustomerInfo;
+SHOW TABLES;
+
+
+<!-- Shows everything from table -->
+SELECT * FROM tblCustomerInfo;
+
+SELECT (columns) FROM (table);
+SELECT custInfoCityName,custInfoState FROM tblCustomerInfo;
+
+<!-- All customer's last names filtered with WHERE. = Must be an exact match. Can use != for not equals as well -->
+SELECT custInfoLastName FROM tblCustomerInfo WHERE custInfoState='NY';
+
+<!-- Like searches for a pattern within a field. -->
+SELECT custInfoLastName FROM tblCustomerInfo WHERE custInfoState LIKE 'NY';
+
+In SQL compliant databases, !=, <> are the same.
+
+
+
+-----------------
+Alter Table
+
+ALTER lets you add, drop, and change the data type of a column.
+
+ALTER TABLE tblCustomerInfoBackup ADD custInfoDOB varchar(10);
+
+NULL is default value that isn't constrained.
+
+Data that has data that isn't valid for the type that's being changed to, it'll give an error. This is data integrity.
+
+
+ALTER TABLE tblCustomerInfoBackup ALTER COLUMN custInfoDOB year;
+or
+ALTER TABLE tblCustomerInfoBackup MODIFY custInfoDOB year;
+
+Which one you use depends on how compliant-focused with SQL the database is.
+
+ALTER TABLE tblVendors CHANGE vendorName vendorName varchar(50) NOT NULL;
+
+
+--------------------
+DELETE FROM
+
+Once records have been DELETEd, records are gone!
+
+DELETE * FROM tblCustomerInfoBackup; (Deletes all entries, keeps schema)
+
+<!-- Use WHERE clause to target deletions -->
+DELETE FROM tblCustomerInfoBackup WHERE custInfoState='Ohio';
+
+DELETE FROM tblCustomerInfoBackup WHERE custInfoFirstName='John' AND custInfoLastName='Johnson';
+
+
+-----------------------
+CREATE INDEX
+
+Indexes are created to find data more quickly and efficiently. Indexes should be used on high traffic columns due to the increased compute cost in handling
+
+Use unique values for indexes to make searches simpler and more likely to show up on LIKE searches.
+
+CREATE INDEX on a particular TABLE or a table's column.
+
+CREATE INDEX <name> ON <TABLE> (column (optional));
+CREATE INDEX indexCustInfoID ON tblCustomerIDInfo (custID);
+
+CREATE INDEX indexCustInfoNames ON tblCustomerIDInfo (custInfoFirstName,custInfoLastName);
+
+
+Every time a database is modified, indexes need to be updated.
+
+
+-------------------
+DROP TABLE
+
+DROP = data and meta info is deleted from database engine and the filesystem as well.
+
+DROP TABLE tblTest;
+
+Can also drop an index as well:
+
+ALTER TABLE tblCustomerIDInfo DROP INDEX indexCustInfoID; (Syntax will vary depending on database engine)
+
+Be careful of DROP'ing. This immediate and permanent!
+
+
+----------------------
+TRUNCATE TABLE
+
+Deletes data but keeps schema info for a table. May be used to delete transaction log/user log.
+
+TRUNCATE TABLE tblCustomerInfoBackup;
+
+Relatively simple command. Keep in mind that it will delete all data though.
+
+
+-------------------
+Auto Increment
+
+Constraint that automatically increments an integer by one. Ideal so we don't need to keep track of index or primary key values;
+
+CREATE TABLE tblEmpInfo(empID int PRIMARY KEY AUTO_INCREMENT, empLastName varchar(5
+0),empSSN varchar(11));
+
+ALTER TABLE tblEmpInfo AUTO_INCREMENT=1000; Alters increment value so it goes up by 1000 instead of one. Only does this once though.
+
+ALTER TABLE tblCustomerIDInfo MODIFY custID int AUTO_INCREMENT;
+
+----------------------
+Count Function
+
+SQL statements that don't directly manipulate data, but related to SELECt statement.
+INSERT INTO tblEmpInfo (empLastName,empSSN) VALUES ('Smith','11111111111');
+
+COUNT takes parameters and conditions and returns data based on that.
+
+Takes in a wildcard, column name, or a constraint as a parameter.
+SELECT COUNT(*) FROM tblCustomerInfo;
+SELECT COUNT(DISTINCT custInfoLastName) FROM tblCustomerInfo; DISTINCT only works on one column.
+SELECT COUNT(custInfoLastName) FROM tblCustomerInfo;
+
+SELECT COUNT(custInfoState) FROM tblCustomerInfo WHERE custInfoState='NY';
+
+
+
+--------------------------------
+Average and Sum Functions
+
+CREATE TABLE tblInvoices (invID int(11) PRIMARY KEY AUTO_INCREMENT,invCustName varc
+har(50),invNumberItems int(11));
+
+SELECT AVG(invNumberItems) FROM tblInvoices;
+
+
+
+SELECT COUNT(*),AVG(invNumberItems) FROM tblInvoices;
+
++----------+---------------------+
+| COUNT(*) | AVG(invNumberItems) |
++----------+---------------------+
+|        7 |           5985.0000 |
++----------+---------------------+
+1 row in set (0.00 sec)
+
+SELECT SUM(invNumberItems) FROM tblInvoices;
+
+Variety of SQL functions available. Explore!
+
+
+<!-- Note how you can combine functions into a single statement -->
+SELECT COUNT(*),AVG(invNumberItems),SUM(invNumberItems) FROM tblInvoices;
+
+
+--------------------
+LIKE Operator
+
+Use like operator to do wildcard searches
+
+
+<!--What are these queries doing? -->
+SELECT * FROM tblCustomerInfo WHERE custInfoLastName LIKE '%S';
+
+SELECT * FROM tblCustomerInfo WHERE custInfoLastName LIKE '%mith%';
+
+SELECT COUNT(*) FROM tblCustomerInfo WHERE custInfoLastName LIKE '%S';
+
+SELECT COUNT(*) FROM tblInvoices WHERE invCustName LIKE '%smith%';
+
+SELECT SUM(invNumberItems),COUNT(*) FROM tblInvoices WHERE invCustName LIKE '%smith%';
+
+SELECT AVG(invNumberItems),SUM(invNumberItems),COUNT(*) FROM tblInvoices WHERE invCustName LIKE '%smith%';
+
+SELECT invCustName,AVG(invNumberItems),SUM(invNumberItems),COUNT(*) FROM tblInvoices WHERE invCustName LIKE '%
+smith%';
+ERROR 1140 (42000): In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 
+'dbCustomerInfo.tblInvoices.invCustName'; this is incompatible with sql_mode=only_full_group_by
+
+
+LIKE operator is much more CPU intensive. = is much faster. LIKE also relies on updated index, try to only use updated indexes with like.
+
+
+
+
+--------------------
+Create View
+
+View - custom cached report. May want to use if you run a particular query very often. Save some compute power! Teated like a table.
+
+CREATE VIEW viewOverFifty AS SELECT COUNT(*),AVG(invNumberItems),SUM(invNumberItems) FROM tblInvoices WHERE in
+vNumberItems > 50;
+
+SHOW TABLES;
+
+Can treat views exactly as a table.
+
+SELECT * FROM viewOverFifty;
+
+Maybe create a view for multiple execs to look at than to have them scan a query dozens of time (one per person). This will greatly reduce compute times.
+
+
+
+------------------
+Inner Join
+
+Method of selecting/combining rows of two or more tables based on some common field.
+
+Inner join returns all rows from multiple tables that meets the join condition.
+
+<!-- Join left table tblOrders with right table, tblCustomerIDInfo, join tables based on common field custID. Note order of fields, that's the order they'll be displayed. -->
+
+SELECT tblOrders.ordID,tblCustomerIDInfo.custInfoLastName,tblCustomerIDInfo.custInfoFirstName,tblOrders.ordDat
+e FROM tblOrders INNER JOIN tblCustomerIDInfo ON tblOrders.custID=tblCustomerIDInfo.custID;
+
+Must have at least one column that is the same in both tables.
+
+
+
+-------------------
+Left Join
+
+Returns all the rows in the left table with matching rows in the right table. If no records in left table in the right table, returns empty set.
+Displays all records on left table, and matching records on the right table. If there's a record on left, but will indicate there's no associated record for it.
+
+
+
+SELECT tblCustomerIDInfo.custInfoLastName,tblOrders.ordID from tblCustomerIDInfo LEFT JOIN tblOrders ON tblCustomerIDInfo.custID=tblOrders.custID ORDER BY tblCustomerIDInfo.custInfoLastName;
+
+
+
+-----------------
+Right Join
+
+Take right-hand database, display all records and indicate a null value if there are no matching records on the left. Like a left join but the opposite.
+
+
+<!-- Same result as the example left join, but the exact opposite order -->
+SELECT tblOrders.ordID,tblCustomerIDInfo.custInfoLastName FROM tblOrders RIGHT JOIN tblCustomerIDInfo ON tblOr
+ders.custID=tblCustomerIDInfo.custID ORDER BY tblOrders.ordID;
+
+
+------------------
+Full Join
+
+AKA, full outer join. Returns all records from left and right tables regardless if matching record exists. Will indicate if there's an associated record with it.
+
+<!-- NOTE: MySQL doesn't support full outer joins. Expects you to use a combination of joins or unions instead.-->
+SELECT tblCustomerIDInfo.custInfoLastName,tblOrders.ordID FROM tblCustomerIDInfo FULL OUTER JOIN tblOrders ON tblCustomerIDInfo.custID=tblOrders.custID;
+
+
+-------------------------
+Unions
+
+Union is the concatenation/combination of multiple select statements from one or more tables.
+
+SELECT tblCustomerIDInfo.custID,tblCustomerIDInfo.custInfoLastName,tblCustomerIDInfo.custInfoFirstName FROM tblCustomerIDInfo UNION SELECT * FROM tblOrders;
+
+----------------------
+Sorting Records
+
+Displays a query in a requested sorting order. Doesn't actually sort the records.
+
+SELECT * FROM tblCustomerIDInfo ORDER BY custID ASC LIMIT 1;
+
+SELECT * FROM tblCustomerIDInfo ORDER BY custID DESC LIMIT 1;
+
+
+
+-------------------
+Min/Max Values
+
+Show min/max value.
+
+SELECT MIN(custID) FROM tblCustomerIDInfo;
+
+SELECT MAX(custID) FROM tblCustomerIDInfo;
+
+<!-- Adding a sub query to get more of a record's data for a min/max query -->
+SELECT custID,custInfoLastName,custInfoFirstName FROM tblCustomerIDInfo WHERE custID=(SELECT MAX(custID) FROM tblCustomerIDInfo);
+
+
+----------------
+Upper/Lower Case Conversions
+
+Changes results of a query to upper case/lowercase. This will not change underlying data, only what is displayed for the query.
+
+SELECT UCASE(custInfoFirstName),UCASE(custInfoLastName) FROM tblCustomerIDInfo;
+
+SELECT LCASE(custInfoFirstName),LCASE(custInfoLastName) FROM tblCustomerIDInfo;
+
+SELECT LCASE(custInfoFirstName),UCASE(custInfoLastName) FROM tblCustomerIDInfo;
+
+SQL functions only deal with SELECT statement. No universal method of manipulating data other than what query returns.
+
+
+
+
+-----------------------
+Now()
+
+Returns current system date and time.
+

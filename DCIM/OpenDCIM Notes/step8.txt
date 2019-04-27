@@ -1,0 +1,7 @@
+Validate
+
+1. Remove the install.php file.
+
+sudo rm install.php
+
+2. Validate site, confirm no bizarre issues.

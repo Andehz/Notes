@@ -1,0 +1,22 @@
+https://tldr.sh/
+DCIM directory is in /opt/opendcim
+
+
+
+1. Download opendcim file.
+
+wget -c {{https://example.com}}
+
+Download all URLs stored in a text file to a specific directory:
+wget -P {{path/to/directory}} -i {{URLs.txt}}
+
+
+wget -P /opt/openDCIM/opendcim1901 https://www.opendcim.org/packages/openDCIM-19.01.tar.gz
+
+
+https://www.opendcim.org/downloads.html
+
+
+2. Extract via tar command in directory
+
+sudo tar zxpvf ~/openDCIM-4.0.1.tar.gz

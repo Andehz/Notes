@@ -1,0 +1,145 @@
+1. Move to the openDCIM working directory.
+
+sudo cd /opt/openDCIM
+
+
+
+2. Download opendcim file.
+
+wget https://www.opendcim.org/packages/openDCIM-19.01.tar.gz
+
+
+
+3. Extract via tar command in directory
+
+sudo tar zxpvf openDCIM-19.01.tar.gz
+
+
+
+4. Verify changes took.
+
+ls -l
+
+
+
+5. Rename directory to opendcim1901.
+
+sudo mv openDCIM-19.01/ opendcim1901/
+
+
+
+6. Move to old directory.
+
+sudo mv opendcim
+
+
+
+8. Copy drawings, images, and pictures to new install.
+
+sudo cp -rp .htpasswd drawings images pictures ../opendcim1901/
+
+
+
+9. Move back to DCIM working directory.
+
+sudo cd ..
+
+
+
+10. Change ownership of all files to apache.
+
+sudo chown -R apache:apache opendcim1901/
+
+
+
+11. Verify changes took.
+
+ls -l
+cd opendcim1901
+ls -l | less
+cd ..
+
+
+12. Set permissions to give apache read and write access.
+
+sudo chmod -R 7775 opendcim1901/
+
+
+
+13. Verify changes took.
+
+ls -l
+cd opendcim1901
+ls -l | less
+cd ..
+
+
+
+14. Move into new install directory of openDCIM.
+
+sudo cd opendcim1901/
+
+
+
+15. Create new db access file from .dist file.
+
+sudo cp db.inc.php-dist db.inc.php
+
+
+
+16. Edit new db access file.
+
+sudo vim db.inc.php
+
+
+
+17. Edit to these settings in the following lines in db.inc.php.
+
+ $dbhost = 'localhost';
+ $dbname = 'dcim';
+ $dbuser = 'dcim';
+ $dbpass = 'dcim';
+
+
+
+18. Quit out of Vim
+:wq!
+
+
+
+20. Back to DCIM working directory.
+
+cd ..
+
+
+
+21. Change symlink to point to new DCIM directory.
+
+sudo ln -snf opendcim1901 opendcim
+
+
+
+22. Verify changes took.
+
+ls -l
+
+
+
+23. Reload Apache to flush cache.
+
+sudo systemctl restart httpd
+
+
+
+24. Access the openDCIM website through a browser and validate that the preflight check is ok and no errors pop up.
+
+
+ewfwefewf
+25. Stop install.php from running if preflight check is OK by renaming it.
+
+cd opendcim
+
+sudo mv install.php install.php.bak
+
+
+26. Validate site as an end user, try to confirm that no bizarre issues exist.

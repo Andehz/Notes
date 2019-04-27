@@ -1,0 +1,36 @@
+Copy db.inc.php-dist to db.inc.php and modify as needed for your site. 
+It is not a good idea to just copy the version from the previous version because sometimes configuration directives in this file are added. 
+If you copied an old version you wouldn't have that.
+
+
+What a .dist file does: 
+https://stackoverflow.com/questions/16843080/what-does-dist-used-as-an-extension-of-some-source-code-file-mean
+
+1. Move to new directory of install.
+cd /opt/openDCIM/opendcim1901/openDCIM-19.01
+
+2. Create new db access file from .dist
+cp db.inc.php-dist db.inc.php
+
+
+3. Change ownership of all files to apache.
+
+sudo chown -R apache:apache openDCIM-19.01
+
+
+4. Set permissions to 7775
+
+sudo cmod -R 7775 openDCIM-19.01/
+
+
+5. Edit new db access file.
+vim db.inc.php
+
+
+6. Edit to these settings in the following lines in db.inc.php.
+ $devMode =="FALSE"
+ $dbhost = 'localhost';
+ $dbname = 'dcim';
+ $dbuser = 'dcim';
+ $dbpass = 'dcim';
+

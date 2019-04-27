@@ -1,0 +1,4 @@
+https://superuser.com/questions/645842/how-to-overwrite-a-symbolic-link-of-a-directory
+
+sudo ln -snf openDCIM-19.01 opendcim 
+

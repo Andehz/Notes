@@ -1,0 +1,85 @@
+Postgresql 9.4 Administration
+
+---------------------
+Intro to Databases
+
+
+Database - an organized collection of data.
+
+DBMS - Database management system. tools and utilities to capture data for the end user.
+Data can be imported/exported between DBMS with some changes to datatypes.
+
+-----------------------
+Data Normalization
+
+Process used to reduce/eliminate the redundancy of data in a database.
+
+If there's multiple instances of the same data, may not know every location of copies of data and cause synchronization to fail.
+
+
+Three forms of normalization:
+Objective is to reduce storage, increase referential integrity and logically structure data.
+
+
+1NF - Contains no repeating groups of data in a database structure.
+2NF
+3NF
+
+There are higher forms but they're rarely needed.
+
+
+-----------------
+Indexes, Relationships, and Keys
+
+
+Index - internal structure that improves the speed of retrieval on a database table. Not created automatically.
+Should plan ahead when creating index. May require additional storage and memory to create.
+
+Data relationship - existence of one field of data that exists in multiple tables.
+
+Keys - Keys help keeps all the records "straight"
+
+Primary key - unique for each record in that table.
+Foreign key - Used to create relationships between tables in a database.
+
+
+----------------------------
+Introduction to RDBMS
+
+
+Relational Database Management System
+
+A DBMS that's based on the relational database model. Most common form of DBMS.
+
+Key Concepts:
+
+Data is organized into tables of rows/columns with a unique key for each row.
+
+Each entity type (customers, locations, items, etc) has its own table.
+
+Each row within an entity type represents an instance of that type
+
+Each column represents values in those instances
+
+Rows in a table can be linked to rows in other tables through the storage of unique key of the row it needs to be linked to (foreign key)
+
+Use SQL as the language for managing the database.
+
+
+
+------------------------------
+Introduction to PostgreSQL 9.4
+
+
+PostgreSQL - representation of a set of utilities and software to manage relational data (and unstructured too)
+
+Classified as an RDBMS. Open source.
+
+
+
+-----------------------
+Downloading PostgreSQL
+
+(Nothing much to add in, old information)
+
+

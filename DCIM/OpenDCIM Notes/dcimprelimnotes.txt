@@ -1,0 +1,106 @@
+https://wiki.opendcim.org/wiki/index.php/Upgrade
+
+"-" is a personal note/commentary
+
+[Phase 1: Planning]
+
+1. Coordinate with your users for an upgrade window and make sure that they aren't trying to modify the db while you upgrade. In other words, Change Management.
+
+- Guessing writing to DB will cause issues during upgrade. Make sure users are logged off, and noone is actively trying to get into the system.
+
+- Are we going to want to schedule a change window for this since this is "production" now?
+
+
+2. Make a backup of your database. This is done with the mysqldump command. Typical command would be mysqldump --opt dcim > backup.sql.
+
+- mysqldump command? what does this do exactly? Seems obvious but remember to know about technicalities. Do we need to get another hard drive before going through with this?
+
+- If we have to go get a backup going, what are the commands to run it?
+
+
+
+[Phase 2: Installation]
+
+3. Unpackage the distribution file into a new folder - not on top of the existing one. 
+
+- Remember NOT to write to the current folder where DCIM is in. What is a symlink, review.
+
+- Do we have a DCIM directory? Consider making one for the future? having backup versions is pretty handy in case of rollbacks.
+
+
+Here's a good idea:
+(FROM DCIM) A typical installation would go into a folder such as /var/www/html/openDCIM-3.3' and a symlink would be created at /var/www/html/opendcim that points to the version numbered directory. 
+Apache would be configured to look at the symlink - meaning whenever you upgrade, you only have to change the symlink and you can leave Apache alone.
+
+
+4. Copy db.inc.php-dist to db.inc.php and modify as needed for your site. 
+It is not a good idea to just copy the version from the previous version because sometimes configuration directives in this file are added. 
+If you copied an old version you wouldn't have that.
+
+- What are db.inc.php-dist anddb.inc.php? Check out the files. What does he mean "addedd directives?"
+
+
+5. Copy your .htaccess file from the old install folder to the new one.
+
+- Remember what the .htaccess file is? Review
+
+
+6. Copy your images, pictures and drawings folders across from your old folder to the new install; also ensure these new folders are writable by your webserver?s user account.
+
+- Remember that we're not overwriting, we're just changing symlinks so the new folder won't have any of custom data in it.
+
+- What are the paths to these? Probably will want to back these up too.
+
+7. Update your symlink to point to the new version and restart Apache to flush out its cache.
+
+- Apache cache? What is this?
+
+- How to get Apache to look at a symlink in the firt place? Was this done at install?
+
+
+
+
+[Phase 3: Testing Phase]
+
+8. Open your browser and go to your DCIM site and log in as a user with Site Admin privileges - otherwise the installer will complain that the site is under maintenance. 
+Be sure to actually read everything on the screen and follow what it says. 
+Some upgrades have expected notice messages that will pop up, which are certainly different from true errors. We try to make the errors obvious.
+
+- Most likely, test environfment will only have admin. Live environment may have proper accounts set up so keep this in mind.
+
+
+9. When you are back that the Create Data Center (same as an initial installation) screen the upgrade has completed. You must either rename or delete the install.php file, otherwise openDCIM will continually attempt to run the upgrade every time someone tries to browse to it.
+
+- Remember about that install.php file. Get rid of it once it's gone.
+
+
+10. (Not part of official steps) Test the site, see if any apparently obvious glitches or data corruption has occurred when browsing site like a user.
+
+- Always test, may catch big errors right away so it can be rolled back if something goes wrong.
+
+
+11. Inform your users that the upgrade is complete and they can once again use openDCIM.
+
+- Done!
+
+
+
+[Phase 4: Feedback and review]
+
+
+
+NOTES: 
+
+Testing is important, don't forget that.
+
+Add a non-privileged user account to DCIM. Good practice and helps better simulate end user experience.
+
+Won't need to do incremental upgrades since we're just changing symlinks. Safe to go from 18.01 to 19.01.
+
+(From DCIM) A typical upgrade is complete in less than 10 minutes (including all steps, not just the browsing to the installer).
+If you have a large installation (5,000 devices or more) it can take longer, so please be patient. 
+Do not refresh during the upgrade or it will abort mid-way and you will have to restart from your backup created in Step 2.
+
+Will probably want to update all relevant components before getting started.
+
+Did Lecomte set up our prod DCIM to have Apache see folder via symlink? Will probably want to look into how to correct this after install is complete and I can justify upgrading our system.

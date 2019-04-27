@@ -1,0 +1,8 @@
+cd /opt/openDCIM/opendcim
+
+sudo cp -rp drawings images pictures /opt/openDCIM/opendcim/openDCIM-19.01
+
+p - preserve date modified.
+
+order of parameter letters doesn't matter. Can - each parameter, or throw them all together in one -.
+All does the same thing. Case matters.
