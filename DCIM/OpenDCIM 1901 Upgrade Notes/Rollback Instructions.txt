@@ -1,0 +1,26 @@
+If installation to new version doesn't work, use these to fall back to an older version.
+
+1. Navigate to openDCIM directory
+
+cd /opt/openDCIM
+
+
+
+2. Change symlink reference to older build.
+
+sudo ln -snf opendcim1801bak opendcim
+
+
+
+3. Restart Apache.
+
+sudo systemctl restart httpd
+
+
+
+NOTE: Many installation directives write directly to the database (fac_Config)
+Even if you roll back, many of the sites settings won't change back to any configuration settings from older builds.
+You may see it listed as 19.01 even though you're running an older version of openDCIM.
+This is fine and only a topical error. As long as the database is fine then there should be no issues.
+
+Recommended that the database be backed up so any future changes to OpenDCIM that destructively alter the database don't cause issues with older versions of OpenDCIM.
