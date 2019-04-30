@@ -30,7 +30,7 @@ sudo mv openDCIM-19.01/ opendcim1901/
 
 6. Move to old directory.
 
-sudo mv opendcim
+sudo cd opendcim
 
 
 
