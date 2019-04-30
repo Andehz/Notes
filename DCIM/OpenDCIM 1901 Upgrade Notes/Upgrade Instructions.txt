@@ -62,7 +62,7 @@ cd ..
 
 12. Set permissions to give apache read and write access.
 
-sudo chmod -R 7775 opendcim1901/
+sudo chmod -R 764 opendcim1901/
 
 
 
