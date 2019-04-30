@@ -12,7 +12,7 @@ wget https://www.opendcim.org/packages/openDCIM-19.01.tar.gz
 
 3. Extract via tar command in directory
 
-sudo tar zxpvf openDCIM-19.01.tar.gz
+sudo tar -zxpvf openDCIM-19.01.tar.gz
 
 
 
