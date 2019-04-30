@@ -30,7 +30,7 @@ sudo mv openDCIM-19.01/ opendcim1901/
 
 6. Move to old directory.
 
-sudo cd opendcim
+cd opendcim
 
 
 
@@ -42,31 +42,11 @@ sudo cp -rp .htpasswd drawings images pictures ../opendcim1901/
 
 9. Move back to DCIM working directory.
 
-sudo cd ..
-
-
-
-10. Change ownership of all files to apache.
-
-sudo chown -R apache:apache opendcim1901/
-
-
-
-11. Verify changes took.
-
-ls -l
-cd opendcim1901
-ls -l | less
 cd ..
 
 
-12. Set permissions to give apache read and write access.
 
-sudo chmod -R 764 opendcim1901/
-
-
-
-13. Verify changes took.
+10. Verify changes took.
 
 ls -l
 cd opendcim1901
@@ -75,25 +55,37 @@ cd ..
 
 
 
-14. Move into new install directory of openDCIM.
+11. Move into new install directory of openDCIM.
 
-sudo cd opendcim1901/
+cd opendcim1901/
 
 
 
-15. Create new db access file from .dist file.
+12. Create report directory.
+
+sudo mkdir assets assets/reports
+
+
+
+13. Give write permissions so apache can write to them.
+
+sudo chmod 766 -R assets drawings pictures vendor/mpdf/mpdf/ttfontdata
+
+
+
+14. Create new db access file from .dist file.
 
 sudo cp db.inc.php-dist db.inc.php
 
 
 
-16. Edit new db access file.
+15. Edit new db access file.
 
 sudo vim db.inc.php
 
 
 
-17. Edit to these settings in the following lines in db.inc.php.
+16. Edit to these settings in the following lines in db.inc.php.
 
  $dbhost = 'localhost';
  $dbname = 'dcim';
@@ -102,44 +94,43 @@ sudo vim db.inc.php
 
 
 
-18. Quit out of Vim
+17. Quit out of Vim
 :wq!
 
 
 
-20. Back to DCIM working directory.
+18. Back to DCIM working directory.
 
 cd ..
 
 
 
-21. Change symlink to point to new DCIM directory.
+19. Change symlink to point to new DCIM directory.
 
 sudo ln -snf opendcim1901 opendcim
 
 
 
-22. Verify changes took.
+20. Verify changes took.
 
 ls -l
 
 
 
-23. Reload Apache to flush cache.
+21. Reload Apache to flush cache.
 
 sudo systemctl restart httpd
 
 
 
-24. Access the openDCIM website through a browser and validate that the preflight check is ok and no errors pop up.
+22. Access the openDCIM website through a browser and validate that the preflight check is ok and no errors pop up.
 
 
-ewfwefewf
-25. Stop install.php from running if preflight check is OK by renaming it.
 
-cd opendcim
+23. Stop install.php from running if preflight check is OK by renaming it.
 
-sudo mv install.php install.php.bak
+sudo mv opendcim1901/install.php opendcim1901/install.php.bak
 
 
-26. Validate site as an end user, try to confirm that no bizarre issues exist.
+
+24. Validate site as an end user, try to confirm that no bizarre issues exist.
