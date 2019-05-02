@@ -1,9 +1,9 @@
-Copy db.inc.php-dist to db.inc.php and modify as needed for your site. 
-It is not a good idea to just copy the version from the previous version because sometimes configuration directives in this file are added. 
+Copy db.inc.php-dist to db.inc.php and modify as needed for your site.
+It is not a good idea to just copy the version from the previous version because sometimes configuration directives in this file are added.
 If you copied an old version you wouldn't have that.
 
 
-What a .dist file does: 
+What a .dist file does:
 https://stackoverflow.com/questions/16843080/what-does-dist-used-as-an-extension-of-some-source-code-file-mean
 
 1. Move to new directory of install.
@@ -33,4 +33,3 @@ vim db.inc.php
  $dbname = 'dcim';
  $dbuser = 'dcim';
  $dbpass = 'dcim';
-
