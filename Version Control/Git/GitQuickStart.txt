@@ -137,7 +137,7 @@ git checkout master
 
 Notice that if you switch back to the master, you won't see the redesign branch.
 
-#Create and switch to new branch
+#Create and switch to new branch in one command.
 git checkout -b <new branch name>
 
 #-a Adds and commits in one command.
