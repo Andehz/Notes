@@ -74,3 +74,87 @@ Works with directories as well.
 vim .gitignore
 
 Add file/directory name per line. Wildcard supported.
+
+#Can also exclude paths using the following command:
+git config --global core.excludesfile <path>
+
+
+-----------------------------------------
+5. Cloning Repositories
+
+Each repo is unique to its own directory structure.
+
+#Creates a copy of the repo.
+git clone <source> <target>
+
+Can also clone over ssh/https as well.
+
+#Clones a repo from github.com
+git clone https://github.com/linuxacademy/content-git-quickstart ~/quickstartclone
+
+#Push changesd back to the master copy
+git push origin master
+
+----------------------------------------------
+6. Git Logging
+
+#More general information about git log. Less detailed info.
+git log --oneline
+
+#Gives more detailed info about logs.
+git log -p
+
+Can use / while in this mode to search for a particular keyword. Press N to cycle to the next result.
+
+#returns logs relevant to a particular file.
+git log -- <file>
+
+#Returns oneline form of results from a particular file.
+git log --oneline <file>
+
+#Returns a more graphical representation of a log history. Helpful when dealing w/ multiple branches.
+git log --graph --decorate
+
+--------------------------------------------
+7. Branches in git
+
+Allows you to reate copies of master without interfering the master branch. Usually branches are created to deal with a particular goal in mind.
+Can even create branches off of branches.
+
+#Create the branch
+git branch <New branch name>
+
+#Move to the new branch
+git checkout <new branch's name>
+
+#tells you what branch you're currently on.
+git status
+
+Now you can work on the branch and not interfere with the master.
+
+#Switch back to master.
+git checkout master
+
+Notice that if you switch back to the master, you won't see the redesign branch.
+
+#Create and switch to new branch
+git checkout -b <new branch name>
+
+#-a Adds and commits in one command.
+git commit -am "fixed toc"
+
+---------------------------------------------
+8. Merging and Pushes in git
+
+Push moves changes to the origin.
+
+#pushes a branch to the origin (usually master)
+git push <target> <Branch to be pushed>
+
+#pushes all branches to origin
+git push origin --all
+
+To merge, checout to target branch. Usually to master.
+
+#Merges a branch to the master.
+git merge <branch to be merged>
