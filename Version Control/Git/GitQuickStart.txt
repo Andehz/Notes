@@ -1,0 +1,76 @@
+1. Git Intro and Architecture
+
+Keeps tracks of changes in files. Created by Linus Torvalds.
+
+Commit - A state of a file.
+
+Current commit = the head. Head can be moved between commits.
+
+------------------------------
+2. Install and Configure Git
+
+#For RHEL-based systems:
+sudo yum install git
+
+
+#Returns current git config.
+git config -l
+
+Will want two pieces of info to give to Git, name and email.
+
+#Gives git a name at the user level
+git config --global user.name "Andy Li"
+
+#gives git an email at the user level
+git config --global user.email "email@email.com"
+
+#Set preferred text editor for Git at for the entire system.
+git config --system core.editor vim
+
+Can also create system-wide configurations in the config files
+
+/etc/config - Config files at the system level.
+~/.gitconfig - Config files at the user level
+.git/config - Config files at the local level.
+
+
+---------------------------------------
+3. Working with Repositories in Git
+
+Repository - group of content.
+
+#Creates a repository in current directory.
+git init
+
+#Get status of Repository
+git status
+
+Git won't track files automatically. Must add them first for Git to track.
+
+#Adds files for git to track in the commit.
+git add <file>
+
+#Tells git to track state of the file. -m lets you add a message to the commit.
+git commmit -m <message>
+
+Git will know if a commited file has been changes. Must re-add then commit to track new state.
+Git will make you add a message if you don't include the -m flag. It will open a text editor and make you add one if you don't.
+
+#Lists a history of commits.
+git log
+
+#Removes file from being tracked by repository and the file itself.
+git rm <file>
+
+#Recovers a file that's been deleted that git is tracking.
+git checkout -- <file>
+
+------------------------------------------
+4. gitignore
+
+Tell git not to track certain files or specific kinds of files by creating a .gitignore file in a repo, but may need them for a project.
+Works with directories as well.
+
+vim .gitignore
+
+Add file/directory name per line. Wildcard supported.
