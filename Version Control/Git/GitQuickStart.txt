@@ -154,7 +154,7 @@ git push <target> <Branch to be pushed>
 #pushes all branches to origin
 git push origin --all
 
-To merge, checout to target branch. Usually to master.
+To merge, checkout to target branch. Usually to master.
 
 #Merges a branch to the master.
 git merge <branch to be merged>
