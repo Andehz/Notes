@@ -60,3 +60,53 @@ Git doesn't care about directories. If you want git to track a directory, create
 
 ---------------------------------
 5. Status of your Project
+
+#Abbreviated form of output. s = short
+git status -s
+
+Characters to the left of the output:
+A = Added to Index
+?? = Not yet added.
+AM = Added and modified.
+
+First character = staged value, second character = unstaged value. Must be re-added if you want to commit modified files that have changes after it's been added.
+
+
+----------------------------------
+6. Committing to Git.
+
+#Commits files. Won't commit anything that hasn't been added.
+git commit
+
+Git commit messages are in a COMMIT_EDITMSG file.
+
+commit 19e793becd9ad1c68283330977629e82dabc4be9
+Author: newproject <newproject@email.com>
+Date:   Mon May 6 09:33:39 2019 +0000
+
+    Helo world!
+
+Note the string next to commit is the SHA-1 has value. Git will also create a directory named after the first two characters of the value in the objects directory.
+File in this directory is the contents in hashed form.
+
+#removes file from git, but keeps it in the directory.
+git rm --cache CHANGELOG.md
+
+#Must commit after deletion
+git commit -m "Deleted changelog from git"
+
+#Commits file that was just changed without needing to add and commit seperately.
+git commit -am "Readding changelog"
+
+
+------------------------------------
+7. Ignoring certain files.
+
+Standard convention is to create a .gitignore file to exclude files from tracking by git. Can also edit exclude file directory too though. .git/info/exclude
+
+Add the .gitignore file to root of repo.
+
+Files edited in VIM are automatically backed up. These files end with a ~ character. May be wise to ignore these files. (*~ for all of these files.)
+
+Returns files that have been ignored based on the specified pattern.
+git check-ignore <pattern>
