@@ -1,0 +1,62 @@
+1. Basics of Git File system
+
+.git file is created in a working directory that contains metadata about a repository. Database in .git file has info about files being tracked.
+
+Files in git are untracked and unknown to git until they're added to git to be tracked.
+
+Files in .git
+
+COMMIT_EDITMSG - records of each commit in github
+
+HEAD - Current branch being worked on.
+
+Config - Contains config info about a repository, like email and user info.
+
+Description - Txt file that contains name of repository. Typically used by gitweb
+
+hooks - Contains scripts that can be used to create automated task.
+
+index - Keeps tracks of items in the staging area and files ready to be committed.
+
+info - Contains items like the excludefile.
+
+logs - Contains log info of github
+
+objects - database consists of compressed files that are hashed versions of content that have been commited in the repo. Index is the link to this.
+
+refs - Contains references and tags for your repo.
+
+
+-------------------------------
+2. Creating a local Empty Repository
+
+git init <Name of Repo>
+
+#creates a bare repo. Used for larger projects when multiple people are contributing with different branches.
+git init --bare <Name of Repo.>
+
+
+--------------------------------
+3. Basic Config of Git
+
+#Creates identity. Not authentication, just identifies who you are. In key:value pair form. This is mandatory.
+git config --global user.email <email>
+git config --global user.name <Name>
+
+#Lists git config settings
+git conig --list
+
+You can change identity per repo by changing the working directory to that repo and initializing an identity without the global switch.
+If git finds multiple entries of an item in the config, it'll use the last one in the config.
+
+
+-----------------------------------
+4. Add Files to a Project
+
+#See what has been added into git. Can also do git status which is much cleaner.
+cat .git/index
+
+Git doesn't care about directories. If you want git to track a directory, create a .keep file in the target directory and add that .keep file to git.
+
+---------------------------------
+5. Status of your Project
