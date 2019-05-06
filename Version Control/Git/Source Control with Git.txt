@@ -1,3 +1,5 @@
+https://linuxacademy.com/cp/modules/view/id/195
+
 1. Basics of Git File system
 
 .git file is created in a working directory that contains metadata about a repository. Database in .git file has info about files being tracked.
