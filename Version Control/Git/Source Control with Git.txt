@@ -112,3 +112,48 @@ Files edited in VIM are automatically backed up. These files end with a ~ charac
 
 Returns files that have been ignored based on the specified pattern.
 git check-ignore <pattern>
+
+
+---------------------------------------
+8. Tagging in git
+
+Marks a particular commit if needed.
+
+#create an annotated tag.
+git tag -a <tag name> -m <message>
+
+#Shows tag information
+git tag
+
+#shows info about a particular tag
+git show <tag name>
+
+Annotated tags are for more significant milestones. Lightweight tags are meant to be more temporary.
+
+#Create a lightweight tag. Note that there's no -a
+git tag <tag name>
+
+#deletes a tag
+git tag -d <tag name>
+
+
+
+
+-------------------------------------
+9. Using Branches
+
+Master branch created by default when creating a new repo.
+
+Making branches doesn't automatically set them as the working branch. HEAD is a pointer to which branch you are on.
+
+#Shows last branch you were in
+cat .git/HEAD
+
+#Shows the hash of the last commit
+cat .git/refs/heads/master
+
+#Deletes a specified branch
+git branch -d <branch>
+
+Merge conflict happens when there's two different commits to the same file/area between two different branches.
+Fix the conflicting changes on the file to overcome a merge conflict.
