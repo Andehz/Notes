@@ -1,0 +1,30 @@
+18. Tracking Remote Repos.
+
+#Shows remote servers that are being tracked f or the current repo.
+git remote -v
+
+#Fetches new commit information down from the remote server for the current repository.
+#Doesn't commit anything to the local db.
+git fetch <remote>
+
+Fetched changes aren't part of the local repo automatically till merged.
+
+#Shows info from origin
+git remote show origin
+
+#Automatically pulls down any changes.
+git pull
+
+
+
+----------------------------------
+19. Pushing to remote repos.
+
+Considered bad form to push to master to projects you don't control.
+
+#Pushes changes to a remote repo. -u ensure tracking of the upstream reference.
+git push -u <remote> <local branch>
+
+
+-----------------------------------
+20. Pull requests
