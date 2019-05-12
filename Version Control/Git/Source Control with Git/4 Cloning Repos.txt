@@ -1,1 +1,23 @@
 15. Cloning local repos.
+Clone repositories if you don't want to mess with the master branch.
+
+git clone <source repo> <new repo>
+
+Good to do if you want to work on features and don't want to mess anything up on important branches.
+
+Use the -local switch so clones reference local repos as the reference and not the remote repo that the original came from.
+
+---------------------------
+16. Cloning repos over HTTPS
+
+#Clones a remote git repo to the local fs.
+git clone <remote URL>
+
+Gets the git database as well, including history.
+
+--------------------------
+17. Forking
+
+More of a process than a command. Consider it a series of commands if done from the terminal.
+
+May want to create a new project based on another.
