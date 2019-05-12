@@ -1,0 +1,105 @@
+---------------------------------------
+8. Tagging in git
+
+Marks a particular commit if needed.
+
+#create an annotated tag.
+git tag -a <tag name> -m <message>
+
+#Shows tag information
+git tag
+
+#shows info about a particular tag
+git show <tag name>
+
+Annotated tags are for more significant milestones. Lightweight tags are meant to be more temporary.
+
+#Create a lightweight tag. Note that there's no -a
+git tag <tag name>
+
+#deletes a tag
+git tag -d <tag name>
+
+
+
+
+-------------------------------------
+9. Using Branches
+
+Master branch created by default when creating a new repo.
+
+Making branches doesn't automatically set them as the working branch. HEAD is a pointer to which branch you are on.
+
+#Shows last branch you were in
+cat .git/HEAD
+
+#Shows the hash of the last commit
+cat .git/refs/heads/master
+
+#Deletes a specified branch
+git branch -d <branch>
+
+Merge conflict happens when there's two different commits to the same file/area between two different branches.
+Fix the conflicting changes on the file to overcome a merge conflict.
+
+
+
+-------------------------------------
+10. Rebasing
+
+Alternative to merging. Replays changes made to one branch over the top of another.
+
+#Replays changes made to a branch onto another branch.
+git rebase <branch>
+
+Cleans up history as changes done in branch are done in the branch to be committed to. Good when there are multiple branches being worked on.
+
+
+------------------------------------
+11. Reverting a commit
+
+Revert a commit if you dun messed up.
+
+#Removes a change, but retains a historical record of the change. Note, this is basically a new commit that removes the old one, not just an undo.
+git revert <commit>
+
+Revert from HEAD is the most recent commit, can also do via the commit number, or HEAD~# where # is the number of commits back from head.
+
+
+
+-------------------------------------
+12. diff
+
+Views changes between different files and commits.
+
+#Shows change in working tree.
+git diff
+
+#Shows what would be commited to head if you were to commit to head during then.
+git diff HEAD^ HEAD
+
+
+#Can also see diff between two different commits as well.
+git diff <commit 1> <commit 2>
+
+#Doesnt show contents, but other data like files added/deleted. Useful if you don't care about file contents and just want to see more general info.
+git diff <commit 1> <commit 2
+
+
+------------------------------------
+13. Garbage Collection
+
+Maintenance should be done on a repo every once in a while as it grows in size.
+
+#Cleans out old objects that can't be referenced by the database anymore and compresses contents in the git directory to save space.
+git gc
+
+#By default, cleans out objects older than two weeks. Time frame can be specified.
+git gc --prune
+
+
+#Checks to see if repo needs to be cleaned. Exits without doing anything if it oesn't.
+git gc --auto
+
+#Creates a job to automatically do the pruning so that it doesn't need to be done manually.
+git config gc.pruneexpire "# days"

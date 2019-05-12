@@ -1,0 +1,113 @@
+1. Basics of Git File system
+
+.git file is created in a working directory that contains metadata about a repository. Database in .git file has info about files being tracked.
+
+Files in git are untracked and unknown to git until they're added to git to be tracked.
+
+Files in .git
+
+COMMIT_EDITMSG - records of each commit in github
+
+HEAD - Current branch being worked on.
+
+Config - Contains config info about a repository, like email and user info.
+
+Description - Txt file that contains name of repository. Typically used by gitweb
+
+hooks - Contains scripts that can be used to create automated task.
+
+index - Keeps tracks of items in the staging area and files ready to be committed.
+
+info - Contains items like the excludefile.
+
+logs - Contains log info of github
+
+objects - database consists of compressed files that are hashed versions of content that have been commited in the repo. Index is the link to this.
+
+refs - Contains references and tags for your repo.
+
+If you're never sure, just use the man pages! man git-<command>
+
+-------------------------------
+2. Creating a local Empty Repository
+
+git init <Name of Repo>
+
+#creates a bare repo. Used for larger projects when multiple people are contributing with different branches.
+git init --bare <Name of Repo.>
+
+
+--------------------------------
+3. Basic Config of Git
+
+#Creates identity. Not authentication, just identifies who you are. In key:value pair form. This is mandatory.
+git config --global user.email <email>
+git config --global user.name <Name>
+
+#Lists git config settings
+git conig --list
+
+You can change identity per repo by changing the working directory to that repo and initializing an identity without the global switch.
+If git finds multiple entries of an item in the config, it'll use the last one in the config.
+
+
+-----------------------------------
+4. Add Files to a Project
+
+#See what has been added into git. Can also do git status which is much cleaner.
+cat .git/index
+
+Git doesn't care about directories. If you want git to track a directory, create a .keep file in the target directory and add that .keep file to git.
+
+---------------------------------
+5. Status of your Project
+
+#Abbreviated form of output. s = short
+git status -s
+
+Characters to the left of the output:
+A = Added to Index
+?? = Not yet added.
+AM = Added and modified.
+
+First character = staged value, second character = unstaged value. Must be re-added if you want to commit modified files that have changes after it's been added.
+
+
+----------------------------------
+6. Committing to Git.
+
+#Commits files. Won't commit anything that hasn't been added.
+git commit
+
+Git commit messages are in a COMMIT_EDITMSG file.
+
+commit 19e793becd9ad1c68283330977629e82dabc4be9
+Author: newproject <newproject@email.com>
+Date:   Mon May 6 09:33:39 2019 +0000
+
+    Helo world!
+
+Note the string next to commit is the SHA-1 has value. Git will also create a directory named after the first two characters of the value in the objects directory.
+File in this directory is the contents in hashed form.
+
+#removes file from git, but keeps it in the directory.
+git rm --cache CHANGELOG.md
+
+#Must commit after deletion
+git commit -m "Deleted changelog from git"
+
+#Commits file that was just changed without needing to add and commit seperately.
+git commit -am "Readding changelog"
+
+
+------------------------------------
+7. Ignoring certain files.
+
+Standard convention is to create a .gitignore file to exclude files from tracking by git. Can also edit exclude file directory too though. .git/info/exclude
+
+Add the .gitignore file to root of repo.
+
+Files edited in VIM are automatically backed up. These files end with a ~ character. May be wise to ignore these files. (*~ for all of these files.)
+
+Returns files that have been ignored based on the specified pattern.
+git check-ignore <pattern>

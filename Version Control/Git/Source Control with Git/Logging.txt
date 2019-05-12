@@ -28,6 +28,7 @@ objects - database consists of compressed files that are hashed versions of cont
 
 refs - Contains references and tags for your repo.
 
+If you're never sure, just use the man pages! man git-<command>
 
 -------------------------------
 2. Creating a local Empty Repository
@@ -250,3 +251,6 @@ git log --since="<time>"
 
 #looks for logs for a specific line of textual
 git log -S <search string>
+
+#Shows log information in one line
+git log --oneline
