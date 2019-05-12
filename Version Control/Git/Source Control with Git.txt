@@ -157,3 +157,96 @@ git branch -d <branch>
 
 Merge conflict happens when there's two different commits to the same file/area between two different branches.
 Fix the conflicting changes on the file to overcome a merge conflict.
+
+
+
+-------------------------------------
+10. Rebasing
+
+Alternative to merging. Replays changes made to one branch over the top of another.
+
+#Replays changes made to a branch onto another branch.
+git rebase <branch>
+
+Cleans up history as changes done in branch are done in the branch to be committed to. Good when there are multiple branches being worked on.
+
+
+------------------------------------
+11. Reverting a commit
+
+Revert a commit if you dun messed up.
+
+#Removes a change, but retains a historical record of the change. Note, this is basically a new commit that removes the old one, not just an undo.
+git revert <commit>
+
+Revert from HEAD is the most recent commit, can also do via the commit number, or HEAD~# where # is the number of commits back from head.
+
+
+
+-------------------------------------
+12. diff
+
+Views changes between different files and commits.
+
+#Shows change in working tree.
+git diff
+
+#Shows what would be commited to head if you were to commit to head during then.
+git diff HEAD^ HEAD
+
+
+#Can also see diff between two different commits as well.
+git diff <commit 1> <commit 2>
+
+#Doesnt show contents, but other data like files added/deleted. Useful if you don't care about file contents and just want to see more general info.
+git diff <commit 1> <commit 2
+
+
+------------------------------------
+13. Garbage Collection
+
+Maintenance should be done on a repo every once in a while as it grows in size.
+
+#Cleans out old objects that can't be referenced by the database anymore and compresses contents in the git directory to save space.
+git gc
+
+#By default, cleans out objects older than two weeks. Time frame can be specified.
+git gc --prune
+
+
+#Checks to see if repo needs to be cleaned. Exits without doing anything if it oesn't.
+git gc --auto
+
+#Creates a job to automatically do the pruning so that it doesn't need to be done manually.
+git config gc.pruneexpire "# days"
+
+
+-------------------------------------------
+14. Git Logging
+
+#show a textual graph of a project's commit history
+git log --graph
+
+#show statistics of the files w/ each commits
+git log --stat
+
+#Shows a summarized version of stats
+git log --shortstat
+
+#format the output of a git log command to display specific fields. See man pages for all available options
+git log --pretty=format:"Input format here."
+
+Some options available to put in the format string:
+%h - abbreviated hash of the commit
+%an - Author's name for the commit
+%ar - relative time of the commit by the Author
+%s - subject line of the commit
+
+example: git log --pretty=format:"%h - %an - %ar - %s"
+
+
+#Shows log activity from specified number of time. # days ago
+git log --since="<time>"
+
+#looks for logs for a specific line of textual
+git log -S <search string>
