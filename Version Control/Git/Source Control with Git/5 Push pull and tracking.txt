@@ -24,7 +24,3 @@ Considered bad form to push to master to projects you don't control.
 
 #Pushes changes to a remote repo. -u ensure tracking of the upstream reference.
 git push -u <remote> <local branch>
-
-
------------------------------------
-20. Pull requests
