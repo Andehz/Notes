@@ -1,0 +1,20 @@
+https://www.rootusers.com/how-to-join-centos-linux-to-an-active-directory-domain/
+
+1. Install packages:
+yum install sssd realmd oddjob oddjob-mkhomedir adcli samba-common samba-common-tools krb5-workstation openldap-clients policycoreutils-python -y
+
+2. Configure hosts file to be able to resolve the FQDN for the AD domain.
+vim /etc/resolv.conf
+
+3. Join to the domain using an elevated account that will let you in.
+realm join --user=<domain user> dcname.domain.com
+
+4. Verify domain information
+realm list
+
+5. Verify ability to access user directory by querying for a user in AD.
+id user@domain.com (UPN)
+
+
+Notes:
+Check system time if you're unable to join the domain and everything looks ok, make sure it's within the 5 minute limit for Kerberos.

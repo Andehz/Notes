@@ -1,0 +1,12 @@
+https://beta.linuxacademy.com/#/hands-on-labs/details/97c07e60-cf53-4466-92cd-3f4333e1067a%3Fredirect_uri%3Dhttps:%252F%252Fapp.linuxacademy.com%252Fsearch
+
+1. Install appropriate packages
+yum install nss-pam-ldapd pam_krb5 autofs nfs-utils openldap-clients
+
+2. Run authconfig, enable services, point to LDAP server
+authconfig --enableldap --enableldapauth --enablemkhomedir --enableldaptls --ldaploadcacert=http://ldap.linuxacademy.com/pub/cert.pem --ldapserver=ldap.linuxacademy.com --ldapbasedn="dc=linuxacademy,dc=com" --update
+
+3. Find UID of user
+id ldapuser3
+
+LDAP is now configured and pointing to the LinuxAcademy LDAP server.
