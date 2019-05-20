@@ -7,3 +7,53 @@ At a high level, only two things are needed to make a website work.
 1. Properly configured server with a public IP address and web format content.
 
 2. User w/ a web browser.
+
+-----------------------
+7. What is the Cloud/AWS?
+
+Cloud, at its core, is just a computer located somewhere else that the user is using in some capacity.
+
+AWS - Cloud services provider/IaaS
+
+
+----------------------------
+8. Cloud Terminology
+
+High Availability - Something is accessible when trying to access it.
+
+Fault tolerance - Able to withstand a certain amount of failure and still be operational, or self-healing.
+
+Scalability - Ablility to grow in size/scope when needed, usually via demand.
+
+Elasticity - Ability to not only scale, but reduce in size when required.
+
+
+Fundamental to AWS.
+
+
+-------------------------
+9. Benefits to the Cloud/AWS
+
+
+Two big benefits: backups, and sharing.
+
+Can also scale to demand quickly as needed quickly, sometimes as fast as within seconds or minutes.
+
+
+-------------------------------
+10. AWS Global Infrastructure
+
+AWS Regions - highest conceptual level, comprised of multiple availability zones, of multiple data centers
+
+Availability zones - work together to make up a collection of your AWS resources. Properly designed apps will utilize multiple availability zones for high availability and fault tolerance.
+AZ's have direct low latency to each other and each one is isolated from others to ensure fault tolerance.
+
+------------------------------
+11. Section Conclusion/Summary
+
+S3 - simple storage service - fully managed bulk file storage service. Like drop box.
+
+EC2 - Elastic Cloud Compute - Compute capacity service, ie. servers.
+
+
+AWS Shared responsibility model - defines how security and compliance are shared with customers and AWS
