@@ -1,0 +1,49 @@
+9. IAM - Identity and Access Management
+
+Where and how AWS manages AWS accounts for users and the various resources.
+
+Security, Identity, & Compliance > IAM
+
+Common use of IAM:
+-users
+-groups
+-access policies
+-roles
+-user credentials
+-user password policies
+-MFA
+-API keys for CLI access
+
+
+User accounts just created have no access to any services. All permissions must be "attached."
+
+Three components for IAM user:
+-User name
+-password
+-permissions to services
+
+
+Company IT department responsible for attaching IAM permission policies for a particular user.
+
+IAM groups
+Add IAM users and can attach policy at the group level and the policy will be added to all the users under the group.
+
+Can also have unique permissions per user level and group level.
+
+Roles - How AWS services are granted permissions to communicate and share data.
+Can't attach IAM policies to systems directly, ONLY users.
+Attach a policy to the role, then the system can assume the role and take those permissions from there.
+
+User password policies - password requirements for AWS accounts.
+
+IAM is a global service, not by region.
+
+ARN - Amazon resource name
+
+Managed policy - policies attached by AWS or an admin. Changes to policies are immediately applied. It's shared for all members.
+
+Inline policy - Policy for one user/group. Used for special cases.
+
+Denies will always overrule a conflicting allow. Explicit deny.
+
+AWS follows least privileges for permissions.

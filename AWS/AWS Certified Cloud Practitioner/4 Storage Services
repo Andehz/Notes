@@ -1,0 +1,25 @@
+10. Simple Storage Service (S3) and Glacier
+
+S3 - An online bulk storage service that you can access from almost any device.
+
+Can store any file type in S3.
+
+Root level folders are known as buckets, subfolders are just folders.
+
+Files are referred to as objects.
+
+Buckets must select a specific region for it to exist in.
+
+Best practice is to select region that's physically closest to you/target end user.
+
+Rules to creating a bucket:
+-name must be unique across the entirety of AWS.
+-must be 3 to 63 characters in length.
+-can only contain lowercase letters, number, and hyphens
+-must not be formatted as an IP address
+
+Storage class - classification assigned to each object in S3.
+
+Glacier technically isn't a storage class, but commonly referred to as one.
+
+Can change storage class on demand, except for Glacier. Glacier requires more set up.
