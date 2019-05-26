@@ -41,3 +41,11 @@ Spot - "big" on an instance type and only pay for and use use that instance when
 5. Provisioned instances automatically terminate when spot price is greater than the bid price.
 
 Can be volatile depending on price fluctuations.
+
+-----------------------------------------------------
+14. Lambda (Serverless)
+
+Much more virtual/abstract than EC2. "Next Gen" that will eventually replace EC2 for the most part.
+
+Compute server that lets you run code without provisioning or managing servers. Executes code only when needed and scales automatically. Hence, serverless. No need to think about managing systems.
+Executes code only when needed and scales automatically. Code must be supported but that's all you need to provide.
