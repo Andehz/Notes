@@ -1,0 +1,43 @@
+13. EC2
+EC2 - Essentially just a computer that you're utilizing
+
+AMI - Amazon machine image. How you select a machine image for EC2 instances
+
+Instance type - processing power
+
+EBS (elastic block store) - local storage
+
+IP addressing - Assign ip address to a server.
+
+AMI Options:
+
+Community AMIs - Free to use, generally with these AMIs you're just selectin the OS you want.
+
+AWS Marketplace AMIs - Pay to use, generally comes packaged with additional, licensed software.
+
+My AMIs - AMIs that you create yourself.
+
+There are different type of EC2 types specialized for different purposes:
+1. General purpose
+2. Compute optimized
+3. GPU optimized
+4. Memory storage
+5. Storage optimized
+
+
+EC2 Buying Options
+On-demand - allows you to choose any instance type and provision/terminate it at any time.
+Most expensive, most flexible. Only charged when the instance is running and billed by the second.
+Can be provisioned/terminated at any time.
+
+Reserved - Allows you to purchase an instance for a set time of one or three years.
+- Allows for a significant price discount over using on-demand. Once bought, you own it for the time period and are responsible for the entire price no matter what.
+
+Spot - "big" on an instance type and only pay for and use use that instance when the spot price is equal to or below your "bid" price.
+1. Allows Amazon to sell the use of unused instance for short amounts of time at a substantial discount.
+2. Prices fluctuate depending on marketplace.
+3. Charged by the second (but big pricing is based on an hourly rate)
+4. When there's an active bid, an instance is provisioned for you when spot price is equal to or less than your bid price.
+5. Provisioned instances automatically terminate when spot price is greater than the bid price.
+
+Can be volatile depending on price fluctuations.

@@ -1,0 +1,10 @@
+12. Security and VPC
+
+What is a VPC?
+Virtual Private Cloud - Private subsection of AWS you control in which you place AWS resources.
+When an AWS account is created, a "default" VPC is also created and tied to that account automatically.
+
+VPC is a network in a particular region.
+
+NACL - firewall/security layer at the subnet level
+SG - Security group: firewall/security layer on the instance/server level

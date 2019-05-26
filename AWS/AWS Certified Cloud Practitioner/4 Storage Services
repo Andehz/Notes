@@ -23,3 +23,58 @@ Storage class - classification assigned to each object in S3.
 Glacier technically isn't a storage class, but commonly referred to as one.
 
 Can change storage class on demand, except for Glacier. Glacier requires more set up.
+
+-----------------------------
+11. Simple Storage Service (S3) and Glacier Pt 2
+
+S3 Classes
+
+Standard:
+Designed for general purpose storage. Default option, and most expensive option
+99.999999999% object durability (11 nines)
+99.99% Object availability.
+
+Standard-IA (Infrequent Access)
+Designed for objects that you don't need access frequently, but must be immediately available when accessed.
+99.999999999% durability.
+99.90% availability.
+Somewhat less expensive.
+Uses multiple availability zones.
+
+One-Zone-IA
+Designed for objects that you don't access frequently, but must be immediately available. Uses 1 availability zone.
+99.99% durability
+99.50% availability
+~20% less expensive than standard-IA storage class.
+
+Intelligent Tiering
+Designed to optimize costs by automatically moving data to the most cost-effective tier based on usage.
+99.999999999% durability
+99.90 availability
+Pricing depends on assigned storage class.
+
+Glacier - Not technically a class, but a whole separate service.
+Designed for long-term archival storage. May take several hours for objects stored in Glacier to be retrieved.
+99.999999999% durability
+Cheapest of all S3 classes.
+
+Object durability - % over a one year time period where a file stored in S3 won't be lost.
+11 nines = that there's a .000000009% chance of a file being lost in S3 in a year, or you may lose one file in 10 million years.
+Done by making multiple replications of a file over the zones in a region.
+
+Object availability - % over a one year time period that a file stored in S3 will be accessible.
+.01% chance that you won't be able to access a file stored in S3 in a year.
+
+
+Lifecycle policy - Set custom time tables from when an object will move from one storage class to another. Somewhat replaced by Intelligent tiering
+
+
+Other Benefits and features of S3:
+Object sharing - publicly available via a URL link
+Object lifecycle
+Object versioning - keep multiple versions of an object when enabled.
+
+----------------------
+S3 Sandbox Lab
+
+Buckets must be empty before they can be deleted.
