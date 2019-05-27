@@ -1,0 +1,16 @@
+15. ELB Pt. 1
+
+Elastic load balancing. Feature, not a service in of itself.
+
+Evenly distributes traffic between EC2 instances that are associated with it. Increases fault tolerance of applications.
+
+If a server crashes, the ELB will re-route all users to the working servers.
+
+Important for high availability and fault tolerance.
+
+--------------------------
+17. Auto scaling
+
+Autoscaling automates the process of adding (scaling up) or removing (scaling down) EC2 instances based on traffic demand of your app.
+
+Create scaling policies to scale up or down based on certain conditions.
