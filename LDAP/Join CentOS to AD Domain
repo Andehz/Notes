@@ -1,10 +1,13 @@
 https://www.rootusers.com/how-to-join-centos-linux-to-an-active-directory-domain/
 
-1. Install packages:
+1. Install packages appopriate packages:
 yum install sssd realmd oddjob oddjob-mkhomedir adcli samba-common samba-common-tools krb5-workstation openldap-clients policycoreutils-python -y
 
 2. Configure hosts file to be able to resolve the FQDN for the AD domain.
 vim /etc/resolv.conf
+
+search <FQDN>
+nameserver <IP address>
 
 3. Join to the domain using an elevated account that will let you in.
 realm join --user=<domain user> dcname.domain.com
