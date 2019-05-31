@@ -1,0 +1,64 @@
+23. Database Services
+
+Relation database - AKA SQL
+Non-relational database - AKA NoSQL
+
+Amazon offers services for both databases.
+
+RDS - SQL databases
+DynamoDB - NoSQL databases
+
+RDS - Relational Database Services
+SQL database service that provides a wide range of SQL database options to select from
+Web service that makes it easier to set up, opearte, and scale a relational database in the cloud.
+Resizeable capacity while automating time-consuming administration tasks.
+
+
+Includes:
+Amazon Aurora
+MySQL
+MariaDB
+PostgreSQL
+Oracle
+Microsoft SQL Server
+
+DynamoDB
+NoSQL database service. Does not provide other NoSQL options
+Database service for all applications that need consistent, single-digit millisecond latency at any scale. Fully managed cloud database and supports both document and key-value store models.
+Good for applications that need high performance databases.
+
+Can replace:
+MongoDB
+Cassandra DB
+Oracle NoSQL
+
+SQL - stores data in tables, for very structured data, like contact lists.
+NoSQL - for non-structured data such as cataloging documents. In JSON-like, name-value documents.
+
+Benefits:
+
+RDS
+When you need a SQL database option
+Easy to set up, highly available, fault-tolerant, Scalable
+Used when data is clearly defined
+Common use cases include online stores and banking systems
+
+DynamoDB
+When you need a NoSQL database option
+Fast, highly scalable, and fully-managed
+Used when data is fluid and can change
+Common use cases include social networks, web analytics
+
+
+-----------------------------------------
+24. ElastiCache and Redshift
+Data caching service used to help improve speed/performance of web applications running on AWS
+Scale in-memory data store or cache in the cloud. Improves performance of web applications by allowing you to retrieve information from fast, managed, secure in-memory data stores
+
+Supports two open-source in-memory engines:
+Redis - Fast, open source, in-memory data store and cache
+MemcacheD - a widely adopted memory object caching system
+
+Redshift
+Data warehouse database service designed to handle petabytes of data for analysis using your existing business intelligence (BI) tools.
+Fast, fully managed data warehouse. Complex analytic queries against petabytes of structured data.

@@ -1,0 +1,35 @@
+18. Route 53
+
+Where you configure and manage web domains for websites or applications you host on AWS.
+
+Performs three main functions:
+Domain registration - lets you register domain names.
+DNS service - Translates friendly domain names. Responds to DNS queries using a global network of authoritative DNS servers, which reduces latency.
+Health checking - Sends automated requests over the internet to your application to verify that it's reachable, available, and functional.
+
+Multi-region failover - If Route 53 can't reach your application because maybe it failed catastrophically, can have route 53 reroute traffic to another region of a replicated version of that application.
+
+
+---------------------------------
+19 CloudFront (Content delivery Network)
+
+Allows you to store content at "edge location" located all around the world. Allows your customers to access your content more quickly and can also provide additional security - especially DDoS attacks
+
+Edge location - like a region, but don't have all of the features of a regular AWS region/datacenter. Specifically designed to be a "front" for a user's content
+Content can be hosted in one region, and content is hosted in edge locations all around the world. Essentially a cache for your content.
+Edge locations work in conjuction with Lambda, CloudFront, Route 53, and other services.
+
+CloudFront "Origin" - Location that holds your primary files and content. Users may never actually access the origin, hits an edge location instead. Good if hit by a DDoS attack.
+
+Benefits to Route 53:
+Domain registration
+DNS services
+Traffic flow (sends users to the best endpoint)
+Health checking
+Automatic DNS failvoer
+Integrates with a variety of AWS services as endpoints
+
+Benefits to CloudFront:
+Cache content at edge locations for fast distribution to customers
+Built-in DDoS attack protection
+Integrates with many AWS services

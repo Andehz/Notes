@@ -1,0 +1,15 @@
+22. Simple Notification Service
+
+An AWS service that allows you to automate the sending of email or text msgs based on events that happen in your AWS account.
+Coordinates and manages the delivery or sending of messages to subscribing endpoints or clients.
+
+Two types of clients: publishers and subscribers
+
+Publishers asynchronously communicate with subscribers by producing and sending a message to a topic when they're subscribed to a topic.
+
+SNS Benefits:
+Send automated/manual notifications
+Send notification to email, mobile, and HTTP endpoints
+Closely integrated with other AWS services so that alarms, events, and actions in your AWS can trigger your notifications.
+
+Can set this up in a matter of minutes, easy to use.

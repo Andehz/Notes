@@ -1,0 +1,23 @@
+20. CloudWatch
+
+Service that allows you to monitor various elements of your AWS account. Resources and applications are monitored in real time.
+Collect and track metrics, sends alarms, or make changes based on rules that a user defines.
+
+Can create custom widgets to make it more convenient to look at metrics.
+
+Alarms can perform automated actions based on certain conditions and metrics a user makes.
+
+Cloudwatch Benefits:
+Monitor metrics for almost all of your AWS Resources
+Create and monitor custom metrics
+Create custom dashboards for easy viewing of metrics
+Set alarms and events
+
+
+However, CloudWatch doesn't monitor user events.
+
+--------------------------------
+21. CloudTrail
+
+Allows you to monitor all actions taken by IAM users. (like logging who deleted an S3 object)
+Service that enables governance, compliance, operational auditing, and risk auditing of AWS account.

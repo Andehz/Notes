@@ -33,7 +33,7 @@ Can be provisioned/terminated at any time.
 Reserved - Allows you to purchase an instance for a set time of one or three years.
 - Allows for a significant price discount over using on-demand. Once bought, you own it for the time period and are responsible for the entire price no matter what.
 
-Spot - "big" on an instance type and only pay for and use use that instance when the spot price is equal to or below your "bid" price.
+Spot - "big" on an instance type and only pay for and use that instance when the spot price is equal to or below your "bid" price.
 1. Allows Amazon to sell the use of unused instance for short amounts of time at a substantial discount.
 2. Prices fluctuate depending on marketplace.
 3. Charged by the second (but big pricing is based on an hourly rate)
