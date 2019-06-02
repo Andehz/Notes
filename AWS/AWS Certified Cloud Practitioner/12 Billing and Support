@@ -1,0 +1,158 @@
+25. AWS Organziations
+
+Allows you to manage billing and access  to multiple AWS accounts for your business.
+Offer policy-based management for multiple AWS accounts. Enables you to centrally manage policies across multiple accounts.
+Create SCP (Service Control Policies) that centrally control AWS service use across multiple AWS accounts. Automate creation of new accoutns through APIs.
+
+Available to all AWS customers at no additional charge.
+
+Consolidated billing - allows you to view, manage, and pay bills for multiple AWS accoutns through one user interface.
+Enables you to set up a single payment method for all accounts in your organization.
+
+Benefits:
+Central location to manage billing across all your AWS accounts
+Gain volume discounts for usage across all your AWS accounts.
+
+------------------------------
+26. AWS Pricing Model
+
+Principals:
+1. Works on a pay-as-you-go model. Only pay for what you use, when you are using it. No upfront cost.
+2. No long term contracts or complex licensing required. Some exceptions possible for EC2 instances.
+3. Volume discounts available.
+4. No termination fees.
+5. Free tier available, free-of-charge for 12 months.
+
+S3:
+Charged for:
+  Storage Pricing:
+  data-at-rest
+  charged per gigabyte
+  depends on region and storage class as well.
+
+  Request Pricing:
+  PUT,POST,LIST,GET requests
+  Lifecycle transition requests
+  Data retrieval, archive, restore
+
+EC2:
+Charged per second based on an hourly rate for the amount of time instance is in a running state. Reserved instances are in 1 or 3 year terms regardless of use.
+
+Hourly rates depend on:
+  Purchasing option you choose: on-demand, reserved, or Spot
+  Instance type
+  AMI type
+  Region
+
+Also charged for transferring data in/out of an instance.
+
+Pricing can be complex!
+
+---------------------------
+27. Pricing and Cost Tools
+
+TCO Calculator - total cost of ownership. Free tool that allows you to estimate the cost savings of using AWS Cloud vs. using on-prem.
+1. Shows how much you can save by using AWS. Helps you reduce by avoiding large capital expenditures on IT infrastructure and hardware
+2. Can provide directional guidance on cost savings.
+3. Put in elements of your current/theoretical on-prem and comparing those cost requirements to how much it would cost in AWS.
+4. Elements can be added/modified as you move through the process to best estimate the cost savings.
+
+Cost Explorer - Free tool that allows you to view charts of your costs.
+1. Cost data for the past 13 months.
+2. Forecast spending over next 3 months.
+3. Use explorer to discover patterns in how much you spend on AWS over time.
+4. Identify which services you use the most.
+
+------------------------------
+28. Shared Responsibility Model
+
+Defines what you and AWS are responsible for when it comes to security and compliance.
+AWS responsible for host operating system, virtualization, down to physical security of facilities where service operates.
+Customer assumes responsibility and management of guest OS, associated app software as well as config of AWS provided secuurity group firewall.
+
+AWS Responsible for:
+1. Setup and maintenance of physical hardware located at each data center.
+2. Physical security data centers
+3. Setup and aintenance of host virtualization software.
+
+Customer responsible for:
+1. Network level security
+2. Operating system patched and updates.
+3. IAM user access management
+4. Client/server side data encryption.
+
+Not all-inclusive lists.
+
+
+DDoS Protection is built-in/mitigated by many core AWS services.
+
+DDoS Built-in Protection/Mitigation:
+1. Route 53
+2. CloudFront
+3. WAF - web application firewall
+4. ELB
+5. VPCs and Security Groups
+
+Pen Testing:
+Practice of testing one's own application security for vulnerability by simulating an attack.
+AWS allows penetration testing, but must request permission from AWS before doing pen testing.
+
+Pen testing allowed on:
+  EC2
+  RDS
+  Aurora
+  CloudFront
+  API Gateway
+  Lambda
+  LightSail
+
+---------------------------------------
+29. Support Plans and Trusted Advisor
+
+Support Plans
+1. Basic - Included with any AWS Account. No access to cloud support rep.
+2. Developer starts at 29$/month. Business hour access to cloud support associate
+3. Business Starts at $100/month. 24x7 access to a cloud support engineer
+4. Enterprise starts at $15,000/month. 24x7 access to a sr. cloud support engineer
+
+AWS trusted advisor - online service that "advises" and helps you optimize aspects of your AWS account.
+
+Trusted advisor categories:
+1. Cost optimization
+2. performance
+3. Security
+4. Fault tolerance
+
+Six basic checks for performance and security
+1. Security groups - port checks
+2. IAM use
+3. MFA enabled on root IAM user account
+4. EBS public snapshots
+5. RDS public snapshots
+6. service limits
+
+Business/enterprise get access to:
+  1. Full list of trusted advisor checks
+  2. Notifications to stay up-to-date with weekly resource deployments
+  3. Programmatic access to retrieve/refresh trusted advisor results via API
+
+If you think account is compromised:
+  1. Change AWS root account password.
+  2. Change IAM user's passwords.
+  3. Delete and rotate all API access keys.
+  4. Delete any resources you didn't create.
+  5. Respond to any notifications you receive from AWS through the support center and open a support case.
+
+-----------------------------------------
+30. AWS Whitepaper and Documentation
+
+Collection of technical documents that outline many AWS relevant topics such as:
+  1. Architecture best practices
+  2. Security best practices
+  3. Cloud computing economics
+  4. Serverless architecture
+
+All white papers have been reviewed by many parties.
+
+AWS Service Documentation - collection of documents specific to each AWS service. Provide technical explanations and walkthroughs on how to use each service and features.
+Tells you how something works, much more specific than the whitepaper documentation.
