@@ -1,0 +1,151 @@
+1 Network Fundamentals
+
+Think of a networking model as you think of a set of architectural plans for building a house.
+
+Enterprise network - network created by a corporation or enterprise for the purpose of allowing its employees to communicate.
+SOHO - Smaller networks when used for business purposes.
+
+A cloud represents a part of a network whose details are not important to the purpose of the diagram.
+
+
+The job of a network is to move data from one device to another.
+
+-------------
+TCP IP Model
+Networking model - AKA networking architecture, or networking blueprint refers to a comprehensive set of documents.
+
+TCP IP RFC 1122
+
+Application layer - Provide services to the application software running on a computer.
+Doesn't define the application itself, but defines services that the applications need.
+Provides an interface between software running on a computer and the network itself.
+
+-----------------
+HTTP
+Generally, protocols use headers as a place to put information used by that protocol.
+
+--------------------------
+TCP IP Transport layer
+Two most commonly used transport layer protocols are TCP and UDP
+TCP - Transmission Control protocol: Provides services to the application layer protocols
+UDP - User Datagram Protocol
+
+---------------------------
+TCP Error Recovery Basics
+TCP IP needs a mechanism to guarantee delivery of data across a network.
+TCP header shows a sequence number (SEQ) with each message. If not in sequence, this prompts TCP to resend data.
+
+-------------------------------------------
+Same-Layer and Adjacent-layer interactions
+
+Adjacent-layer interactions - General topic of how on one computer, two adjacent layers in a networking architecture model work together, with the low layer providing services to the higher layer.
+ex.; HTTP may want error recovery, and the lower layer TCP performs this service of error recovery. Lower layer provides a service to the layer above it.
+
+Same-layer interactions - When a particular layer on one computer wants to communicate with the same layer on another computer. Use headers to hold the info that they want to communicate.
+
+---------------------------
+TCP IP Network Layer
+
+Network layer contains only one major protocol, the internet protocol, IP.
+The name TCP IP is simply the names of the two most common protocols, TCP and IP.
+
+IP Protocol provides addressing and routing services.
+IP defines that each host should have a different IP address. Each host needs a unique address so that it can be identified in the network.
+Also defines how to group addresses together, like a ZIP code.
+
+-----------------------------
+IP Routing Basics
+TCP IP using the IP protocol provides a service of forwarding IP packets from one device to another.
+Any device with an IP address can connect to the TCP IP network and send packets.
+IP routing - process of forwarding IP packets
+
+-----------------------------
+TCP IP Link layer
+Link refers to physical connection between two devices and the protocols used to control those links.
+
+Frame - data link header and trailer plus data encapsulated between them.
+Headers exist at the beginning of a message, trailers at the end.
+
+Link layer includes a large amount of protocols and standards including ethernet, LAN standards.
+Link layer includes WAN standards as well which differ significantly compared to LAN.
+
+
+TCP Link layer includes two distinct functions: functions related to physical transmission of data, plus protocols and rules that control the use of the physical media.
+TCP IP model splits out link layer into two layers (data link and physical) to match this logic.
+
+-----------------------
+Modern TCP IP Model:
+  application
+  Transport
+  Network
+  Data Link - Encapsulation, addressing
+  Physical - bit transmission
+
+---------------------------------
+Data Encapsulation Terminology
+Encapsulation - refers to the process of putting headers around some data.
+
+Process by which a TCP IP host sends data can be viewed as a five-step process. First four relate to encapsulation and the last step is the actual tansmission of the data by the host.
+
+Step 1.
+  Create and encapsulate application data with any required application layer Headers.
+  ex.; HTTP OK message can be returned in an HTTP header
+
+Step 2.
+  Encapsulate the data supplied by application layer inside a transport layer header.
+  Typically TCP or UDP header is used.
+
+Step 3.
+  Encapsulate the data supplied by the transport layer inside a network layer header.
+
+Step 4.
+  Encapsulate data supplied by network layer inside a data link layer header and trailer.
+
+Step 5.
+  Transmit the bits
+
+------------------------
+Names of TCP IP Messages
+
+Segment - transport layer Datagram
+Packet - Network layer Datagram
+frame - link layer datagram
+
+
+
+-------------------------------
+OSI Networking Model
+
+Although no longer used as a networking model, many of the terms from OSI still used.
+Has seven layers. Used as a standard of comparison to other networking models.
+
+OSI Model:
+  Application - provides an interface from application to network by supplying a protocol with actions meaningful to the app.
+  Presentation - Negotiates data formats, like ASCII or JPEG
+  Session - Provides methods to group multiple bidirectional messages into a workflow for easier management and easier backout of work
+  Transport - Like TCP IP transport layer
+  Network - Like TCP IP Network layer
+  Data Link - "
+  Physical - Defines physical characteristics of the transmission medium, including pins and connectors.
+
+Networking documents often describe TCP IP protocols and standards by referencing OSI layers both by layer number and name.
+Generally maps to the same thing as TCP IP model.
+
+Common Protocols used in OSI
+  Application, Presentation, session - Telnet, HTTP, FTP, SMTP, POP3, VOIP, SNMP.
+    Devices - Hosts, firewalls
+  Transport - TCP, UDP
+    Devices - Hosts, firewalls
+  Network - IP
+    Devices - Router
+  Data link - Ethernet (IEEE 802.3), HDLC
+    Devices - LAN switch, WAP, cable modem, etc.
+  Physical - RJ-45, Ethernet (IEEE 802.3)
+    Devices - LAN Hub, LAN repeater, cables
+
+-----------------------------
+OSI Encapsulation Terminology
+OSI also asks for service from the next lowest layer
+
+PDU - Protocol datagram Unit. Generic term to refer to frame, packet, or segment.
+  ex.; L3PDU - Layer 3 PDU
