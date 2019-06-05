@@ -1,0 +1,11 @@
+1. Well Architected Framework
+
+Series of best practice recommendations and questions to ask when designing and developing cloud architectures
+
+Five Pillars:
+
+Operational Excellence - Run and monitor systems to provide Business Value
+Reliability - Recover from failure and mitigate disruptions
+Security - Protection and monitor systems
+Performance efficiency - Use computing resources efficiently
+Cost optimization - Avoid or eliminate unneeded expense
