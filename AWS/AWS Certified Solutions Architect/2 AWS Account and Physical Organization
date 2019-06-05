@@ -1,0 +1,117 @@
+1. Exploring the AWS Account and Services Layer
+Represents how you interact with AWS. Interact with everything through service APIs.
+Every user must have permissions to access and use a particular API.
+Root account has full privileges, made when first opening AWS account.
+
+Can access API through console, CLI, or SDK. In many cases, users will access AWS through the open internet.
+
+AWS Management console - how solutions architect generally access with AWS. All actions are done in the console are API calls.
+
+AWS CLI - text based interface for accessing and administering AWS resources. All commands executed are API calls, and require API key config'd
+
+SDK - Integrate AWS services with your custom applications. All commands are also API calls and require API key configuration.
+AWS publishes in most popular software languages. SDK makes all of the API calls. Still also need permissions to access the API.
+
+
+---------------------------------------------------------
+2. Physical and Networking Layer
+Global infrastructure of AWS in terms of where resources are physically located around the world and how data flows through AWS.
+
+Types of locations in AWS
+
+AWS Region
+Contains two or more availability zones. Actual physical data centers are grouped in these availability zones.
+
+Multiple regions all over the world. Possible to deploy over multiple regions. As of 2018, AWS has 18 active regions.
+Availability of regions allow the architect to design application to conform to specific laws and regulations for specific parts of the world.
+Console displays only one region at a time, but resources will be in all AZs within the region.
+Some AWS services work globally and aren't within a specific region, like IAM
+
+May want to select a particular region due to latency, or data sovereignty regulations. Regions are autonomous so some features aren't available in all regions.
+Costs vary by region.
+
+
+Availability Zones (AZ)
+Grouping of independently separated data centers in a specific geographic region. Foundation for High Availability and Fault Tolerance
+
+Data centers connected between dedicated fiber optic connections. Each availability located far enough so local disasters don't affect multiple zones.
+Should properly design applications so they'll utilize multiple zones for fault tolerance and failover
+Each AZ have direct low latency connections but each one is isolated to ensure fault tolerance.
+Should deploy over multiple availability zones. Foundation for high availability and fault tolerance.
+Data centers house hardware to run AWS services and provide hardware for VPC Networking
+
+
+Edge locations
+Edge locations are AWS data centers located around the world to give low latency access to end users.
+
+Route 53 and Cloud front runs on these.
+  -Route 5: DNS lookups. On edge location to provide lowest latency possible
+  -CloudFront: CDN, etc. AWS Shield, AWS WAF run here to prevent attacks.
+    Can be used to stream content, users can also upload files to edge location to reduce upload times.
+    Lambda@Edge, S3 Transfer, API Gateway part of CloudFront.
+
+
+
+Regional Edge Cache
+Relatively new feature of CloudFront. Used by CloudFront to offload your origin by caching content that has been ejected from an edge location.
+Content gets rotated off an edge location if it's not accessed frequently.
+
+
+-----------------------------------------------------------------------
+3. Essential CSA Terminology
+
+High Availability - Architecture that continues to remain available to end users in the event of a component of systems failure.
+  Multi-AZ architectures allow your app to remain in the event of an AZ outage.
+
+Fault Tolerance - Architecture remains not only available during an outage, but suffers no degradation in performance.
+  May require extra redundancy so should note cost concerns.
+
+Scalability - Infrastructure can increase in capacity in a cost-effective way.
+  Scaling can either be:
+    -Vertical: Add more capacity to a system to let them handle more load.
+    -Horizontal: Add more instances to support an application.
+
+Elasticity - How flexible is the system to change or adapt.
+  Elastic systems may be able to auto remap IP addresses, auto-update firewall rules, automate scaling out or in, etc. Remember that everything is software at its core so no reason that it shouldn't be automatable.
+
+Cost-efficient - Make tradeoffs to make system as inexpensive as possible while meeting all functional requirements.
+  Over-provisioning is discouraged because systems can change in relatively short order based on what customer needs.
+
+Secure - Follow proper security guidelines and practices to secure a system at every layer. Principle of Least Privilege
+
+
+----------------------------------------------
+4. Shared Responsibility Model and Attributes
+Clear way of who is responsible for what parts of security of the infrastructure.
+
+Security OF the Cloud: AWS is responsible for security of global infrastructure and foundation services.
+  -Physical data center addresses aren't public, no tours and only select groups have access to the data centers.
+  -Reduce operational burden on the customer as AWS manages and controls host components of infrastructure.
+
+  AWS Responsibilities
+    Facilities
+    Physical security of hardware
+    Storage decommissioning
+    Network Infrastructure
+    Virtualization infrastructure
+
+
+
+Security IN the cloud: Customer is responsible for security of virtual environment, data, and applications.
+  Responsible for managing guest operating system, other associated software apps, as well as config of AWS-provided security group firewall.
+
+  Customer Responsibilities
+    AMIs
+    OS
+    Applications
+    Security Groups
+    Firewalls
+    Data-in-transit
+    Data-at-rest
+    Credentials
+    Policies and configuration
+    Intrusion Detection
+    Intrusion Prevention
+
+
+AWS personnel aren't allowed to touch or access your instances in any way.
