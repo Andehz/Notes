@@ -1,1 +1,20 @@
 1. Console Tour and Navigation
+
+Management console accessible via web browser.
+
+Two types of user:
+  Root account user - Person who created AWS account. Privileges can't be restricted.
+  Regular AWS users - Can be restricted
+
+Should enable MFA for increased security.
+
+Can search for services in search bar, or click on the Services dropdown button to show all services grouped by category.
+  Can also sort alphabetically.
+
+Resource Group - Create groups of resources to logically sort them out and make them easier to find with tags.
+
+Pin button lets you have certain services available at top bar.
+
+Health events - Reports outages in AWS.
+
+Plenty of other useful links on the Support section.

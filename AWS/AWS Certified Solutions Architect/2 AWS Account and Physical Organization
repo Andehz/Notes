@@ -4,13 +4,12 @@ Every user must have permissions to access and use a particular API.
 Root account has full privileges, made when first opening AWS account.
 
 Can access API through console, CLI, or SDK. In many cases, users will access AWS through the open internet.
+  AWS Management console - how solutions architect generally access with AWS. All actions are done in the console are API calls.
 
-AWS Management console - how solutions architect generally access with AWS. All actions are done in the console are API calls.
+  AWS CLI - text based interface for accessing and administering AWS resources. All commands executed are API calls, and require API key config'd
 
-AWS CLI - text based interface for accessing and administering AWS resources. All commands executed are API calls, and require API key config'd
-
-SDK - Integrate AWS services with your custom applications. All commands are also API calls and require API key configuration.
-AWS publishes in most popular software languages. SDK makes all of the API calls. Still also need permissions to access the API.
+  SDK - Integrate AWS services with your custom applications. All commands are also API calls and require API key configuration.
+    AWS publishes in most popular software languages. SDK makes all of the API calls. Still also need permissions to access the API.
 
 
 ---------------------------------------------------------
