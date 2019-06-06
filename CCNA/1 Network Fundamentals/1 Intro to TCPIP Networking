@@ -27,8 +27,8 @@ Generally, protocols use headers as a place to put information used by that prot
 --------------------------
 TCP IP Transport layer
 Two most commonly used transport layer protocols are TCP and UDP
-TCP - Transmission Control protocol: Provides services to the application layer protocols
-UDP - User Datagram Protocol
+  TCP - Transmission Control protocol: Provides services to the application layer protocols
+  UDP - User Datagram Protocol
 
 ---------------------------
 TCP Error Recovery Basics
@@ -39,7 +39,8 @@ TCP header shows a sequence number (SEQ) with each message. If not in sequence, 
 Same-Layer and Adjacent-layer interactions
 
 Adjacent-layer interactions - General topic of how on one computer, two adjacent layers in a networking architecture model work together, with the low layer providing services to the higher layer.
-ex.; HTTP may want error recovery, and the lower layer TCP performs this service of error recovery. Lower layer provides a service to the layer above it.
+  ex.; HTTP may want error recovery, and the lower layer TCP performs this service of error recovery.
+  Lower layer provides a service to the layer above it.
 
 Same-layer interactions - When a particular layer on one computer wants to communicate with the same layer on another computer. Use headers to hold the info that they want to communicate.
 

@@ -1,1 +1,30 @@
 1. IAM Essentials
+Where you manage access to AWS endpoints. Used to create users and assign permission policies to each service. Can get very fine grained.
+Users can go into groups.
+
+Roles are used to grant applications access to AWS services.
+
+IAM API keys - associated with a user and permission policy. Must be provided when calls are made with API.
+
+Can customize sign-in link so it can be easier to remember/more security because it won't use your account number as part of the domain prefix.
+
+Security status box: Some quick recommendations to better secure account.
+
+Account settings - can set strong password policies here.
+
+
+By default, no password policy for account. Also no default groups and users. All of these must be created.
+Users created by default have no permissions, implicit deny.
+
+Everything done in IAM is done at the account level by default, permissions are done for all regions unless specified by conditions.
+
+Not recommended to use root user for every day administration. Should create a daily driver admin user instead to do daily admin tasks.
+
+Users should also not share user accounts. Everyone should have their own accounts.
+
+Good practice to assign permission policies to group, then put users in those groups. Much more convenient.
+
+ALWAYS follow the Principal of Least Privilege. Better to give too few, then make them ask for more.
+
+------------------------------------------------
+2. IAM Policies
