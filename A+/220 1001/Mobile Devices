@@ -1,0 +1,127 @@
+1. Laptop Hardware
+There are many key differences to laptops compared to desktops. This is due to what purpose they serve, which is a more mobile and compact computing option.
+Keyboards on a laptop are much smaller than a full desktop one. Much more compact. ex.; function keys are much more compact.
+Numpad generally also not present, but not always the case. 17" laptops could have the numpad but space remains a premium.
+
+Laptop storage
+Same types of storage you may find in a desktop.
+
+SSD - Solid State Drive
+  -All memory, no moving parts
+  -Silent, less latency
+  -2.5 and 1.8 inch form factors.
+
+SSHD - Solid State Hybrid Drive
+  -Flash memory and hard drive. SSD portion usually caches the hard drive data.
+
+Magnetic Disk
+  -Traditional spinning disk platters.
+
+Generally all internal, may require you to remove a cover and some screws on the back. Can be very modular.
+Storage generally designed to be very easy to replace.
+
+
+Laptop Memory
+Same type of memory as desktop memory, but form factor may be different. Smaller to accommodate for the more limited space.
+
+SO-DIMM - Small Outline Dual In-line Memory Module
+Micro-DIMM - Micro-Dual In-line Memory Module
+
+
+Smart card reader
+May see these more often in laptop. Generally built into laptop, or there could be an external one that may be USB connected.
+
+
+Optical drive
+They've become too large for today's portable drives, so becoming more difficult to find. They're now often removable.
+Read and write CD-RW/CD-ROM and DVD-RW/DVDROM
+
+
+Wireless Card
+Laptops generally have a wireless card instead of physical ethernet jack.
+  WLAN - Wireless LAN. 802.11
+  WWAN - For cellular connections
+  WPAN - For bluetooth.
+
+Laptops may generally have these types of wireless connections. May come in Mini-PCI or Mini PCI-e form factor for these.
+
+
+Video adapter
+Often integrated into the processor. Not upgradeable if that's the case. Sometimes these are part of the system board as well. These are also not upgradeable.
+However, some laptops do have upgradeable video cards, but laptops like these aren't slimline types
+
+
+Screen
+LCD - Liquid Crystal Display. These are very fragile so you'd want a good case. Often uses a fixed resolution so changes to resolutions may look blurry or not as crisp.
+
+
+DC jack
+Laptops need direct current to operate. Auto-switching or fixed input. Converts AC to DC.
+Input is 110/220 volts depending where you are in the world. DC jack is usually model specific to the power supply.
+
+
+Laptop power - AC adapters
+Generally use Li-ion batteries. Common in consumer electronics and don't have the "memory effect." Don't need to deplete the entire battery before charging it.
+However, capacity does slowly diminish over time so they'll eventually need to be replaced. These batteries generally have specific unique form factors so batteries are generally model-specific.
+
+
+Touchpad
+A kind of mouse alternative for a laptop. Not as user-friendly as a mouse but it's an option.
+May also have a pointing stick as well.
+
+
+Laptop Frame
+These are generally plastic, lightweight, and durable. Plastic is inexpensive and cost-effective.
+They may also have metal cases as well but these are more difficult to repair if they break.
+
+
+Speaker
+Self-contained, portable audio. Not the highest audio quality due to their location and (lack of) size. Often L/R stereo and may even include a subwoofer
+
+
+System board
+Due to their limited size, the form factors and builds are usually proprietary as they need to be built to fit.
+Repair usually means replacing the entire board so replacements aren't exactly simple.
+
+
+CPU
+Unlike a desktop, these are designed for mobility so they may be more difficult to cool.
+They may try to use less power to offset this due to the heat and limited battery. As a result they're generally slower than their desktop counterparts.
+CPUs generally have many more integrated features and aren't as upgradeable. However, in many cases they're still replaceable.
+
+-------------------------------------------------
+2. Laptop Displays
+Most laptops are using LCDs.
+
+LCD - Light shines through liquid crystals.
+  LCD displays need a backlight. Fluorescent lamp to LCD display to your eyes.
+  Some laptops have inverters. Convert DC into AC. If you look very closely, maybe with a flashlight, you can see the screen still rendering.
+  If you can still see that data you may need to replace the inverter or the display entirely.
+
+  Lightweight, and generally low power and inexpensive.
+  However, black levels are poor, and if the backlight is dead, the whole screen would be unusable.
+
+OLED - Organic Light Emitting Diode
+  Organic compound emits light when receiving an electric current.
+  These are thinner and lighter because they're more flexible and mobile. No glass needed.
+  They also have no backlight because the compound gives off light.
+  However, they're not quite ready for widespread use. The materials degrade over time, and burn-in is a real concern.
+  They're also more costly than LCD and more power hungry.
+
+
+
+LED-Backlit LCD display - Backlight is LEDs instead of fluorescent light. Use LEDs around the screen. An array of LEDs behind the screen. Latest laptops are LED-backlit.
+CCFL - Cold Cathode Fluorescent Lamp. Generally older laptops use these. They take higher voltage and more power, and add thickness to the display. Not that common anymore.
+
+
+Wifi Antennas
+Multiple antennas, Wifi main, aux, and bluetooth. These wires generally wrap around the laptop screen.
+
+
+Laptop webcam
+These are built into the screen. Capture video and audio using built in camera and microphone.
+Generally need specialize drivers and software.
+
+
+Digitizer
+Can use a pen-like device to input info instead of the traditional keyboard and mouse. Not as common but definitely an option for many laptops.
