@@ -29,7 +29,7 @@ In-car navigation machine. Requires a view of the sky and will need to be period
 2. Mobile Device Connections
 Many different ways to physically and wireless connect mobile devices.
 
-Micro-USB/Micro-USB - EU standardized this so all mobile devices must support this. Mini-B plug slightly larger. Older devices may use this.
+Micro-USB - EU standardized this so all mobile devices must support this. Mini-B plug slightly larger. Older devices may use this.
 
 USB-C - 24pin connector. Doesn't matter which way you plug it in. About the same size as the micro B USB plug. Can act as a 3.1/2.0 connection.
 USB C also includes an analog audio option, so they can be used as audio cables as well.
@@ -47,7 +47,7 @@ Proprietary mobile interfaces was common in the early days of mobile tech. Compl
 Maybe one cable for just data, and another for just power. What a pain!
 
 NFC - Near field communication
-Allows you to use mobile device to transfer small bits of data, like a payment system, bus token, NFC contact exchange. All of this is encryptable.
+Allows you to use mobile device to transfer small bits of data, like a payment system, bus token, NFC contact exchange. All of this is encrypt-able.
 
 Bluetooth - Higher speed than NFC. AKA, PAN. Let you connect a variety of devices to your mobile device.
 
