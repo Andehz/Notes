@@ -1,0 +1,170 @@
+1. Mobile Devices
+
+Tablets
+May run IOS, or Android. Generally larger than 7" diagonally. Designed for touch input.
+Good for a multimedia machine.
+
+Smart phones
+The suped up cell phone. Small computer in your pocket. Media viewer, mobile apps, and anything else that is built for it.
+
+Wearable technology
+Something that you wear on a person. An extension of your phone and body.
+
+Virtual Reality
+Remove the real world, replace what you can see with computer-generated graphics. inputs from the real world interacts with the virtual world.
+Great for games, design applications, and whatever your imagination can take you.
+
+Augmented Reality
+The combination of the real world with virtual. Google Glasses anyone?
+Computer adds additional detail to the real world.
+
+e-reader
+Specifically created to read books. Might have some multimedia abilities. They may use electronic paper instead of normal LCD screens.
+Generally have high battery life. Almost exclusively use network connectivity via wifi.
+
+GPS
+In-car navigation machine. Requires a view of the sky and will need to be periodically updated.
+
+----------------------------
+2. Mobile Device Connections
+Many different ways to physically and wireless connect mobile devices.
+
+Micro-USB/Micro-USB - EU standardized this so all mobile devices must support this. Mini-B plug slightly larger. Older devices may use this.
+
+USB-C - 24pin connector. Doesn't matter which way you plug it in. About the same size as the micro B USB plug. Can act as a 3.1/2.0 connection.
+USB C also includes an analog audio option, so they can be used as audio cables as well.
+
+Lightning - Apple proprietary 8pin connector. Higher output, simpler design, can be inserted either way.
+
+Tethering
+Physically connect a device to your mobile phone. Use the phone's data to access the internet via the phone. Can access the internet basically anywhere with your laptop.
+This may require some configuration with your wireless carrier.
+
+Hotspot
+Phone can turn into an 802.11 wireless router. This hotspot option though is generally controlled by the carrier.
+
+Proprietary mobile interfaces was common in the early days of mobile tech. Completely different cable for data, but standardization has pushed these problems away.
+Maybe one cable for just data, and another for just power. What a pain!
+
+NFC - Near field communication
+Allows you to use mobile device to transfer small bits of data, like a payment system, bus token, NFC contact exchange. All of this is encryptable.
+
+Bluetooth - Higher speed than NFC. AKA, PAN. Let you connect a variety of devices to your mobile device.
+
+IR - Infrared
+Almost exclusively used for entertainment centers nowadays. Used to have limited data and printing capabilities but 802.11 has basically completely replaced it in that arena.
+
+-----------------------------------
+3. Mobile Device Accessories
+
+Headsets
+Lets you have hands-free audio.
+  Wired headsets - connects via a 3.5 TRRS connector (Tip-ring-ring-sleeve). The extra ring lets you have microphone, if it doesn't have a microphone, it may just be TRS. Analog audio, but iPhones may use the lightning port.
+  Wireless headsets - will connect via bluetooth.
+
+Speakers
+Battery powered and may most likely be bluetooth linked. They're small and portable.
+
+Game pads
+Controller to let you play games on your mobile device better.
+
+Extra battery packs are also an option for certain phones. Maybe consider using a powerbank instead if you can't easily replace the battery and need more juice.
+
+Protective Covers
+  Screen protector - Lets you help avoid scratches on the screen, but may take some work to install
+  Device protector - wrap the entire device, may even have water proofing options depending on the type of protector. Do note that these can interfere with wireless charging.
+
+Credit card readers
+Phone can become a POS terminal. Connects through some sort of port of bluetooth, great for small and mobile businesses. Just as instant as a normal POS, works via the internet.
+
+Memory/microSD
+Option of increasing storage capacity. May not work with some phones though. microSD is a small form factor.
+
+--------------------------------------
+4. Mobile Device Connectivity
+Remember that your phone is connected to the internet. Take advantage of this.
+
+Hotspot
+Turn your phone into a wifi router, but may have to pay extra. Other devices connect to your phone via WiFi.
+
+Tethering
+Anchor your phone to a laptop, connect your laptop via USB or bluetooth. It's only a single connection, and again, may need to deal with the service provider to enable this...
+
+Airplane mode - one button turns off all connections. Good for when you get on an airplane. Alternatively, can also just disable the Wifi connection as well with a single button.
+
+Bluetooth
+PAN to about 10 meters or less. Can connect multiple different devices. Once paired, devices work automatically. Once paired, usually don't need to pair again.
+Devices must be set to discovery mode to pair it. Note that many devices may appear! Remember to deal with the PIN.
+
+Baseband radio processor - To connect to a provider's network, needs radio. Network interface for your radio.
+Basically its own mini computer, own firmware and memory. Quite proprietary, and has its own real-time operating system. Firmware can be updated OTA (over the air)
+
+PRL updates - preferred roaming list. Type of updates. Common to CDMA networks (ie., Verizon, Sprint). Allows your phone to connect to the right tower OTA to get updates.
+
+PRI updates - Product release instructions. Another type of updates for a phone. Has specific radio settings, like ID numbers, network codes, country codes, etc. Also done OTA so you may never know this was done.
+
+IMEI - International Mobile Station Equipment Identity. Identifies a physical mobile device. Each phone has its own unique IMEI. Can be used to allow or disallow access.
+
+IMSI - International Mobile Subscriber Identity. Identifies a user on a network. Can be programmed on a SIM card so you can switch a SIM card to move between phones.
+
+VPN - Virtual Private Network. Creates a secure channel between both endpoints. Usually integrated into the phone OS, but third party options available. May require additional setup and may support RSA.
+
+---------------------------------------
+5. Configuring Email on Mobile Devices
+
+Email configurations.
+  Retrieving email: POP3, IMAP protocols
+  Sending email: SMTP
+
+  Corporate email: Microsoft Exchange, this is different than the standard protocols.
+
+  Other solutions may have unique solutions as well.
+
+Retrieving mail messages
+  POP3 - Post Office Protocol 3. Been around for a very long time. Used for downloading mail to local mail client. Downloads and can also delete email from the server.
+    Not used that often anymore as it's made to use one device. Legacy apps may use this.
+    Default ports: TCP/110, if SSL (POP3S) then TCP/995
+
+    IMAP - Internet Message Access Protocol (IMAP4). Access mail on a central server, mail is usually stored here. Supports folder and server-side searching.
+      Configuration information: Name of IMAP server, username, password.
+      Default ports: TCP/143, SSL (IMAPS): TCP/993
+
+Sending email
+  SMTP - Simple Mail Transfer Protocol. Send mail from device to a mail server, or between mail servers. Authentication usually required, may be different credentials than incoming mail.
+    Default ports: TCP/25 with no authentication (relatively unused), SMTP w/ authentication: TCP/587
+
+Enterprise email
+Much more robust option than simple home email. May use Microsoft exchange. Have contacts, calendars, reminders, and much more. Integrates with mobile device database and integrate with the device's data.
+Can encrypt message with S/MIME - Secure/Multipurpose email Extensions. Allows you to encrypt and digitally sign messages from Exchange.
+
+Commercial Email Providers
+
+Gmail - Google emails, lets you split inbox into tabs, IMAP4, POP3 also available.
+
+Exchange Online (hosted email). IMAP4 and POP3 support. Exchange's online solution.
+
+iCloud Mail - Apple Mail, IMAP4 support
+
+-----------------------------------------
+6. Mobile device synchronization
+No single desktop anymore, many different devices. All of this data needs to be sync'd and accessed at any time.
+This process is generally invisible, but security is important. Authentication must work between each device to sync.
+
+Sync to the Cloud
+May be completely hands off. No physical cables, local files. May be integrated with Exchange or Gmail. Choose how you access your cloud option.
+  Apple iOS - sync all data to iCloud. Complete backup and recovery if needed.
+  Android - Configure your Google account, and Google account manages your cloud syncing.
+
+Sync to the Desktop
+This will require an OS and disk space. Relatively minimal memory, may require extensive amount of HDD storage though.
+  -iOS has Apple iTunes, syncs everything in the phone and can create full backups on the computer.
+  -Android may use Google, but there's no standard way to sync everything. Use third party apps to do this.
+
+Sync to your car
+This can be done over bluetooth or a cable. Extend your phone functionality into the car. Maybe see big maps, phone calls, play music on your car.
+iOS CarPlay, Android Auto. Syncs contact info, music, and much more. This could be a security risk though especially with rented cars or shared vehicles.
+
+Sync Connections
+Options to sync data between the two big mobile solutions
+  iOS: USB, 30-pin connector, 8-pin lightning, USB-C, 802.11, mobile network.
+  Android: USB Micro-B, USB-C, 802.11, mobile network
