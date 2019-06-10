@@ -1,0 +1,256 @@
+1. Intro to IP
+Moving truck and road analogy for network analogy.
+
+Header at the beginning of a frame, trailer. Inbetween is the payload.
+
+Encapsulation of protocols - putting one protocol within another within another.
+
+TCP/UDP - OSI layer 4.
+
+Multiple applications in different frames at the same time = multiplexing.
+
+
+TCP - Transmission Control Protocol
+Connection oriented protocol. Formal setup and close. "Reliable" form of delivery. Recovery from errors. Can manage out-of-order messages and retransmissions.
+Receiver can manage how much data is sent based on responses sent to each other.
+
+UDP - User Datagram Protocol
+No formal open or close to the connection. Considered "unreliable" as there's no error recovery and no reordering of data retransmissions. Sender determines amount of data transmitted.
+
+IP socket - IP address:port number
+Port number tells us which service needs to receive a particular piece of data. Client and server would communicate via socket.
+
+  Non-ephemeral port (permanent) - ports 0 - 1023 and usually on a server or service.
+  ephemeral ports - 1024 - 65,535. Usually chosen only during that session by the client at random.
+
+Servers most likely using non-ephemeral ports. TCP and UDP can be 0 - 65,535. Sometimes servers may use different ports than expected. No hard and fast rules so this is fine.
+
+Clients do need to know the port for a service beforehand. If a server is using a different port for an app then it won't work. This is why ports need to be "well-known"
+TCP and UDP ports aren't the same, they could be using the same port number and these are totally different sets of traffic. No conflict. Ports are for communication, not security!
+
+-----------------------------------
+2. Common Network Ports
+Many "well-known" ports that you should know. See chart for common services and their "well-known" ports.
+
+FTP - File transfer Protocol.
+Transfer files between systems. Authenticates with a username and password, some systems use a generic anonymous login. Fully featured, list, add, delete, etc.
+  TCP/20 - active data mode
+  TCP/21 - control
+
+
+SSH - Secure Shell
+Like a console screen, looks and acts the same as Telnet. Always encrypted.
+  TCP/22
+
+
+Telnet - Telecommunication Network
+Login in to devices remotely at the console. Unencrypted at all, in the clear. Not best choice for production systems.
+  TCP/23
+
+
+SMTP - Simple Mail Transfer Protocol
+Server to server email transfer, or from client to server. Commonly configured on mobile devices and email. Receiving emails use a different protocol.
+  TCP/25
+
+
+DNS - Domain Name System
+Converts names to IP addresses. Done behind the scenes. Very critical to have.
+  UDP/53
+
+
+HTTP and HTTPS - Hypertext Transfer Protocol.
+Communication in the browser.
+  TCP/80 (HTTP)
+  TCP/443 (HTTPS)
+
+
+POP3/IMAP4 - Post Office Protocol 3/Internet Message Access Protocol 4
+  TCP/110 (POP3)
+  TCP/143 (IMAP4) - Has more features than POP3
+
+
+RDP - Remote Desktop Protocol
+Share a desktop from a remote location. On many Windows versions, can connect an entire desktop or just an application. Clients for many operating systems.
+  TCP/3389
+
+
+SMB - Server Message Block
+Protocol used by Microsoft Windows to share files. Also called CIFS (Common Internet File System)
+
+Older systems may need to use NetBIOS to communicate:
+  UDP/137 - NetBIOS name services (nbname) - Find device by NetBIOS name
+  UDP/138 - NetBIOS datagram service (nbdatagram)
+  TCP/139 - NetBIOS session service (nbsession)
+
+Direct communication over TCP/445 (NetBIOS-less) without NetBIOS transport
+
+
+AFP - Apple Filing Protocol
+File Services in macOS. Full-featured like Windows equivalent.
+  TCP/548
+
+Works with SLP (Service Location Protocol). Populates list of devices.
+  TCP/427 and UDP/427
+
+
+DHCP - Dynamic Host Configuration Protocol.
+Automated configuration of IP address, subnet mask, and other options. Requires a DHCP server.
+  UDP/67
+  UDP/68
+
+Dynamic/Pooled - IP addresses are assigned in real-time from a pool. Each system is given a lease. DORA.
+
+DHCP Reservation - IP addresses are assigned by MAC address in the DHCP server.
+
+
+LDAP - Lightweight Directory Access Protocol.
+Directory Services. Store and retrieve information in a network directory.
+  TCP/389
+
+
+SNMP - Simple Network Management Protocol.
+Gather Statistics from network devices
+  UDP/161 - for queries
+  UDP/162 - receive traps
+
+  v1 - original. In the clear, structured tables.
+  v2 - Update of V1. Data type enhancements, buik transfers, still in the clear.
+  v3 - Message integrity, authentication, encryption.
+
+----------------------------------------
+3. Network Devices
+Common network devices
+
+NIC - Network Interface Card
+Fundamental Network Device. Every device on the network has a NIC. Anything that needs to get on the internet will have one.
+Specific to the network type. Ethernet, WAN, wireless, etc. Often built-in to the motherboard, or added as an expansion card.
+Many options, single/multi-port, fiber, etc.
+
+
+Repeater
+Receive signal, regenerate, resend. No forwarding decisions to make. Commonly used to boost copper/fiber connections, convert one network media to another. Extend wireless network.
+
+
+Hub
+Multi-port repeater. Traffic going in one port is repeated to every other port. AKA, multi-port repeater. Everything occurs at half-duplex. Only one device can send info at a time.
+Becomes less efficient as network speeds increase. Only go to 10mbits/100mbits. Difficult to find today as it doesn't scale well.
+
+
+Bridge
+Makes forwarding decisions based on software. Similar to switches, but only two to four ports. Connect different physical netwokrs, can connect different topologies. Gets around physical network size/limitations/collisions.
+Distribute based on MAC address, so a bit smarter than hub/repeater.
+WAP is a modern example of a modern bridge.
+
+
+Switches
+Bridging done in hardware, uses ASICs (application specific integrated circuit), forwards traffic based on data link addresses. Exact same function as a bridge, but much much faster than a bridge.
+Have many features, may be the core of an enterprise network, may provide PoE.
+Multilayer switches including routing functionality.
+
+Unmanaged switch - very few configuration options, turn it on, plug and play. Fixed configuration, no vLANs.
+Very little integration with other devices, no management protocols like SNMP.
+Much cheaper and simpler though.
+
+Managed switch
+Let you configure different vLANs, configure 802.1Q ports. Traffic prioritization, many more features than an unmanaged switch.
+Lets you set up STP, external management via SNMP, port mirroring to capture packets.
+
+
+Routers
+Forwarding decisions based on IP addresses. Routers inside of switches sometimes called layer 3 switches
+Often connects diverse network types like LAN, WAN, copper, etc.
+
+
+WAP
+Not a wireless router. Simply extends a wired network onto the wireless network. Forwarding decisions based on MAC.
+
+
+Wireless LAN controllers
+Centralized management of WAPs, single "pane of glass." Management functions to manage, deploy, remove, etc many access points.
+Usually proprietary system, but can also be cloud based.
+
+
+Firewalls
+Filter traffic by port number, AKA OSI layer 4 TCP/UDP. Some firewalls can filter based on the application.
+Can encrypt traffic into/out of the network, protect traffic between sites.
+Can proxy traffic, and even be routers as well. Usually sits on the ingress/egress of the network in taht case.
+
+
+Cable Modem
+Lets you connect to a broadband network. Transmission across multiple frequencies. Data moves via DOCSIS )data over cable service interface specification) protocol
+Can get speeds from 4Mbits/s to even gigabit speeds.
+Allows for multiple services.
+
+
+DSL modem
+Internet over telephone lines.
+ADSL - Asymemetric Digital subscriber line. Uses telephone lines. Asymmetric because down speed higher than up.
+10,000 foot limitation from central office. 52 Mbit/s down 16Mbit/s up common. Faster speeds possible if closer to CO.
+
+
+Patch panels
+combination of punch-down blocks and RJ-45 connectors. Runs from desks are made once, permanently punched down to panel.
+Patch panel to switch can be easily changed, no special tools needed.
+
+
+PoE - Power over Ethernet
+Power provided over ethernet cable. Use one wire for internet and electricity. Useful in difficult-to-power areas, like for a WAP. Power usually provided at the switch.
+  Endspan - power from switch
+  Midspan - in-line power injector - midspans
+
+
+EoP - Ethernet over Power
+Ethernet connection extended over power lines. AKA, PLC - Power-line communication IEEE 1901.
+Can have speeds up to 500Mbits/s
+
+-------------------------------------
+4. Installing a SOHO Network
+Many SOHO routers have many features combined that many enterprises may have seperate devices that do each one.
+
+Usually over a DSL/cable connection. Normally labeled the DSL/WAN port. SOHO routers don't have much to configure
+One vLAN.
+
+Many SOHO routers have wireless options, like 2.4GHz/5GHz. Can configure these wireless functions as well in a lot of cases.
+Maybe have WPA2, pre-shared key/enterprise security settings as well.
+
+WAN interface may automatically be assigned via DHCP from the ISP. May require authentication before this will happen. The SOHO router itself may also be a SOHO router and provide DHCP functions to internal devices in the local network.
+
+NIC configuration is usually set to auto-duplex, and automatically define the speed. Might not have many options. Usually configured for auto speed duplex.
+If you want to use the wireless options that may be available on a SOHO router, you may need to disable the wired configuration first and input the appropriate settings to get to it.
+
+End-user network configurations in the OS should be similar to what you see on the router. Similar settings and everything.
+
+IoT Configurations - Internet of Things
+Home automation devices, security is an issue for these. Not much needs to be done to communicate with these.
+
+----------------------------------------
+5. Configuring a SOHO Firewall
+May be part of a SOHO router as well. Prevents anyone from the internet from accessing internal resources. Normally can't be disabled.
+DMZ ports can be configured to allow unrestricted access. Almost always a bad idea, consider creating more specific port forwarding rules instead, or just don't allow any access at all.
+
+NAT - Network Address Translation
+IPv4 supports 4.29 billion addresses. Address space for IPv4 is exhausted. No more available addresses to assign.
+NAT gets around this limitation. For SOHO devices, this is automatic.
+
+SOHO routers almost always use Source NAT, AKA PAT (Port address translation). All internal devices are translated to a single external address on the internet.
+Can have tons of internal devices, but to the internet, all looks like one device.
+
+Port forwarding - makes an internal device available externally., like a web server, gaming server, etc.
+
+AKA Destination NAT/Static NAT. Destination address is translated from public to private IP. doesn't expire.
+
+UPnP - Allows network devices to automatically configure SOHO router, and change the configuration. AKA, zero configuration.
+Instead of manually configuring port forwarding rules, applications on the internal network can open inbound ports using UPnP, no approval needed. Used for P2P applications.
+Best practice is to disable UPnP as it's a security concern.
+
+Many SOHO routers let you perform content filtering.
+  Whitelist - nothing pass through firewall unless it's approved. Very restrictive.
+  Backlist- Only things on the "bad list" are blocked.
+
+MAC filtering - limit access through the MAC address. Keeps neighbors out, additional administration with visitors.
+MAC addresses can be easily spoofed so this type of filtering isn't super useful at all.
+
+Recommended to have the highest encryption possible, WPA2-AES. WEP is not appropriate.
+Make sure all devices are using highest level of encryption.
+
+QOS - some SOHO routers let you do QoS. Changes what traffic gets priority for traffic. Usually a feature of high-end SOHO routers, can cause slowdowns for low priority applications so keep this in mind when configuring it.
