@@ -1,0 +1,77 @@
+1. 802.11 Wireless Standards
+Managed by the IEEE LAN/MAN committee. Many updates over time. Wi-Fi Alliance handles interoperability testing.
+
+802.11a - October 1999.
+Operates 5GHz range. 54.Mbit/s, smaller range than 802.11b.
+Not used that much today.
+
+802.11b - October 1999
+Also an original standard.
+Operates at 2.4GHz range. 11Mbit/s, better range than 802.11a. More frequency conflicts as many other devices used the same frequencies.
+
+802.11g - June 2003
+Operates in the 2.4GHz range.
+54Mbit/s. Backwards-compatible with 802.11b. Same issues as 802.11b
+
+802.11n - October 2009.
+Update to all the previous standards. Operates at 5GHz/2.4GHz and 40MHz width channels.
+600Mbit/s when used in 40MHz mode and 4 antennas. Uses MIMO - Multiple-input Multiple Output. Multiple transmit and receive antennas.
+
+802.11ac - Jan 2014
+Significant improvements over 802.11n.
+Operates exclusively over 5 GHz. Increased channel bonding, larger bandwidth usage. Denser signal modulation, 8 MU-MIMO (Multi-User MIMO) streams
+Nearly 7Gbits/s theoretically. (866.7Mbit/s per stream)
+
+--------------------------------------------------
+2. Wireless Network Technologies
+Two major frequencies used when using WiFi. 2.4/5GHz
+
+Channels - Grouping of frequencies, numbered of IEEE.
+
+Bandwidth - amount of frequency in use
+20, 40, 80, 120MHz blocks
+
+802.11a - 20MHz bandwidth
+802.11b - 22MHz bandwidth
+802.11g - 20MHz
+802.11n - 20 or 40MHz, two contiguous bonded channels. In 2.4GHz, 40MHz channel uses much of the available bandwidth.
+802.11ac - 40MHz for 802.11n stations, 80MHz 802.11ac stations needed. 160MHz optional.
+
+2.4GHz - Channel 1, 6, 11.
+5GHz - significantly more.
+
+Bluetooth
+High speed communication over short distances. PAN that connects a bunch of our mobile devices.
+
+RFID - Radio-frequency identification.
+Used everywhere for identification. Uses radio technology. NFC is a form of RFID.
+
+Two IoT standards:
+  Zigbee - Open standard 802.15.4 PAN.
+    Alternative to WiFi and bluetooth. Longer distances than bluetooth, less power consumption than wifi.
+    Mesh network, uses the ISM band 900Mhz and 2.4Ghz frequencies in the US.
+
+  Z-Wave - Proprietary home automation networking. Wireless mesh networking, uses ISM band's 900MHz and 2.4GHz frequencies.
+
+---------------------------------------------------
+3. Cellular Network Technologies
+Cell phones called that way because we separate land into cells, antenna covers a cell with certain frequencies.
+
+2G Networks
+Built for voice communication in mind, not originally designed to send data.
+  GSM - Global System for Mobile Communications
+  CDMA - Code Division Multiple Access
+
+3G Networks
+Introduced in 1998. Upgraded data connectivity over 2G. Significant bandwidth improvements.
+
+4G and LTE - Long Term Evolution
+Converged standard, based on GSM and EDGE (Enhanced data rates for GSM Evolution)
+Supports DL rates of 150Mbits/s
+
+LTE-A - LTE Advanced
+Standard supports download rates of 300Mbit/s
+
+5G
+Update to 4G. Rollout in late 2018 and 2019. Worldwide launches in 2020.
+Significant performance improvements.
