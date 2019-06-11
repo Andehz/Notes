@@ -75,3 +75,108 @@ Standard supports download rates of 300Mbit/s
 5G
 Update to 4G. Rollout in late 2018 and 2019. Worldwide launches in 2020.
 Significant performance improvements.
+
+-----------------------------------------
+4. Network Services
+Common servers and services you may find in a business.
+
+Web server
+Server that respond to browser requests. Via HTML/HTML5. Web pages stored on the server
+
+
+File server
+Centralized storage of files. Standard system of file managemnet like SMB, AFP, etc.
+
+
+Print server
+Provide printing services for all network devices. May be software, maybe built-in to the printer.
+Printing Protocols:
+  SMB
+  IPP - Internet Printing Protocol
+  LPD - Line Printer Daemon
+
+
+DHCP Server
+Server that automatically serves IP addresses to clients. Very common service, available on most home routers. Usually enterprise DHCP is redundant.
+
+
+DNS Server
+Server that converts IP addresses to domain names and vice versa.
+Distributed system. Usually managed by the ISP or enterprise IT department.
+
+
+Proxy server
+Intermediate server that mediates connections between client and end point. Proxy handles requests for you instead of client directly interfacing with the endpoint.
+Good for security since proxy server can audit traffic.
+
+
+Mail server
+Store incoming mail server. Usually managed by ISP or enterprise IT department. Very important resource.
+
+
+Authentication server
+Login authentication to resources, centralized management of this. Almost always found in enterprise environment, and are redundant.
+
+
+SIEM
+Security Information and Event Managemnt. Consolidate and manage events, logging, and information. Link diverse data types.
+
+
+Syslog
+Standard for message logging. No matter what type of device is sending data, as long as it's following syslog standard it'll work. Logs take up a lot of space so will need a lot of space.
+Some drives use WORM technology, once it's written once, data can't be changed after this.
+
+
+IDS and IPS
+Devices that watch for intrusions and exploits being performed over the network. May watch for buffer overflows, XSS attacks, and other vulnerabilities
+  Detection - only alarms/alerts if it sees an attack occurring.
+  Prevention - Stops before it gets into the network
+
+
+All-in-one security appliance
+Also known as a next-gen firewall, UTM - unified threat management, web security gateway.
+Can be a URL filter, malware inspection, firewall, IDS/IPS, and many other security functions in one.
+
+
+Endpoint management server
+Manage all devices from one pane of glass. Perform software installations, driver installations, software updates, and more.
+May require you to install an agent.
+
+
+Legacy and embedded systems
+Many systems may be super critical, but super old.
+
+
+Embedded systems
+Purpose-built systems like time card clock, security systems, etc.
+
+--------------
+5. IPv4 vs IPv6
+IPv4 most popular IP protocol today. IPv6 also slowly appearing.
+
+IPv4
+OSI layer 3 address. 32 bits long/4 bytes long. Any number for each octet can be a number from 0 - 255.
+
+IPv6
+128-bit address. Separated into 8 different sections, colon delimited. All IPv6 addresses are in hexadecimal, 16 bits per section.
+350 undecillion totally possible combinations.
+
+Can abbreviate v6 addresses.
+  -Can omit leading 0s in a section
+  - Full sections of IPv6 can be totally omitted and replaced with ::
+
+DNS becomes very important due to the sheer length of these addresses.
+First 64 bits, network prefix, last 64 is host network address.
+
+
+Every IP address must be unique.
+Must also configure the subnet mask, used by local device to determine what subnet it's on.
+
+Default gateway
+Router that's on your local subnet. need to configure so device can communicate to internet.
+
+
+DNS so important, your browser will have slots for two DNS servers to configure. If one DNS server is lost, there's a backup that can be used in the meantime.
+
+-------------------------------
+6. Assigning IP Addresses
