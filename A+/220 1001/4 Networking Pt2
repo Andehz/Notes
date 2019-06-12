@@ -22,7 +22,7 @@ Significant improvements over 802.11n.
 Operates exclusively over 5 GHz. Increased channel bonding, larger bandwidth usage. Denser signal modulation, 8 MU-MIMO (Multi-User MIMO) streams
 Nearly 7Gbits/s theoretically. (866.7Mbit/s per stream)
 
---------------------------------------------------
+-----------------------------------
 2. Wireless Network Technologies
 Two major frequencies used when using WiFi. 2.4/5GHz
 
@@ -53,7 +53,7 @@ Two IoT standards:
 
   Z-Wave - Proprietary home automation networking. Wireless mesh networking, uses ISM band's 900MHz and 2.4GHz frequencies.
 
----------------------------------------------------
+---------------------------------
 3. Cellular Network Technologies
 Cell phones called that way because we separate land into cells, antenna covers a cell with certain frequencies.
 
@@ -76,7 +76,7 @@ Standard supports download rates of 300Mbit/s
 Update to 4G. Rollout in late 2018 and 2019. Worldwide launches in 2020.
 Significant performance improvements.
 
------------------------------------------
+--------------------
 4. Network Services
 Common servers and services you may find in a business.
 
@@ -180,3 +180,116 @@ DNS so important, your browser will have slots for two DNS servers to configure.
 
 -------------------------------
 6. Assigning IP Addresses
+
+IPv4 address config used to be all manual.
+
+October 1993, BOOTP was introduced.
+
+1997, DHCP introduced.
+
+DHCP Process
+Works on a local subnet. Router must be configured to have a helper address to work with a DHCP server outside of the local subnet.
+
+  1. Discover.
+  Workstation sends a UDP67 broadcast.
+
+  2. Offer
+  DHCP sees request by workstation, responds with UDP/68 to the workstation with an IP address offer.
+
+  3. Request
+  Send a broadcast over UDP 67 requesting a particular IP address that it received from offer step.
+
+  4. Acknowledge
+  Server formally acknowledges this, workstation now has that IP address.
+
+
+APIPA - Automatic Private IP addressing. Link-local address. Automatic address assigned by workstation if it can't get to DHCP server. Can communicate with local subnet, but can't communicate outside of it.
+169.254.0.1 - 169.254.255.254
+
+Sends an ARP frame to confirm there's no IP conflict when workstation is assigning APIPA address.
+
+IPv6 link-local address
+FE80::/10. only one subnet allocated. Required on every IPv6-enabled interface. Not always random, may be configured based off of MAC address. Also non-routable.
+
+---------------------------
+7. Using IP Addresses
+
+SSL VPN - Uses SSL/TLS protocol. Authenticate users, don't need to digital certificates. Can be run from a browser or VPN client.
+
+Client-to-Site VPN. AKA remote access VPN. Requires software on user device, might be built into OS.
+
+
+LAN - Local Area Network
+Group of devices that share in the same broadcast domain.
+
+
+VLAN - logically separated LANs.
+
+---------------------------------
+8. Internet Connection Types
+Many different kinds of connection types.
+
+Cable modem
+Broadband communication - Tranmission across many different frequencies and traffics over the single cable.
+
+DOCSIS - Standard over cable networks that traffic gets sent over cable modems
+
+
+Dialup
+Network over voice telephonee lines. 56kbit/s modems, can compress data up to 320 kilobit/s
+Relatively slow, difficult to scale. Common in Enterprise environments as a backup.
+
+
+Fiber
+Very high speed networking. Converged services (voice, video, data). Enhanced features.
+
+
+Satellite
+Non-terrestrial communication. Relatively high cost, can get 50Mbit/s down, 3Mbit/s up.
+Good for remote, hard to reach sites. High latency though.
+2GHz signal, needs good line of site.
+
+
+ISDN
+Integrated Services Digital Network
+  BRI - Basic Rate Interface (2B+D)
+    2 64kbit/s bearer channels
+    1 16kbit/s signaling channel. Manages the connection.
+
+  PRI - Primary Rate Interface. Delivered over T1/E1
+    T1 - 23B + D
+    E1 - 30B + D + alarm channel
+    Commonly used as a PSTN to large PBX
+
+
+Cell Networks
+Separate land into "cells." Antenna coverages a cell within a certain frequency.
+
+
+Line-Of-Site services
+Visual path between antennas, high frequencies. Common in metropolitan areas. Non-LOS is also available.
+
+WiMAX - Worldwide Interoperability for Microwave Access. Wireless high-speed Non-LOS internet access.
+
+--------------------------
+9. Network Types
+
+LAN - Local Area Network. Local is relative.
+Ethernet and 802.11 wireless.
+
+
+WAN - Wide area network
+Generally connect LANs at a distance. Point-to-Point serial, MPLS, etc.
+
+
+PAN - Personal Area Network
+Own Private network. Bluetooth, IR, NFC, etc.
+
+
+MAN - Metropolitan Area Network
+Network in your city, Larger than a LAN, smaller than a WAN. Usually managed by a central area network provider.
+MAN common to see government ownership. Connected via Metro Ethernet.
+
+
+WMN - Wireless Mesh Network
+All devices connected together. Commonly associated with IoT. Self form, self heal. 802.11, Zigbee, Z-Wave, etc.
