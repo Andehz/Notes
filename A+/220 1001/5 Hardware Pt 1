@@ -1,0 +1,203 @@
+1. Copper Network Cables
+Cables are fundamental to your network. Bad cables = bad times!
+
+Twisted pair cabling
+Balanced pair operations - two wires with equal and opposite signals. One +, One -
+
+The twist keeps a single wire constantly moving away from interference. Opposite signals are compared on the other end.
+Pairs on the same cables have different twist rates. Helps make sure traffic gets through network even with interference.
+
+Network Cabling standards
+
+EIA - Alliance of trade associations, develops standards for the industry.
+Electronics Industries Alliance. RS-#.
+
+TIA - Telecommunications Industry Association.
+Standards, market analysis, etc. ANSI/TIA/EIA-568 - Commercial Building Telecommunications Cabling Standard
+
+International ISO/IEC 11801 cabling standards
+Defines classes of networking standards.
+
+Cable Categories
+Cat 3 - 10BASE-T, 100meters
+Cat 5 - 100BASE-TX 1000BASE-T, 100meters
+Cat 5e - 100BASE-TX 1000BASE-T, 100meters
+Cat 6 - 10GBASE-T, 37 - 55 meters
+Cat 6A - 10GBASE-T, 100meters
+
+
+Plenum - shared area above work space for HVAC. Concerns of smoke/fire so make sure you have the right cabling.
+
+PVC - Polyvinyl chloride. Traditional cable jacket.
+
+FEP - Fluorinated ethylene polymer, or low smoke PVC are good for plenum. May not be as flexible as regular cable/ not the same bend radius.
+
+Plan for worst-case scenario.
+
+
+Cabling types
+UTP - Unshielded twisted pair. No additional shielding, just  the PVC.
+
+STP - Shielded twisted pair. Additional shielding protects against interference. Shield each pair and/or the overall cable. Requires cable to be grounded.
+
+Abbreviations
+U = Unshielded
+S = Braided shielding
+F = Foil shielding
+
+S/FTP - Braided shielding around the entire cable and foil around pairs.
+F/UTP - Foil around the  cable and no shielding around the pairs.
+
+
+T568A/T568B Termination
+Pin assignments for how cables get terminated. Eight conductor 100-ohm balanced twisted-pair cabling.
+
+A and B are different pin assignments for 8P8C connectors.
+
+T568A - use this for horizontal cabling.
+T568B - most cabling use this one regardless, less confusion.
+
+Can't mix and match the two standards.
+
+(Know the termination standards and what they are!)
+
+
+Coaxial cable
+Two or more forms share a common axis.
+
+RG-6 used in television/digital cable.
+RG-59 used as patch cables. Not designed for long distance communications.
+
+------------------------
+2. Fiber Network Cables
+Transmit data by light. No RF signal, very difficult to monitor to tap.
+
+Signal is slow to degrade, so can go over very long distances. Immune to RF and interference.
+
+MMF - Multimode fiber
+Light comes out into modes on the other side. Good for short-range communications.
+Up to 2km for 100Mbit/s, 550m for 10Gbit/s. Inexpensive light source.
+
+SMG - Single mode fiber.
+Light comes out in one mode. Good for long-range communications.
+Can go up to 80km without additional processing. May take an expensive light source like laser beams.
+
+----------------
+3. Video Cables
+
+VGA - Video graphics array
+AKA, DB-15 connector/DE-15. Usually colored blue due to PC System Design Guide.
+Analog signal, no digital option, image degrades after 5 to 10 meters.
+
+PC System Design Guide - Convention in how connectors need to be colored.
+
+
+HDMI - High-Definition Multimedia Interface.
+Audio and video stream. All digital, no analog. 20m distance before losing too much signal.
+19-pin connectorm proprietary.
+
+miniHDMI - Type-C connector.
+
+
+DisplayPort
+Standard created by VESA. Royalty-free standard. Data is sent in packetized form like ethernet and PCI-e.
+Can use a passive adapter to convert between HDMI and DVI.
+
+
+DVI - Digital Visual Interface
+Single link - 3.7 Gbps. HDTV @ 60fps
+Dual link - 7.4Gbps. HDTV @ 85fps
+
+DVI-A: Analog signals
+DVI-D: Digital signals
+DVI-I: Integrated. Supports both.
+
+-------------------------
+4. Multipurpose Cables
+
+Thunderbolt
+High-speed serial connection. Data and power on same cable. Based on MDP (Mini DisplayPort) standard.
+
+v1 - two channels, 10Gbit per channels. 20Gbit/s total throughput. MDP connector.
+v2 - 20Gbit/s aggregated channels. MDP connector
+v3 - 40Gbit/s, USB-C connector. Max 3m copper, 60m optical, daisy chain up to 6 devices.
+
+
+USB
+Intended to simplify connections.
+
+USB1.1
+  low-speed: 1.5mbit/s, 3m
+  Full-speed: 12mbit/s, 5m
+
+USB2.0 - 480mbit/s, 5m
+
+USB3.0 - SuperSpeed, 5Gbit/s, 3m. Standard doesn't specify a cable length though.
+Has no mini/micro usb connector for the standard.
+
+USB3.1 - Released Jul 2013, SS+, Type-A/C connectors. 10Gbit/s
+
+USB3.2 - Sep 2017. New SS+ over usb-c. 10Gbit/s and 20Gbit/s
+
+USB-C - Connector works either way, different than previous USB connectors.
+USB doesn't necessarily mean it's USB3.1 ready. Cable must support it. Must support > 7.5w output, 3.1 speeds, and alternate mode (lets you send other protocols through the cable)
+About the same size as micro b.
+
+
+DB-9 serial cable connector.
+D-subminiature B or D-sub. Different sizes A through E.
+Commonly used for RS-232, Recommended standard 232. Industry standard since 1969. Commonly used for management/console port.
+
+----------------------------
+5. SATA Drive Cables
+Common way to connect storage devices.
+
+Serial-AT Attachment.
+
+SATA 1.0 - 1.5Gbit/s, up to 1meter.
+SATA 2.0 - 3.0Gbit/s, up to 1meter.
+SATA 3.0 - 6Gbit/s, up to 1meter.
+SATA 3.2 -  16Gbit/s, up to 1meter.
+
+15 pins = power, 7pin = data.
+
+------------------------------
+6. PATA Drive Cables
+Not the most recent type of storage, some legacy systems still use it.
+
+Parallel AT Attachment. From 1999. Originally called IDE - Integrated Drive Electronics.
+From 16MB/S to 133MB/s. Let you connect peripherals like CD-ROM.
+Changed from IDE to PATA once SATA was release to help differentiate the two. Uses a 40wire/80wire cable.
+
+From closest to farthest on the cable:
+  40wire - Device 0 (master), Device 1 (slave)
+  80wire - Device 1 (slave), device 0 (master)
+
+Can only support up to two drives per cable, need more cables to support more drives.
+80 wire extra cables are grounding wires to reduce crosstalk.
+
+----------------------------
+7. SCSI Cables
+Small Computer Systems Interface. Originally designed to string many peripherals together onto a single cable/controller. Up to 16 devices in a daisy chain.
+Many different parallel and serial solutions. Used to be how people connect a bunch of devices.
+
+Many devices on a bus: 8 on narrow, 16 on wide bus.
+
+SCSI didn't need a lot of configing. Assign a number and let SCSI do the rest.
+
+Still used in enterprise today, well supported.
+
+SCSI ID = controller, ID 2 = usually hard drive, ID3 = usually cd-rom.
+
+LUN - Logical unit number. Separate drives in a storage array or VM.
+
+Use a terminator to signal the "end" of bus.
+
+SAS - Serial attached SCSI. Newer form of SCSI, devices have no jumpers, terminators, or other settings.
+Increased throughput, this is a point-to-point connection. No more daisy chains. No termination needed.
+
+--------------------------------
+8. Adapters and Converters
+Allow you to convert from one connector to another as long as they're electrically compatible. If not, may need to use a converter.
+
+DVI to VGA backward compativle with VGA, but only up to 640 x 480.
