@@ -1,1 +1,108 @@
 1. Connectors
+
+RJ11 Connector
+6P2C connector, for telephones.
+
+RJ14 use 6P4C for dual-line use.
+
+
+RJ45 Connector
+8P8C Connector. Similar to RJ48C, used with T1/WAN data lines
+
+
+BNC Connector
+Bayonet Neill-Concelman connector. Type of Coaxial connector for DS3 WAN links.
+Rigid and bulky, hard to work with.
+
+
+F Connector
+Cable Television, cable modems may use this. RG-6 or RG59 threaded connector.
+
+---------------------
+2. Overview of Memory
+
+RAM - Random Access Memory.
+
+DIMM - Dual Inline memory module. Has contacts on both sides of the module that are different. 64 bit data width.
+
+SO-DIMM - Half the width of DIMM.
+
+DRAM - Type of memory on dimm. Dynamic because needs constant refreshing, or data disappears. Very fast though.
+
+Random because can access any part of memory at any time.
+
+SDRAM - Synchronous DRAM. Synchronized with system clock, can queue up one process while waiting for another. Older RAM didn't queue.
+
+DDR - Dual Data rate. Can pull information from the upside and downside of the clock cycle.
+
+DDR2 twice as fast as DDR. Not backwards or forwards compatible.
+
+DDR3 twice data rates of DDR2. Also increased max capacity to 16GB per DIMM. Also not backwards compatible.
+
+DDR4 faster than DDR3. Max capacity per dimm is 64GB. Not backwards compatible.
+
+---------------------------------
+3. Memory Technologies
+
+Multi-channel memory - multiple RAM in specific slots increases performance. Exact matches are best.
+
+Parity memory - Adds additional parity bit, determines when an error has occurred but not always, but won't correct it.
+
+ECC memory - Detects and corrects errors on the fly. Looks like ECC memory.
+
+Parity - Even parity: parity bit makes an even number. If not, then it knows it's an error.
+
+-------------------------
+4. Storage Devices
+
+Optical formats
+Small bumps read with a laser beam.
+
+CD-ROM - hold 700MB of data.
+DVD-ROM - 4.7GB on a single layer, 8.5GB on dual layer (DVD-R DL)
+BD-R - 25GB single layer, 50GB dual layer.
+BD-RE - Blu ray disk erasable. Can be rewritten.
+
+Burners darken photosensitive dye, not creating bumps to write data.
+
+
+SSD - No moving parts. Non-volatile.
+
+
+M.2 interface - much smaller than SSD. Can give us direct access to PCI-e bus. May be a B key, or M key, or even both.
+  B-key PCI-e x2
+  M-Key PCI-e x4
+
+
+Flash memory
+EEPROM - Electrically Erasable programmable read-only memory. Non-volatile, no power required to retain data.
+Has a limited number of writes, but can still read. No designed for archival storage, easy to lose or damage. Always have a backup.
+
+---------------------------
+5. RAID
+Redundant Array of Independent/Inexpensive Disks
+
+Different RAID levels, some redundant, some not.
+
+RAID 0 - Striping.
+  File blocks are split between two or more physical drives. High performance, data is written quickly. No redundancy, if drive fails all the data is lost.
+
+RAID 1 - Mirroring.
+  File blocks are duplicated between two or more physical drives. High disk utilization, double space requirements, but redundant.
+
+RAID 5 - Striping with Parity
+  Files are striped along with a parity block. Requires at least three disks. Can reconstruct data if one drive is lost. High redundancy, parity calculation may affeect performance though.
+
+Nested RAID/RAID 10 - Stripe of mirrors.
+  Striped data with mirrors. Need at least 4 drives. Redundant and fast but needs 4 drives.
+
+
+Software RAID
+Feature build into OS. Doesn't need any special hardware, usually lower performance than hardware-based.
+
+Hardware RAID
+Feature of a hard drive controller. Configured outside of the OS, usually invisible to it. High performance, designed for speeds.
+
+
+Hot swappable drives
+Able to remove and add drives while system is running. Easy to repair, combine RAID for 100% uptime.
