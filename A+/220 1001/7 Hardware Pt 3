@@ -1,0 +1,114 @@
+1. Motherboard Form Factors
+
+Four form factors to know:
+  ATX - Largest of these. For beefy computers, servers due to the amount of slots and power abilities.
+  microATX - More limited slots due to the smaller size than ATX. Might be more appropriate for smaller home PCs. Compatible with ATX mounting points.
+  ITX
+  mini-ITX - Created by VIA technologies back in '01. Compatible with ATX and microATX mounting points. Useful for single-purpose PCs that need to take up a little room like a media box. Very limited in space.
+
+Don't worry about exact dimensions, but their use case.
+
+-----------------------------------
+2. Motherboard expansion slots.
+
+Buses are used to transfer data between different components on the board.
+
+Expansion slots use expansion bus to connect different components. Use to refer to parallel buses in width. Now it's in bandwidth for serial.
+
+1 MHz - 1 million cycles per second.
+1 GHz = 1 billion cycles per second.
+
+Clock speed doesn't equal transfer rate. DDR3 SDRAM can transfer 64 times the memory clock speed.
+
+
+PCI - Peripheral Component Interconnect (noone calls it that)
+32/64bit bus width.
+
+Depending on the version of PCI, you may see these transfer speeds:
+  133MB/s for 32bit @ 33MHz
+  266MB/s for 32bit @ 66MHz/64bit @ 33MHz
+  533MB/s for 64 bit @ 66MHz
+
+PCI expansion slots may be connected to the southbridge generally speaking.
+
+Short slots are 32 bit, 64 bit is the larger PCI slots. PCI slot itself will generally provide the power at 3.3v or 5v. The power that a card may need depends on the notch.
+  Notch closest to case = 3.3v, closer to center = 5v, even closest to center = 64 bit notch.
+
+
+PCI-e - PCI Express. Will see these instead of PCI on modern motherboards. Has completely replaced PCI-X, AGP
+Communicates serially, unidirectional "lanes." Not all devices share lanes, so slower devices don't slow everyone down.
+
+Will see lanes in: x1, x2, x4, x8, x16, x32.
+Describes how many pairs of lanes are between the slots.
+
+Different version of PCI-e supports different speeds:
+  v1.x: 250MB/S
+  v2.x: 500MB/s
+  v3.0: ~1GB/s
+  v4.0: ~2GB/s
+  v5.0: Expected in 2019, 4GB/s
+
+Note the hook on the card and the latch on the board slot when installing a PCI-E card
+
+Riser cards can let you install cards perpendicularly due to size constraints.
+
+------------------------------------
+3. Motherboard Connectors
+
+CPU Sockets - These are matched to the motherboard, motherboard is usually designed to work with the socket.
+Central to everything. Can't really upgrade a socket as the motherboard is so closely integrated to it.
+
+ZIF socket - Zero insertion force. Full of little holes for PGA (pin grid array) CPU.
+
+LGA socket - Land grid array. Reverse of PGA. No pin to damage on CPU. Needs an LGA CPU
+
+-----------------------------
+4. BIOS
+Basic Input/Output System. Firmware used to manage system. Used to be stored on ROM memory, but now on flash so it can be upgraded.
+
+POST - Power On Self Test. Checks hardware to see if it usable.
+
+Legacy BIOS - Older traditional BIOS.
+
+UEFI BIOS - Unified Extensible Firmware Interface. A defined standard for manufacturers, designed to replace legacy BIOS.
+Can boot drives > 2.2TB, GPT disks (GUID partition table). Also supports FAT and removable media boot.
+
+Includes a pre-boot environment for remote diagnostics.
+
+Used to store BIOS settings on CMOS (Complementary metal-oxide semiconductor) memory. Now all settings saved on flash. Battery would refresh CMOS so settings wouldn't get lost.
+Nowadays this battery is used to maintain date and time. Jumpers are used to reset flash memory settings now.
+
+------------------------
+5. BIOS options
+
+Disable fast startup if you want to access BIOS on restart as it causes the PC to not shut down all the way and you'll miss the ability to get to BIOS.
+
+Diagnostic checks built into BIOS focused on hardware checks, doesn't touch OS.
+
+Maybe take a picture of BIOS config in case you do something you don't want to.
+
+-----------------------
+6. BIOS Security
+
+BIOS supervisor password - stops BIOS settings changes from being made, but BIOS will still bootl. NOT the same as a BIOS password.
+
+FDE - full disk encryption. Everything on the disk is encrypted. Windows uses BitLocker. BIOS integrates with TPM
+
+TPM - Built into systems, can generate cryptographic keys, store them, etc
+
+LoJack - Software that lets you track where laptop is. Built into BIOS, so it will continue to be installed even if it's removed or OS is reformatted.
+Can even do a theft mode which can lock down laptop if lost.
+
+Secure boot - Part of UEFI spec. digitally signs known-good software. Software can't run without proper signature.
+
+---------------------------------
+7. Installing BIOS upgrades
+
+Older motherboards involved replacing older ROM chip with newer one. Now we just flash memory.
+
+msinfo32 could tell you all relevant system information.
+
+Older upgrades may use floppy. Newer upgrades are an executable from the OS, or via flash drive.
+
+--------------------------------
+8. CPU Features
