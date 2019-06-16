@@ -111,4 +111,107 @@ msinfo32 could tell you all relevant system information.
 Older upgrades may use floppy. Newer upgrades are an executable from the OS, or via flash drive.
 
 --------------------------------
-8. CPU Features
+8. Peripherals
+
+Printers
+ADF - Automatic Document feeder for a printer. Input a large amount of papers that will be automatically get scanned by a scanner.
+
+
+Projectors
+Use Metal-halide lamp. Very bright, measured in lumens. Relatively expensive lamps. Always let bulbs cool as fans may continue to run after shutting it off to cool the fan.
+
+--------------------------------
+9. Computer Power
+NOTE: Always discount from the power source when working on a device. Drain capacitors before beginning work.
+
+Computer uses DC voltage, but most power sources provide AC voltage.
+
+Power supplies may convert 115/220AC to 3.3v DC, 5.5v DC, and/or 12v DC so it's usable for your pc.
+
+
+Ampere (amp, A) - Rate of electron flow past a point in one sec. The diameter of a hose.
+Voltage (volt, v) - Electrical "pressure" pushing the electrons. How a faucet is.
+Watt (W) - Measurement of real power use. volts * amps = watts.
+
+
+Alternating current (AC) - Direction of current constantly reverses. Allows us to efficiently distribute electricity over long distances.
+US/Canada 110/120 volts of VAC, 60Hz
+EU - 220-240 VAC, 50Hz
+
+DC - Direct current. Current in a constant single direction.
+
+Some PSUs may have a switch that would let you set the input to the type of power you're connecting to. Many other PSUs are auto switching so may not need to do this.
+
+24 Pin connector is the primary connector on a motherboard, provides +3.3V, +/- 5V, +/- 12v
+
+Original ATX standard was 20 pin, 24 was added for PCI-e power. If you only have a 24 pin connector, this will still work with a 20 pin, just have 4 pins hanging over.
+
+Voltages may be referred as positive or negative. Voltage is a difference in potential. More common to find positive output than negative. Older stuff may use negative voltages.
+
+Video cards tend to use the most amount of power. 50% capacity is good rule of thumb for sizing PSU.
+
+--------------------------------------
+10. Customer Computer Systems
+
+CAD - Computer Aided Design
+CAM - Computer aided Manufacturing.
+May want SSD, high end video, and high amount of RAM for CAD/CAM systems.
+
+
+Audio/Video editing workstations
+May want SSDs, and specialized audio/video cards, along with dual monitors.
+
+
+Virtualiation Workstation
+Will want as much RAM as possible, and CPUs with many cores.
+
+
+Gaming PC
+SSDs, high end GPU, good sound card, good cooling systems.
+
+
+NAS
+Recommended to have a Gigabit NIC, and RAID array-type drives high capacity.
+
+
+Traditional computers are known as thick clients. Everything is run off locally from the hardware.
+
+Thin clients are where applications are accessed remotely from the thin client. Usually used for VDI so only thing that's running locally is keyboard, mouse and screen.
+They'll only need just enough power to run an OS, but will want good network hardware to maintain connection to the remote system it's connected to.
+
+---------------------------------------
+11. Common Devices
+
+May be a good idea to set up a VPN and hard drive encryption for thick clients, especially for laptops.
+
+MDM - Mobile Device Management - manage company phones/tables. Provide remote management, and security. Application management also enforceable.
+
+-------------------------------
+12. SOHO Multifunction Devices
+
+Can't mix and match print drives, must use the specific drivers for specific printers.
+
+Duplex mode - printing on both sides of the page without manually flipping it over. Not all printers can do this.
+
+Collate - Print multiple copies iin their proper order. Very useful for many copies of large documents.
+
+Most common connector on printer is the type B printer, type a on the computer. Older computers may use DB-25/parallel connector for the computer, and a centronics interface on the printer. Usually on legacy machines.
+
+May also see bluetooth connectivity for a printer for mobile printing, but more common to see Wi-fi connections for wireless connectivity.
+
+Infrastructure mode - many devices access an access point and in turn can access the printer.
+Ad hoc mode - devices directly connect to the printer, may need additional configuration settings.
+
+Integrated print server - printer can manage queues, and have docs directly printed to the printer. Can usually access management via a web console.
+
+Other printers can also do cloud sharing.
+
+Common Network Printing Ports:
+TCP/139, TCP/445, UDP/137, UDP/138
+
+d
+Apple devices may need Bonjour service to access printers. Apple software installed on Windows may also use Bonjour.
+
+AirPrint - Print from iOS to compatible devices.
+
+NOTE: Prints from a local system creates a file of the output. Output file is sent to the print server spooler, but sometimes the spool file isn't always deleted right away from a printer when a printout is complete.
