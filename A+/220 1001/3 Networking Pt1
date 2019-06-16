@@ -137,7 +137,7 @@ Becomes less efficient as network speeds increase. Only go to 10mbits/100mbits. 
 
 
 Bridge
-Makes forwarding decisions based on software. Similar to switches, but only two to four ports. Connect different physical netwokrs, can connect different topologies. Gets around physical network size/limitations/collisions.
+Makes forwarding decisions based on software. Similar to switches, but only two to four ports. Connect different physical networks, can connect different topologies. Gets around physical network size/limitations/collisions.
 Distribute based on MAC address, so a bit smarter than hub/repeater.
 WAP is a modern example of a modern bridge.
 
@@ -173,7 +173,7 @@ Usually proprietary system, but can also be cloud based.
 Firewalls
 Filter traffic by port number, AKA OSI layer 4 TCP/UDP. Some firewalls can filter based on the application.
 Can encrypt traffic into/out of the network, protect traffic between sites.
-Can proxy traffic, and even be routers as well. Usually sits on the ingress/egress of the network in taht case.
+Can proxy traffic, and even be routers as well. Usually sits on the ingress/egress of the network in that case.
 
 
 Cable Modem
