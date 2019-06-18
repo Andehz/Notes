@@ -1,1 +1,140 @@
 1. Laser Printers
+Use a laser, high voltage, ions, powdered ink to create very high quality, fast printing speeds.
+
+Disadvantages to Laser printer:
+  - Very complex, many moving parts
+  - requires memory
+  - messy on the inside
+
+Imaging drum - Image drawn into photsensitive drum. Painted with a laser. Picks up toner, can be separated from toner cartridge but often with the cartridge.
+
+Fuser assembly - Heat and pressure done to melt and fuse ink to paper.
+
+Color laser printers use 4 colors: cyan, yellow, megenta black. May use 4 separate cartridges.
+Image is transferred from all cartridges to a single transfer belt. Belt then transfers to a roller which makes it to the page.
+
+Pickup roller - picks up a single page at a time and moves it into the printer for printing. Problems if rollers aren't picking up one roller at a time.
+
+Separation pad - Pull just the top sheet from the paper tray. Usually right on the paper tray, relatively inexpensive.
+
+Duplex assembly - Printers usually print on a single side. Duplexing assembly lets printer flips page internally to print on the other side.
+
+Printing process:
+  1. Processing - data being sent to printer, printer is building out page in memory before starting printing. This must be totally rendered in memory before starting printing.
+  2. Charging - Prepare drum with a negative charge with charging roller.
+  3. Exposing - Laser writes out image on drum by neutralizing negative charge where toner should be at for image.
+  4. Developing - Get toner from toner cartridge to sections of neutralized sections. Toner only sticks on neutralized sections.
+  5. Transferring - Transfer toner from photosensitive drum to paper
+  6. Fusing - Melt toner onto paper with the fusers.
+  7. Cleaning - clean toner off photosensitive drum so it's ready for next print.
+
+-----------------------------
+2. Laser Printer Maintenance
+
+If toner cartridge gets low, you'll usually get warning messages that toner is getting low.
+Toner can also contain the OPC drum - Organic Photoconductor drum: very sensitive to light so keep it in bag till it's ready to be replaced.
+
+Laser printer parts wear out over time. Many manufacturers have maintenance kits to replace standard parts in the printer. Usually perform maintenance based on page count.
+
+Once maintenance has been performed, good to calibrate it. Can be automated but may also be manual.
+
+Laser printers can also get very dirty. Use water or IPA, don't use harsh chemicals. Don't use a normal vacuum cleaner because of the toner.
+
+Use cold water to wash off toner.
+
+--------------------------------
+3. Inkjet Printers
+
+AKA, Ink dispersion printers. Relatively inexpensive compared to laser printers. Also very quiet as well, and in high resolutions.
+
+They're very expensive though. Ink isn't permanent either, so it will eventually fade. They also clog easily.
+
+May use CYMK - Cyan, magenta, yellow key (black)
+
+
+Ink jet and print head are usually integrated in same component. Larger, more expensive printers may separate these.
+
+Feed rollers pick up and feed paper through paper.
+
+Carriage and belt - moves the ink jet and head across the paper to disperse ink accordingly.
+
+If misalignment occurs, good idea to calibrate the printer.
+
+------------------------------
+4. Inkjet Printer Maintenance
+
+Ink can clog very easily, so may see a daily cleaning maintenance done automatically.
+
+Clogged ink can cause streaks or missing sections of color. Cleaning process can start manually, and you can even clean a print head manually if necessary.
+
+Replacing cartridges
+Often separated colors, but some cartridges may combine them. Take seconds to replace.
+
+Inkjet Printer Calibration
+Align nozzles to the paper, lines should be crisp, colors shouldn't overlap. Printer includes the option. Should be done after replacing print head.
+
+Clearing jams
+Jams can happen often. Remove loose paper, use firm pressure but don't rip them. Open printer and see if there are any leftover scraps.
+
+---------------------------
+5. Thermal Printers
+Doesn't have ink or toner, uses a special type of paper. Heated portions of the paper turns black. Very quiet, common for receipt machines.
+
+Very sensitive to white and heat, and may fade over time. Not good for archiving. Clear tape may also cause black to fade quickly.
+
+Heating Element
+No moving parts, heats certain parts at a time.
+
+Thermal paper
+Paper covered with a chemical that changes color when heated. Looks like normal paper.
+
+------------------------------------
+6. Thermal Printer Maintenance
+Paper is relatively inexpensive, but impossible to substitute. Make sure the paper is the right spec for the printer.
+
+Use IPA to clean the heating element, and a cleaning pen. Check recommendations for manufacturer.
+
+May also use a cleaning card which cleans the element and paper pathway.
+
+Not much debris since no toner, maybe some paper bits. Avoid using vacuum as static electricity can cause an issue.
+
+-------------------------------------
+7. Impact Printer
+Printer that makes an impact to mark the output.
+
+Dot-matrix printer - presses a ribbon to make a mark on the paper. Good for carbon/multiple copy paper. Low cost per page.
+Very noisy though. Low resolution.
+
+Dot matrix has a matrix of pins that impact onto paper to make the character on the page.
+
+Printer ribbon - one long ribbon of ink that pins push against to make the image. Easy to replace, one single ribbon. Size is usually proprietary and model-specific.
+
+Tractor feed - continuous long feed with perforations between pages. Holes on the side are used to pull paper through the printer. Must be aligned to go through printer properly.
+
+-----------------------------------
+8. Impact Printer Maintenance
+Ribbon gets rotated around many times and eventually gets too light to be readable. Designed to be very modular so easy to replace.
+
+Print head can take a lot of abuse, but eventually pins may stop working an you'll need to rep it. Gets very hot so be careful when replacing. Also modular.
+
+Paper can be a bit difficult to replace as tractor holds must be aligned correctly.
+
+-----------------------------------
+9. Virtual and 3D Printers
+
+Virtual Printers
+No physical output, output to a digital output. Useful for sending to a file.
+Print to file option in print options in Windows. File will be in an output format specific to that printer when done like this. Copy filename LPT
+
+Print to PDF - Adobe PDF
+Portable document format. One-way path from app to PDF. Proprietary Adobe format, requires specialized software to create and view PDF. Many browsers have built-in PDF viewers.
+
+Print to XPS - XML Paper Specification
+Microsoft XPS, similar to PDF but to XPS.
+Available all the way to XP, viewable with an XPS reader.
+
+Print to image
+Print to a graphics image for later editing/sharing. Not integrated into the OS. Third-party image print drivers available.
+
+3d Printers
+Print in 3 dimensions. AKA additive manufacturing. Good for rapid prototyping.
