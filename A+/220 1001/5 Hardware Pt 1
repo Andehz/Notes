@@ -36,7 +36,7 @@ Plan for worst-case scenario.
 
 
 Cabling types
-UTP - Unshielded twisted pair. No additional shielding, just  the PVC.
+UTP - Unshielded twisted pair. No additional shielding, just the PVC.
 
 STP - Shielded twisted pair. Additional shielding protects against interference. Shield each pair and/or the overall cable. Requires cable to be grounded.
 
@@ -46,7 +46,7 @@ S = Braided shielding
 F = Foil shielding
 
 S/FTP - Braided shielding around the entire cable and foil around pairs.
-F/UTP - Foil around the  cable and no shielding around the pairs.
+F/UTP - Foil around the cable and no shielding around the pairs.
 
 
 T568A/T568B Termination
@@ -94,7 +94,7 @@ PC System Design Guide - Convention in how connectors need to be colored.
 
 HDMI - High-Definition Multimedia Interface.
 Audio and video stream. All digital, no analog. 20m distance before losing too much signal.
-19-pin connectorm proprietary.
+19-pin connector proprietary.
 
 miniHDMI - Type-C connector.
 
@@ -157,7 +157,7 @@ Serial-AT Attachment.
 SATA 1.0 - 1.5Gbit/s, up to 1meter.
 SATA 2.0 - 3.0Gbit/s, up to 1meter.
 SATA 3.0 - 6Gbit/s, up to 1meter.
-SATA 3.2 -  16Gbit/s, up to 1meter.
+SATA 3.2 - 16Gbit/s, up to 1meter.
 
 15 pins = power, 7pin = data.
 
@@ -183,11 +183,11 @@ Many different parallel and serial solutions. Used to be how people connect a bu
 
 Many devices on a bus: 8 on narrow, 16 on wide bus.
 
-SCSI didn't need a lot of configing. Assign a number and let SCSI do the rest.
+SCSI didn't need a lot of configuring. Assign a number and let SCSI do the rest.
 
 Still used in enterprise today, well supported.
 
-SCSI ID = controller, ID 2 = usually hard drive, ID3 = usually cd-rom.
+SCSI ID = controller, ID 2 = usually hard drive, ID3 = usually CD-ROM.
 
 LUN - Logical unit number. Separate drives in a storage array or VM.
 

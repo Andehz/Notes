@@ -119,7 +119,7 @@ Login authentication to resources, centralized management of this. Almost always
 
 
 SIEM
-Security Information and Event Managemnt. Consolidate and manage events, logging, and information. Link diverse data types.
+Security Information and Event Management. Consolidate and manage events, logging, and information. Link diverse data types.
 
 
 Syslog
@@ -159,10 +159,10 @@ OSI layer 3 address. 32 bits long/4 bytes long. Any number for each octet can be
 
 IPv6
 128-bit address. Separated into 8 different sections, colon delimited. All IPv6 addresses are in hexadecimal, 16 bits per section.
-350 undecillion totally possible combinations.
+350 undecillion total possible combinations.
 
 Can abbreviate v6 addresses.
-  -Can omit leading 0s in a section
+  - Can omit leading 0s in a section
   - Full sections of IPv6 can be totally omitted and replaced with ::
 
 DNS becomes very important due to the sheer length of these addresses.
@@ -230,13 +230,13 @@ VLAN - logically separated LANs.
 Many different kinds of connection types.
 
 Cable modem
-Broadband communication - Tranmission across many different frequencies and traffics over the single cable.
+Broadband communication - Transmission across many different frequencies and traffics over the single cable.
 
 DOCSIS - Standard over cable networks that traffic gets sent over cable modems
 
 
 Dialup
-Network over voice telephonee lines. 56kbit/s modems, can compress data up to 320 kilobit/s
+Network over voice telephone lines. 56kbit/s modems, can compress data up to 320 kilobit/s
 Relatively slow, difficult to scale. Common in Enterprise environments as a backup.
 
 
