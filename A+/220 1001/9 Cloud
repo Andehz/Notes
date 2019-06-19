@@ -1,0 +1,54 @@
+1. Cloud Models
+
+IaaS - Infrastructure as a service
+AKA Hardware as a Service. Outsource equipment, but still in charge of software. Web hosting providers are common IaaS
+
+SaaS - Software as a Service
+On-demand software. Gmail, Dayforce, etc. Central management of data and applications. No development work generally needed, vendor deals with that.
+
+PaaS - Platform as a Service
+No servers, no software, no maintenance needed. All underlying infrastructure is managed by a third party. You only need to worry about the application and developing it.
+
+
+Cloud Deployment Models
+
+Private Cloud - You own the virtualized local data center.
+  No resources are shared.
+  Build your own cloud.
+  Pay for everything up front.
+  No ongoing costs.
+
+Public - Available to everyone over the internet
+  Share resources with a public cloud
+  Underlying infrastructure owned by a third party.
+  Cost may be metered/up-front
+
+Hybrid - Mix of public and private
+
+Community - Several organizations share the same resources
+
+-----------------------------------
+2. Virtualization
+
+Virtualization - Native operating system. Perform OS processes natively
+
+Emulation - run software designed for a different architecture. Different architecture is translated to run on the native OS. Much slower than virtualization generally.
+
+
+Security
+Although there's no known significant vulnerabilities yet, doesn't mean there aren't any.
+
+VM escaping - Malware recognizes it's on a VM, malware compromises hypervisor, malware jumps between different VMs.
+
+Guest Operating System security should be treated just like as if it was a regular computer.
+
+Watch out for rogue VMs.
+
+
+Network Requirements
+
+Shared network address - VM shares same IP as physical host. IP is NAT'd to convert to physical host IP.
+
+Bridged network address - VM is a device on physical network.
+
+Private network addressing - VM cannot access outside the virtual network.
