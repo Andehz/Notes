@@ -110,8 +110,23 @@ msinfo32 could tell you all relevant system information.
 
 Older upgrades may use floppy. Newer upgrades are an executable from the OS, or via flash drive.
 
+
 --------------------------------
-8. Peripherals
+8. CPU Features
+
+Virtualization hardware:
+VT - Intel Virtualization Technology
+AMD-V AMD Virtualization
+
+Hyperthreading
+Single CPU can act as multiple CPUs. While cpu is waiting for data to egress/ingress out of the CPU, it can run other separate transactions while it's waiting.
+
+CPU clock - How many transactions can occur in a second, modern day CPUs are measured in GHz.
+Actual speed of a CPU depends on a variety of factors though and CPU speed only one part to it.
+
+
+--------------------------------
+9. Peripherals
 
 Printers
 ADF - Automatic Document feeder for a printer. Input a large amount of papers that will be automatically get scanned by a scanner.
@@ -121,7 +136,7 @@ Projectors
 Use Metal-halide lamp. Very bright, measured in lumens. Relatively expensive lamps. Always let bulbs cool as fans may continue to run after shutting it off to cool the fan.
 
 --------------------------------
-9. Computer Power
+10. Computer Power
 NOTE: Always discount from the power source when working on a device. Drain capacitors before beginning work.
 
 Computer uses DC voltage, but most power sources provide AC voltage.
@@ -151,7 +166,7 @@ Voltages may be referred as positive or negative. Voltage is a difference in pot
 Video cards tend to use the most amount of power. 50% capacity is good rule of thumb for sizing PSU.
 
 --------------------------------------
-10. Customer Computer Systems
+11. Customer Computer Systems
 
 CAD - Computer Aided Design
 CAM - Computer aided Manufacturing.
@@ -180,14 +195,14 @@ Thin clients are where applications are accessed remotely from the thin client. 
 They'll only need just enough power to run an OS, but will want good network hardware to maintain connection to the remote system it's connected to.
 
 ---------------------------------------
-11. Common Devices
+12. Common Devices
 
 May be a good idea to set up a VPN and hard drive encryption for thick clients, especially for laptops.
 
 MDM - Mobile Device Management - manage company phones/tables. Provide remote management, and security. Application management also enforceable.
 
 -------------------------------
-12. SOHO Multifunction Devices
+13. SOHO Multifunction Devices
 
 Can't mix and match print drives, must use the specific drivers for specific printers.
 
@@ -209,7 +224,6 @@ Other printers can also do cloud sharing.
 Common Network Printing Ports:
 TCP/139, TCP/445, UDP/137, UDP/138
 
-d
 Apple devices may need Bonjour service to access printers. Apple software installed on Windows may also use Bonjour.
 
 AirPrint - Print from iOS to compatible devices.
