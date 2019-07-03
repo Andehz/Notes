@@ -1,0 +1,132 @@
+Typical SOHO LANs
+
+Ethernet - general reference to any cable that conforms to any of several Ethernet standards, ie.; Ethernet cables
+Defines LAN technology only. Ethernet is an entire family of standards
+
+Wireless LANs - Defined via IEEE 802.11, use radio waves to send the bits from one node to the next.
+
+WAP - AP acts somewhat like an Ethernet switch, all wLAN nodes connect with ethernet switch by sending/receiving data with it.
+Only needs the single Ethernet link to connect to the Ethernet LAN.
+
+
+------------------------------
+Typical Enterprise LANs
+
+Typically in a large environment, each per-floor switch connects to a large distribution switch.
+
+
+---------------------------------
+Variety of Ethernet Physical Layer Standards
+
+UTP is cheaper than fiber but fiber lets you perform longer cable runs between nodes
+
+Ethernet standards typically named via 802.3 followed by some suffix of letters depending on standard.
+Suffix of T is typically UTP, and fiber suffix is typically an X
+
+
+----------------------------------------------------------------------
+Consistent Behavior over All Links Using the Ethernet Data Link Layer
+
+Ethernet includes many physical layer standards, but it acts like a single LAN technology because it uses the same data link layer standard over all of those physical links
+
+Ethernet frame - Data-link layer protocol sends these types of datagrams from source to destination nodes.
+From a data-link perspective, nodes build and forward frames.
+
+Ethernet LAN - Combination of user devices, LAN switches, and different kinds of cabling.
+
+Three most common Ethernet standards:
+  10BASE-T - Ethernet
+  100BASE-T - Fast Ethernet (FE)
+  1000BASE-T - Gigabit Ethernet (GE)
+
+
+-------------------------------------------------
+Transmitting Data Using Twisted Pairs
+
+Electrical circuits require complete loops, so two nodes using circuitry connect the wires in one pair to complete a loop. Allows electricity to flow
+
+Encoding scheme - similar to two people talking in the same language.
+Sender changes electrical signal changes over time and receiving node interprets changes using same rules as transmitter as either 0s or 1s.
+
+Twisting wire pairs together help cancel out most EMI, so most copper wires in networking use twisted pairs.
+
+
+---------------------------------------
+Breaking Down a UTP Ethernet Link
+
+Ethernet Link - any physical cable between two Ethernet Nodes.
+
+10BASE-T and 100BASE-T require two pairs of wires, 1000BASE-T requires four wire pairs.
+
+Pin position - physical location in which wires can be inserted into. ex.; RJ45 has eight locations for eight pins.
+
+Cisco switches include some physical ports where the transceiver portion can be changed later.
+
+
+------------------------------------------------
+UTP Cabling pinouts for 10BASE-T and 100BASE-T
+
+Ethernet NIC transmitters use the pair connected to pins 1 and 2. NIC receivers use a pair of wires at pin positions 3 and 6.
+LAN switches do the opposite. They receive at pins 1 and 2 and transmit with wire pair at 3 and 6.
+
+PC NIC communicates with a switch via a straight-through cable pinout.
+
+pinout - wiring of which color wire is placed in each of the eight numbered pin positions in RJ45.
+
+Ethernet straight-through cable - connects the wire at pin 1 on one end to pin one at the other end, pin 2 needs to connect to pin 2 at the other end, and so on.
+
+
+Crossover cable - pinout crosses the pair at the transmit pins on each device to receive pins on the opposite device.
+Used to avoid transmit conflict when connecting two devices.
+
+
+--------------------------------------------
+Choosing the Right Cable Pinout
+
+Key is to know whether devices act like a PC NIC, transmitting at pins 1 and 2, or like a switch transmitting at 3 and 6.
+
+Apply this logic to know which cable to use:
+  Crossover cable - If endpoints transmit on the same pin pair
+  Straight-through cable: if endpoints transmit on different pin pairs.
+
+Auto-mdix - Feature on Cisco switches that notices when the wrong cable is used and automatically changes its logic to make it work.
+
+Devices that transmit on Pins 1,2:
+  PC NICs
+  Routers
+  WAP
+
+Devices that transmit on pins 3,6:
+  Hubs
+  Switches
+
+
+-------------------------------------
+UTP Cabling Pinouts for 1000BASE-T
+
+Gigabit Ethernet crossover cable - crosses over the 1,2 and 3,6 wire pairs like other Ethernet standards, and the pairs at 4,5 and 7,8.
+
+
+-----------------------------------
+Ethernet Data-Link Protocols
+
+Core parts of data-link standard date back to original Ethernet standards.
+Ethernet also defines a few alternate formats for header
+
+
+Format of a commonly used Ethernet frame in order of header <-> trailer
+  --Header--
+  Preamble: 7 bytes - Synchronization
+  SDF: 1 byte - Start Frame Delimiter, signifies that the next byte begins MAC address
+  Destination MAC: 6 bytes - Identifies intended recipiend of this frame
+  Source MAC: 6 Bytes - Identifies sender of this frame
+  Type: 2 bytes - Defines the type of protocol listed inside the frame, most likely IPv4 or 6 today.
+  --Header--
+  Data and pad: 46 - 1500 bytes - Holds data from a higher layer, typically L3PDU. Sender adds padding to meet minimum 46 byte requirement (defined by IEEE 802.3)
+  --Trailer--
+  FCS: 4 bytes - Frame Check Sequence, provides method for receiving NIC to determine whether frame experienced transmission errors.
+  --Trailer--
+
+
+---------------------------------------
+Ethernet Addressing
