@@ -130,3 +130,68 @@ Format of a commonly used Ethernet frame in order of header <-> trailer
 
 ---------------------------------------
 Ethernet Addressing
+
+Source and destination Ethernet address fields play a huge role in how Ethernet LANs work.
+
+Sending node puts its own address in the source field address, and the intended Ethernet destination device's address in the destination address field.
+
+MAC address, AKA ethernet address. 6-byte long.
+Before a manufacturer can build Ethernet products, it must ask the IEEE to assign the manufacturer a universally unique 3-byte code, called the OUI
+  OUI - Organizationally unique identifier
+
+Last 3 bytes in MAC are unique for that OUI, never used before, per IEEE standards
+
+Unicast - formal way to refer to the fact that the address represents one interface to the Ethernet LAN.
+
+Group addresses - identifier more than one LAN interface card. IEEE defines two types:
+  Broadcast address - Frames delivered to all devices on the Ethernet LAN. Value = FFFF.FFFF.FFFF
+
+  Multicast address - Frames will be copied and forwarded to a subset of devices on the LAN that volunteers to receive frames sent to specific multicast address
+
+LAN addressing terms:
+  MAC - Media Access Control. 802.3 defines the MAC sublayer of IEEE Ethernet
+  Ethernet address, LAN address - These terms describe the 6-byte address of the LAN interface card.
+  Burned-in address 6-byte address assigned by the vendor making the card
+
+  Unicast address - Term for MAC address that represents a single LAN interface
+  Broadcast address - Address that means "all devices that reside on this LAN right now."
+  Multicast address - On Ethernet, implies some subset of all devices currently on the Ethernet LAN
+
+
+-------------------------------------------------------------
+Identifying Network Layer Protocols with Ethernet Type Field
+
+EtherType - field that sits in the Ethernet data link layer header, but purpose is to directly help network processing on routers and hosts.
+Identifies the type of network layer packet that sits inside the frame. Different known values (defined by IEEE) define what type of L3 packet the data is.
+
+Ethernet FCS - Frame Check Sequence: only field in Ethernet trailer. Gives the receiving ode a way to compare results to the sender and discover whether there were errors in the frame.
+Sender applies a complex math formula to frame before sending it, receiver applies same formula to compare results. If results are same, frame is good, if not, frame is bad.
+
+Ethernet defines bad frames should be discarded, but doesn't attempt to recover.
+
+
+-----------------------------------------------------
+Sending Ethernet Frames with Switches and Hubs
+
+Modern switches allow use of full-duplex logic, which is much faster and simpler than half-duplex that hubs use.
+
+
+Half duplex - Device must wait to send if it's currently receiving a frame, aka can't send and receive at the same time.
+
+Full duplex - Device doesn't have to wait before sending, can receive and send at the same time.
+
+Hubs have no concept of frames, addresses, etc. Just a repeater
+
+Switches are L2 devices, look at data-link header and trailer.
+
+CSMA/CD - Collision detection algorithm for half-duplex logic.
+  1. Device with frame to send listns till Ethernet isn't busy.
+  2. When not busy, sender sends frame
+  3. Sender listens while sending  to discover whether collision occurs.
+    If one occurs:
+    a. All sending nodes send a jamming signal to tell all nodes that a collision happened.
+    b. Independently choose a random time to wait before trying again to avoid bad timing.
+    c. Start back at step 1.
+
+  All links between PCs and switches, and between switches use full duplexes. Any link connected to a hub should use half.
+  Hubs themselves don't use half-duplex logic, just repeat signal out to all ports.
