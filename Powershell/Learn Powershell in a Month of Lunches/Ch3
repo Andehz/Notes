@@ -1,1 +1,23 @@
 Using the Help System
+
+
+"If you aren’t willing to read PowerShell’s help files, you won’t be effective with PowerShell. You won’t learn how to use it, you won’t learn how to administer products like Windows with it, and you might as well stick with the GUI."
+
+update-help - Updates PowerShell help files
+  -source: lets you specify where to update help files, either locally or remotely.
+
+Save-Help - saves help files in specified location for future use, ie.; update help files on a computer that isn't connected to the internet.
+
+Help - like Get-Help but pipes the help output to the More command, which paginates the view.
+
+NOTE: More command doesn't work in ISE.
+
+-----------------------------------
+Using help to find commands
+
+-Name parameter is a positional parameter for the help command, so you don't need to specify it when using Help.
+Also accepts wildcards like *. eg.; help *log*, help *event*
+
+help *log* returns a list of commands that have log somewhere in the name of the command.
+
+* - stands for zero or more characters.
