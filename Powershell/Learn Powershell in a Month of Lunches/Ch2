@@ -1,0 +1,12 @@
+Meet PowerShell
+
+Good idea to jack up font size a bit as small characters can be easily missed.
+
+PowerShell supports Tab completion.
+
+Configure PowerShell so there's no horizontal scrollbars for outputs. This can be a source of some massive frustration.
+
+Always run PowerShell as Administrator if you want to get full use of it. Not always recommended if you're running it in a production environment though.
+
+
+$PSVersionTable - tells you what version of PowerShell you're running.
