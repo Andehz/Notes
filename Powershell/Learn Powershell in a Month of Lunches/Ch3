@@ -21,3 +21,88 @@ Also accepts wildcards like *. eg.; help *log*, help *event*
 help *log* returns a list of commands that have log somewhere in the name of the command.
 
 * - stands for zero or more characters.
+
+Using a parameter-set specific parameter "locks" you into that specific set of parameters.
+
+[<CommonParameters>] - set of eight parameters that are available to every single cmdlet.
+
+--------------------------------------
+Optional and mandatory parameters
+
+[-ComputerName] - Brackets mean that a parameter is optional
+
+Only need to type in enough of a parameter so there's no ambiguity.
+
+Parameters that aren't enclosed in brackets are mandatory. Either PowerShell will prompt you for the parameter when you execute it without it, or it'll error out.
+
+-------------------------
+Positional parameters
+
+Parameters that only need to be specified based on positioning in cmdlet. Doesn't need to explicitly invoked.
+
+ex: [-LogName] <string> [[-InstanceId] <Int64[]>]
+
+
+Specifying -LogName is optional, but the -LogName parameter itself is mandatory as indicated by the fact that the valuetype isn't in brackets
+
+Positional parameters must always be in the correct position. Always legal to specify parameter names though.
+
+It's probably best practice to explicitly define parameters with their full names though, will be hard to remember commands six months from now!
+
+help get-eventlog -full : the full parameter outputs an even more detailed help screen and info about each parameter.
+
+  -showwindow outputs -full in a gui pop up window when GUI abilties are available.
+
+---------------------------
+Parameter values
+
+Switches: Parameters don't take in a value, but will perform something when it's invoked, eg.; [-AsString]. These are never positional.
+
+
+Common input types:
+  Strings: Series of letters and numbers
+  Int/Int32/Int64: An integer
+  DateTime: String that can be interpreted as a date based on a PC's regional settings. eg.; 10-10-2010
+
+Legal way of specifying arrays in a parameter:
+  Examples:
+  Get-EventLog Security -computer Server-R2
+
+  Get-EventLog Security -computer Server-R2,DC4,Files02
+
+  Get-EventLog Security -computer 'Server-R2','Files02'
+
+  Get-EventLog Application -computer (Get-Content names.txt)
+    Have text file input one value per line.
+    Server-R2
+    Files02
+    Files03
+    DC04
+    DC03
+
+() force Powershell to run a particular command first. The preceding command tells powershell to run Get-Content first to get the appropriate data before executing the -computer paremeter.
+
+Pressing Enter on a blank prompt will tell PowerShell to stop prompting and execute based on previous inputs.
+
+------------------------------------------
+Finding command examples
+
+Help get-eventlog -example : PowerShell displays common usage examples of particular command when available.
+
+----------------------------
+Accessing "about" topics
+
+Filesnames that start with about_. These have background information based on the topic it's about.
+ex.; Help about_common_parameters
+
+----------------------------
+Accessing online help
+
+Help get-eventlog -online
+
+Get online documentation with -online switch. Opens default browser to relevant link. Often more up to date than built in documentation
+
+--------------------------
+Misc notes
+
+Cmdlets named via singular nouns, not plural.
