@@ -1,0 +1,59 @@
+-----------------------------
+Cmdlet naming convention
+
+Cmdlet - Native PowerShell command-line utility. Exist only inside PowerShell and are written in a .NET Framework language like C#.
+
+Function - similar to a cmdlet but rather than written in a .Net language, they're written in PowerShell's own scripting language.
+
+Workflow - special kind of function that ties into PowerShell's workflow execution system
+
+Application - any kind of external executable, including command-line utilities like ping.
+
+
+Names start with a standard verb like Get, Set, New, or Pause. After, followed by a dash, then a singular noun.
+
+eg.; Set-ADUser
+
+
+------------------------------
+Aliases: nicknames for commands
+
+Alias - A nickname for a command that PowerShell recognizes.
+
+To find aliases for some cmdlets:
+
+get-alias -Definition "Get-Service"
+
+Output:
+
+Capability Name
+---------- ----
+Cmdlet     gsv -> Get-Service
+
+
+
+The Help command will always display the full command name for an alias.
+
+
+Custom aliases:
+
+New-Alias: create custom aliases
+Export-Alias: Export a list of aliases
+Import-Alias: Import a list of previously created aliases
+
+Aliases by default only last as long as the current session they were created in. Once PowerShell closes, the alias is gone. Hence why you should export and import.
+
+NOTE: Aliases cannot come bundled with parameters, only the cmdlet itself.
+
+
+Parameters can also have aliases, but they can be hard to find. Use the following example to see how to find aliases for parameters:
+
+PS C:\> (get-command get-eventlog | select -ExpandProperty parameters) .computername.aliases
+
+
+Show-Command: Delivers a graphical UI to help show available parameters for a particular command.
+
+
+PowerShell can also execute Cmd.exe-native commands as well, like ping. It'll execute a cmd shell behind the scenes to get the info you need.
+
+& - Invocation character to get PowerShell to run an external command more cleanly. Sometimes the native PowerShell parser just doesn't cut it.
