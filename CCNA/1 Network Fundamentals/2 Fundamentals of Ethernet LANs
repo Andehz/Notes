@@ -185,7 +185,7 @@ Hubs have no concept of frames, addresses, etc. Just a repeater
 Switches are L2 devices, look at data-link header and trailer.
 
 CSMA/CD - Collision detection algorithm for half-duplex logic.
-  1. Device with frame to send listns till Ethernet isn't busy.
+  1. Device with frame to send listens till Ethernet isn't busy.
   2. When not busy, sender sends frame
   3. Sender listens while sending  to discover whether collision occurs.
     If one occurs:

@@ -1,1 +1,62 @@
 Working with Providers
+<<<<<<< HEAD
+=======
+
+PSProvider is an adapter. Designed to take some kind of data storage and make it look like a disk drive.
+
+Capabilities - Describes how a provvider may be used
+  ShouldProcess - Provider supports the use of -Whatif and -Confirm parameters. Allows you to "test" before a commit.
+  Filter - Supports -Filter parameter on cmdlets that manipulate providers' content.
+  Credentials - Provider permits you to specify alternate credentials when connecting to data stores.
+  Transactions - Provider supports use of transactions, which allows you to use provider to make several changes, then either roll back or commit changes as a singular unit.
+
+
+Use a provider to create a PSDrive
+
+PSDrive uses a singular provider to connect to data storage.
+
+Cmdlets used with a PSDrive have the word Item in their noun
+  get-command -noun *item*
+
+------------------------------------------
+Understanding how filesystem is organized
+
+Windows filesystem is organized around three object types: drives, folders, and files.
+
+  Drives - top-level object, contain both folders and files.
+  Folders - Kind of container, can contain files and other Folders
+  Files -  Not a container, more of an endpoint object.
+
+
+Files and folders in Powershell are referred to as items.
+
+
+Items can have properties.
+
+Normal verbs can apply to items. ItemProperty noun refers to attributes of an item. ChildItem refers to items contained with an item, like a folder
+
+
+Some cmdlets don't work with some providers. Refer to documentation in what works where.
+
+
+set-location - Change the shell's current location to a different container-type item, like a folder.
+
+-------------------------------------------
+Using wildcards and literal paths
+
+
+Most item cmdlets include a -Path property, and by default the property accepts wildcards.
+
+* - zero or more chars
+
+? - Any single digit character
+
+-LiteralPath parameter - Specifies path but wildcards are treated as regular characters Instead
+
+
+
+------------------------------------
+Other
+
+New-Item - creates a new generic item. Must specify a type.
+>>>>>>> 12463e388eee7c612f180e0c635cef0b9a96a898
