@@ -1,4 +1,6 @@
 Working with Providers
+<<<<<<< HEAD
+=======
 
 PSProvider is an adapter. Designed to take some kind of data storage and make it look like a disk drive.
 
@@ -57,3 +59,4 @@ Most item cmdlets include a -Path property, and by default the property accepts 
 Other
 
 New-Item - creates a new generic item. Must specify a type.
+>>>>>>> 12463e388eee7c612f180e0c635cef0b9a96a898
