@@ -1,0 +1,5 @@
+The pipeline: connecting commands
+
+get-process | Export-csv procs.csv - exports process data to csv file.
+
+First line of the file is a comment, preceded by a # character, and that identifies the kind of info in the file.

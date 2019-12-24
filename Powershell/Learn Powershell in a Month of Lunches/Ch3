@@ -84,10 +84,22 @@ Legal way of specifying arrays in a parameter:
 
 Pressing Enter on a blank prompt will tell PowerShell to stop prompting and execute based on previous inputs.
 
+help doesn't paginate in ISE.
 ------------------------------------------
 Finding command examples
 
 Help get-eventlog -example : PowerShell displays common usage examples of particular command when available.
+
+summary help - short description of what the command does.
+
+parameter sets - ways in how to handle a command. Commands work in sets. If it appears in one set and not the other, it'll only work in that set.
+They're mutually exclusive. No mix and matching. Running parameters that exist in both sets means PoSH will run the first one.
+
+Positional parameters must always be in the correct position when not specifying parameter name.
+
+Switches are never positional values.
+
+Single quotes are better than double for string inputs.
 
 ----------------------------
 Accessing "about" topics
@@ -106,3 +118,8 @@ Get online documentation with -online switch. Opens default browser to relevant 
 Misc notes
 
 Cmdlets named via singular nouns, not plural.
+
+-------------------------------
+Useful commands:
+
+Get-Content: read in data from another source.

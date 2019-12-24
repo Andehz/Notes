@@ -1,0 +1,41 @@
+Adding commands
+
+Snapins are like modules, but require DLLs. Microsoft moving away from them.
+
+Modular management tools. One shell can open multiple.
+
+
+get-pssnapin -registered : tells us what snapins are available
+
+add-pssnapin sqlservercmdletsnapin100 : Loads a snapin. In this case, sqlservercmdletsnapin100
+
+
+gcm (Get-Command)
+
+gcm -pssnapin sqlservercmdletsnapin100 : Lists what commands a snapin has added to PoSh
+
+
+Snapins may add new providers as well.
+
+
+--------------------
+Modules
+
+Similar to snapins, but designed to be more self-contained and somewhat easier to distribute.
+
+Don't require advanced registration, PoSh automatically looks in a certain set of paths to find them.
+
+PSModulePath - Defines paths where PoSh expects modules to live. Windows environment variable.
+get-content env:PSModulePath
+
+get-module : returns modules loaded in PoSh
+
+remove-module : removes modules loaded.
+
+Import-Module : imports a module via path if it hasn't been auto-loaded.
+
+PowerShell modules with same cmdlet names have the last loaded cmdlet run. To specify another version use:
+<module>\<cmdlet>, eg.; MyCoolSnapin\Get-User
+
+-----------------------
+Export-Console [-Path] : Export PoSh console with snapins so you don't need to manually load them all again next time.
