@@ -57,3 +57,6 @@ Show-Command: Delivers a graphical UI to help show available parameters for a pa
 PowerShell can also execute Cmd.exe-native commands as well, like ping. It'll execute a cmd shell behind the scenes to get the info you need.
 
 & - Invocation character to get PowerShell to run an external command more cleanly. Sometimes the native PowerShell parser just doesn't cut it.
+
+--% - Powershell won't even try to parse command, will just pass the command off to cmd.exe
+  ex.; C:\windows\system32\sc.exe --% qc $n
