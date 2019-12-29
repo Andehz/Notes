@@ -1,5 +1,32 @@
 The pipeline: connecting commands
 
-get-process | Export-csv procs.csv - exports process data to csv file.
+Pipeline - a way for one command to pass/pipe its output to another command.
 
-First line of the file is a comment, preceded by a # character, and that identifies the kind of info in the file.
+get-process | Export-csv procs.csv - exports process data to csv file.
+Note the #. This identifies what kind of info that was exported to the csv file from PoSh.
+
+Import-csv procs.csv - imports a csv into powershell.
+
+Export-clixml - create a generic CLI XML file. Unique to powershell, but any XML reader can read it.
+
+
+Diff -reference (Import-CliXML reference.xml) -difference (Get-Process) -property Name
+Diff is an alias for compare-object. Designed to take two sets of info and compare them to each other.
+
+Get-Service | ConvertTo-HTML | Out-File services.html
+
+> is basically piped out-file cmdlet under the hood.
+
+Out-gridview - fancy UI output. Needs PoSH ISE and .NET framework v3.5
+
+ConvertTo- commands don't save, only output in their respective formats. Keep this in mind.
+
+----------------------------------------
+6.5 Using cmdlets that modify the System
+
+Cmdlets that modify the system in some way have a preset impact level by PoSh devs. These levels can't be changed.
+
+$confirmpreference - cmdlets that are at this impact level will prompt a confirmation message when running in PoSh.
+Use -confirm switch to automatically ok prompt.
+
+get-content only reads in text file and PoSH doesn't try to parse or interpret data in any way.
