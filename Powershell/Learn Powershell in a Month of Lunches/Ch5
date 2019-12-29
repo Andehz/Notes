@@ -31,13 +31,17 @@ Files and folders in Powershell are referred to as items.
 
 Items can have properties.
 
-Normal verbs can apply to items. ItemProperty noun refers to attributes of an item. ChildItem refers to items contained with an item, like a folder
+Normal verbs can apply to items as well as to item properties.
+  ItemProperty noun refers to attributes of an item.
+  ChildItem refers to items contained with an item, like a folder has child items (files)
 
 
 Some cmdlets don't work with some providers. Refer to documentation in what works where.
-
+Environment psprovider doesn't support item properties. There are a few psproviders that are like this as well.
 
 set-location - Change the shell's current location to a different container-type item, like a folder.
+
+Remember that while many data stores have some broad similarities, once you drill down into details they're wildly different. Note this.
 
 -------------------------------------------
 Using wildcards and literal paths
@@ -49,7 +53,7 @@ Most item cmdlets include a -Path property, and by default the property accepts 
 
 ? - Any single digit character
 
--LiteralPath parameter - Specifies path but wildcards are treated as regular characters Instead
+-LiteralPath parameter - Specifies path but wildcards are treated as regular characters Instead. Not positional
 
 
 
@@ -57,3 +61,4 @@ Most item cmdlets include a -Path property, and by default the property accepts 
 Other
 
 New-Item - creates a new generic item. Must specify a type.
+set-itemproperty - Change value of a property of an item.
