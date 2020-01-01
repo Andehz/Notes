@@ -27,7 +27,7 @@ Similar to snapins, but designed to be more self-contained and somewhat easier t
 
 Don't require advanced registration, PoSh automatically looks in a certain set of paths to find them.
 
-PSModulePath - Defines paths where PoSh expects modules to live. Windows environment variable.
+PSModulePath - Defines paths where PoSh expects modules to live. Windows environment variable. Not defined in PoSH.
 get-content env:PSModulePath
 
 get-module : returns modules loaded in PoSh
@@ -39,5 +39,16 @@ Import-Module : imports a module via path if it hasn't been auto-loaded.
 PowerShell modules with same cmdlet names have the last loaded cmdlet run. To specify another version use:
 <module>\<cmdlet>, eg.; MyCoolSnapin\Get-User
 
+Microsoft recommends adding a produect-specific prefix, like AD or SQL to the noun of each command to prevent these kinds of conflicts.
+
+Remove-pssnapin or remove modulke - unloads an extension.
+
 -----------------------
 Export-Console [-Path] : Export PoSh console with snapins so you don't need to manually load them all again next time.
+
+powershellget - like yum or rpm for linux. A way to get new modules over the internet. http://powershellgallery.com
+
+Register-psrepository - add url of a repository.
+Find-module - find modules in repositories. Can use wildcards, tags, and other helpers to help narrow search
+install-module - download modules.
+update-module - updates modules.
