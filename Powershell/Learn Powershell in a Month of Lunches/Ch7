@@ -1,11 +1,13 @@
 Adding commands
 
-Snapins are like modules, but require DLLs. Microsoft moving away from them.
+All about extensibility. Yo. Like MMC but for scripting. Product-specific shell shortcuts are still the same powershell. Not limited to a single product!
 
+Snapins are like modules, but require DLLs. Microsoft moving away from them.
 Modular management tools. One shell can open multiple.
 
 
-get-pssnapin -registered : tells us what snapins are available
+
+get-pssnapin -registered : tells us what snapins are available and installed.
 
 add-pssnapin sqlservercmdletsnapin100 : Loads a snapin. In this case, sqlservercmdletsnapin100
 
