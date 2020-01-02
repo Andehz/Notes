@@ -1,0 +1,46 @@
+Objects - data by another name
+
+PoSh stores data as objects as Windows is itself an object-oriented operating system.
+
+Much more efficient approach than linux administration as they'll need to deel with grep, awk, and sed. These commands deal with string manipulation.
+PoSh represents data in tables, tell it a column name and PoSh knows exactly where to get the data.
+
+Windows is an API-based operating system that relies heavily on object models.
+
+Get-Member | gm - gives you more information about a particular object. Different than help command as that only gives background concepts.
+
+properties, members, and other things attached to an object are collectively called its members.
+
+Objects in .NET (where all objects in PoSh comes from) only have properties. PoSh dynamically adds other properties:
+  Scriptproperty
+  NoteProperty
+  AliasProperty
+  NoteProperty
+
+  and so on.
+
+PoweShell has an Extensible Type System (ETS) that's responsible for adding these last-minute properties. Does this to make objects more consistent or expose info that's deeply buried.
+Because these are dynamically added, you may not see these properties in official documentation.
+
+Properties effectively serve the same process. Only difference is how they were created.
+
+Properties always contain a value. Often read-only.
+Expect that 90% of what you'll do in PoSh will involve properties.
+
+------------------------------------------------------------------
+8.5 Object actions/methods
+
+
+Many objects support one or more methods. This is edging into .NET framework programming. Outside the scope of this book.
+
+-----------------------------------------------
+8.6 Sorting Objects
+
+PoSh cmdlets produce objects in a deterministic fashion, aka, same order every time you run the command.
+
+Select-Object - Accepts objects from the pipeline, and you can specify the properties that you want displayed.
+  Get-Process | Select-Object -property Name,ID,VM,PM | Convert-ToHTML | Out-File test2.html
+
+Select-Object creates a new kind of custom object called a PSObject when modifying an object. It can't just remove objects from a cmdlet with a specific object type. Otherwise it wouldn't be that object type anymore.
+
+Once a PSObject object has been created, any further usage of that object is now under rules of PSObject, not the original piped object.
