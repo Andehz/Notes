@@ -1,0 +1,20 @@
+Ch 9 The Pipeline Depper
+
+When commands are stringed together, PoSh has to figure out how to get the output of the previous command into the next.
+Must figure out which parameter will take the output of the preceding commmand. Two ways to do this.
+
+  1. ByValue
+  2. ByPropertyName if ByValue doesn't work.
+
+This process is called pipeline parameter binding. Looks at the type of object produced by a command, and tries to see whether any parameter of the next command will accept that object.
+
+PS C:\> import-csv .\newusers.csv | select-object -property *, @{name='samAccountName';expression={$_.login}},
+
+Hash tables created with the following syntax
+
+@{<Name/N/Label/L>='varName';<expression/e>={varName}}
+
+A hash table needs a label, designated with Name, N, Label, or L. The label is separated from the value with the semi colon.
+The semi colon is designated as either expression or e. Express value is a script block, these are designated with the {}. Usually they may need the piped in character, $_
+
+Select -ExpandProperty: returns data as type data is set to. This is different from -property as property only returns data in wrapper class it was packaged in.

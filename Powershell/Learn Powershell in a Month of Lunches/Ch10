@@ -1,0 +1,28 @@
+Formatting
+
+Formatting done with the C:\Windows\System32\WindowsPowerShell\v1.0\DotNetType.format.ps1xml file by default. This is digitally signed.
+
+Out-Default at the end of a pipeline by default every time. Invisible but it's always there. Out-Default passes objects to Out-Host.
+
+Screen is called the host.
+
+Out- cmdlets are incapable of working with standard objects. Designed to work with special formatting instructions instead.
+
+
+If formatting rules aren't set for an object, looks for a default display property set (DefaultDisplayPropertySet) for an object of that type.
+
+If it still can't find anything, uses a third formatting rule:
+  If system displays four >= properties, uses a table. If there are >4, it uses a list.
+
+
+Format-Table, Formmat-list: two cmdlets to change how commands are output.
+
+Format-wide: displays a wide list, able to display only the values of a single property.
+
+
+Format Command example:
+  Get-Process | Format-Table Name, @{name='VM(MB)';expression={$_.VM / 1MB -as [int]}} -autosize
+
+Remember to keep Format- cmdlets as the last command.
+
+get-process; get-service - the semi-colon lets you put two commands on a single command line without piping.
