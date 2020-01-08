@@ -19,7 +19,7 @@ Objects in .NET (where all objects in PoSh comes from) only have properties. PoS
 
   and so on.
 
-PoweShell has an Extensible Type System (ETS) that's responsible for adding these last-minute properties. Does this to make objects more consistent or expose info that's deeply buried.
+PowerShell has an Extensible Type System (ETS) that's responsible for adding these last-minute properties. Does this to make objects more consistent or expose info that's deeply buried.
 Because these are dynamically added, you may not see these properties in official documentation.
 
 Properties effectively serve the same process. Only difference is how they were created.

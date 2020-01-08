@@ -1,0 +1,70 @@
+Filtering and Comparisons
+
+Two ways to filter results in powershell:
+
+  - Instruct cmdlet that's retrieving info for you to retrieve only what you've specified.
+  - Take everything cmdlet gives you then filter out what you don't want with a second cmdlet.
+
+Ideally use the first model.
+
+Good idea to filter left, or start filtering as close to the start of the left of the command line as possible.
+The earlier you filter out, the less work subsequent filters have to do.
+
+Where-object: quintessential cmdlet to filter out output for a cmdlet in pipeline.
+
+---------------------------------------------------
+Comparison operators
+
+  -eq: equality
+  -ne: not equal to
+  -ge/-le: Greater than or equal to / less than or equal to
+  -gt/-lt: Greater than / less than
+
+  For string comparisons, you can also use a separate set of case-sensitive operators if needed:
+    -ceq, -cne, -cgt, -clt, -cge, -cle.
+
+  If you want to compare more than one thing at once, you can use the Boolean operators
+    -and and -or.
+
+  In addition, the Boolean -not operator reverses True and False.
+    ex.; -not $_.Responding
+
+    A couple of other comparison operators are useful when you need to compare strings of text:
+      -like accepts * as a wildcard, so you can compare to see if "Hello" -like "*ll*" (that would be True).
+      -The reverse is -notlike, and both are case-insensitive
+
+      -use -clike and -cnotlike for case-sensitive comparisons.
+      -match makes a comparison between a string of text and a regular expression pattern.
+      -notmatch is its logical opposite, and as you might expect,
+      -cmatch and -cnotmatch provide case-sensitive versions. Regular expressions are beyond the scope of this book.
+
+    about_comparison_operators
+
+Can also use more traditional programming operators as well.
+
+Ex: Get-Service | Where-Object -filter { $_.Status -eq 'Running' }
+
+------------------------------------------------------------
+$_
+
+$_ - placeholder for an object placed in the pipeline.
+Only works for specific cmdlets, eg.; Where-Object
+
+If true, pushes to next cmdlet, if false, dropped from pipeline.
+
+The period means comparing one part of the object, not the object itself.
+
+----------------------------------------------------
+PowerShell Iterative Command-Line Model
+
+Idea is that you don't need to construct large, complex command lines all at once and from scratch. Start small.
+
+Measure-object: calculates numeric properties of objects.
+
+
+Run a command, examin results, recall, modify, and repeat. You get immediate feedback to know when to try something else.
+
+------------------------------------------------------
+Start filtering as close to the source as possible. Even filter data from the queried system if possible.
+
+Don't forget that cmdlets may have builtin filter parameters. use those first before resorting to Where or Select cmdlets.
