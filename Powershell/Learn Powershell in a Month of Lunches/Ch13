@@ -1,0 +1,72 @@
+Remote Control 1to1 and MtoM
+
+Remote PowerShell works similar to Telnet and other remote-control tech. Commands are run on the remote pc.
+Only results are sent back.
+
+Uses WS-MAN protocol. Web Services for Management.
+  Operates entirely over HTTP or HTTPS
+
+Microsoft's implementation of WS-MAN is WinRM.
+
+Remote also works over SSH.
+
+PowerShell automatically serializes outputs into XML. Deserialized into objects once it gets to your pc.
+
+Serialized objects are snapshots, not realtime. Also can't command them to do anything.
+
+PCs should be in the same trust/domains to work with remoting.
+
+
+----------------------------------------------------------
+WinRM
+
+Must configure WinRM on pc's receiving connections.
+
+WinRM not unique to PowerShell. WinRM able to route traffic to multiple admin applications.
+WinRM is a dispatcher, decides which app needs to deal with that traffic.
+All WinRM traffic tagged with name of recipient app. Those apps must register as endpoints with WinRM.
+
+WinRM endpoints aka Session configurations. Each can point to different apps, and some can point to same app but for different purpose.
+
+WinRM listener - sits and waits for incoming network traffic on behalf of WinRM. Listens on a socket.
+Default listener with Enable-PSRemoting listens on all local IP addresses.
+
+Enable-PsRemoting - Configure WinRM on device.
+
+Cannot be on a Public network as Firewall settings can't be modified when enabling WinRM.
+
+Port 5986 - Default WinRMv2 port for HTTPs. 5985 for HTTP
+Winrm set winrm/config/listener?Address=*+Transport=HTTP @{Port="1234"} Change port on WinRM
+
+Possible to create multiple listeners for WinRM
+
+--------------------------------------------------------
+Session Types
+
+Enter-PSSession -computerName Server-R2
+
+Remote Powershell won't let you connect with IP address or a DNS alias.
+Connects with security token that it's running under, like Kerberos.
+
+Exit-PSSession - exits remote session. If you just exit, it'll do the same thing as well.
+
+Try to avoid remote chaining, like if you need to use a server a jump box to get to another server. Unnecessary overhead.
+
+-------------------------------------------------------------
+Invoke-Command
+
+Allows 1toM connections. Can connect to multiple systems from one machine.
+
+Invoke-Command -computerName Server-R2,Server-DC4,Server12 -command { Get-EventLog Security -newest 200 | Where { $_.EventID -eq 1212 }}
+Everything in {} gets transmitted to remote pc.
+PoSh talks to a total of 32 pcs at once max. Any more, it'll queue them up instead.
+Can also increase -throttlelimit as well but might want a good pc for that.
+
+-Command is alias for -scriptblock in invoke--command.
+
+Generally  more efficient to use invoke-command than a -computername parameter in a cmdlet.
+
+Always try to complete as much processing on the remote machine as possible.
+
+
+Deserialized objects lack methods as it's not attached t o live software anymore.

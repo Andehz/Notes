@@ -1,0 +1,22 @@
+Install Roles and Features
+
+Role - Something Windows Server aspires to be. Where the machine you want it to go/functions you want Windows to support.
+
+Role Service - Functions that fulfill a particular aspiration for that server. These must be installed for a particular role.
+
+
+Feature - Everything else on the server.
+
+
+Server Core is what Windows wants to use. Get used to this.
+
+If you close out of cmd prompt accidentally in Core, hit ctrl + alt + del again.
+
+Some GUI panels still available
+  Task Manager
+  notepad
+  timedate.cpl
+
+Use sconfig.cmd to access cmd prompt-type menu to configure windows.
+
+Powershell not the default shell when logging in.
