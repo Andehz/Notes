@@ -8,6 +8,7 @@ Capabilities - Describes how a provvider may be used
   Credentials - Provider permits you to specify alternate credentials when connecting to data stores.
   Transactions - Provider supports use of transactions, which allows you to use provider to make several changes, then either roll back or commit changes as a singular unit.
 
+Get-PSDrive - Get all loaded PSDrives
 
 Use a provider to create a PSDrive
 

@@ -1,0 +1,23 @@
+SSH
+
+Secure Shell - Used to open a shell in a more secure manner than telnet
+
+  -l - specify a username, or do user@hostname
+  ssh root@webserver
+
+  -i filename - Used for specifying what private key is used to authenticate this connection
+
+  -F Filename Used for speicifying what configuration file to user. Default is ~/.ssh/config
+
+
+ssh-keygen: script generated pub/priv keys
+
+ssh-copy-id script will copy public key over to the target server
+
+SSH key fingerprint - reduce chance of MITM attacks.
+
+SSH can also tunnel GUI programs over SSH connection to be displayed on your local machine.
+  ssh -X user@server
+
+
+rcp has been replaced by scp

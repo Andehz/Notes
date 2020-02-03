@@ -1,0 +1,36 @@
+Grep
+
+Tool used to find matching patterns
+
+grep error /var/log/messages
+
+  -i makes search case insensitive
+  -r makes search recursive through directory structure
+  -v makes search find all instances where there isn't a pattern match
+  -w makes the search match on a word rather than any pattern match
+
+Regular expressions
+
+  ^ match expression at the start of a line, like ^A
+    grep '^lin' grepexample
+  $ match expression at the end of a line, as in A$
+    grep 'my$' grepexample
+  \ Turn off special meaning of next character, as in \^
+    grep '^[%*]' grepexample
+  [] Match any one of the enclosed characters, as in [aeiou], as in [0-9]
+    grep '^[a-zA-Z]' grepexample
+  [^ ] Match any character except those enclosed in []
+    grep '^[^a-zA-Z]' grepexample
+
+  . Match a single character of any value, except end of line
+    grep '^.u' grepexample
+  * match zero or more of the preceding character or expression
+    grep '^%*' grepexample
+  \{x,y\} Match x - y occurrences of the preceding
+    grep '^%\{1,4\}' grepexample
+  \[x\} Match exactly x occurrences of the preceding
+    grep '^1\{1}' grepexample
+  \[x,\} Match x or more occurrences of the preceding
+    grep 'i\[2\}' grepexample
+
+grep -v -e '^#' -e '^$' /etc/httpd/conf/httpd.conf

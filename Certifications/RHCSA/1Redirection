@@ -1,0 +1,35 @@
+Input/Output Redirection:
+
+3 things to remember for redirection:
+  stdin = keyboard
+  stdout = screen
+  stderror = error outputs
+
+Common use of output is to collect output of a command into a file.
+  ex.; ls -al > listing - store in a file named listing. Maybe do this to check later instead of it staying on the screen.
+
+  > - only overwrites.
+  >> - Appends to the end of a file.
+
+  ls -al > listing vs ls -al >> listing
+
+Input Redirection - like redirect output, you can also redirect where the system is getting input from.
+  sort < listing.
+
+Can also combine both input and output redirection into one command:
+  sort < listing > sorted_list. Output goes to sorted_list file.
+
+------------------------------------------------------------------------------------
+Pipes
+
+Used to take output of one command and feed directly it into another.
+  ls -l /var/log | less
+  du | sort -nr
+  ls -l | wc -l
+  tar -tzvf tarfile.tgz | less
+-------------------------------------
+Error Redirection
+
+Errors go to error output
+  ls -fake 2> error - error outputs go to a file called error.
+  ls -fake 2> error 2>&1 - Redirects error in error to stdout.
