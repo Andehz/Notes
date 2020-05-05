@@ -1,0 +1,78 @@
+https://oauth.net/2/
+
+
+https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2
+
+Abridged version
+
+
+====================
+It works by delegating user authentication to the service that hosts the user account, and authorizing third-party applications to access the user account. 
+OAuth 2 provides authorization flows for web and desktop applications, and mobile devices.
+
+
+====================
+Roles
+
+    OAuth defines four roles:
+
+    Resource Owner - User who authorizes an application to access their account. 
+        App access to user's account is limited to the "scope" of authorization granted.
+
+    Client - App that wants to access the user account.
+
+    Resource Server - Hosts the protected user accounts
+
+    Authorization Server - Verifies identity of the user, then issues access tokens to the app.
+
+
+====================
+Protocol flow
+    1. The application requests authorization to access service resources from the user
+
+    2. If the user authorized the request, the application receives an authorization grant
+
+    3. The application requests an access token from the authorization server (API) by presenting authentication of its own identity, and the authorization grant
+   
+    4. If the application identity is authenticated and the authorization grant is valid, the authorization server (API) issues an access token to the application. Authorization is complete.
+   
+    5. The application requests the resource from the resource server (API) and presents the access token for authentication
+    
+    6. If the access token is valid, the resource server (API) serves the resource to the application
+
+
+===================
+App Registration
+
+Before using OAuth with your application, you must register your application with the service. 
+This is done through a registration form in the “developer” or “API” portion of the service’s website, where you will provide the following information (and probably details about your application)
+
+The redirect URI is where the service will redirect the user after they authorize (or deny) your application, and therefore the part of your application that will handle authorization codes or access tokens.
+
+
+===================
+Client ID and Client Secret
+
+nce your application is registered, the service will issue “client credentials” in the form of a client identifier and a client secret. 
+
+    Client ID - publicly exposed string that is used by the service API to identify the application, and is also used to build authorization URLs that are presented to users.
+
+    Client Secret - used to authenticate the identity of the application to the service API when the application requests to access a user’s account, and must be kept private between the application and the API.
+
+
+===================
+Authorization Grant
+
+In the Abstract Protocol Flow above, the first four steps cover obtaining an authorization grant and access token. 
+The authorization grant type depends on the method used by the application to request authorization, and the grant types supported by the API. 
+OAuth 2 defines four grant types, each of which is useful in different cases:
+
+    Authorization Code: used with server-side Applications.
+        The most commonly used because it is optimized for server-side applications, where source code is not publicly exposed, and Client Secret confidentiality can be maintained
+    
+    Implicit: used with Mobile Apps or Web Applications (applications that run on the user’s device)
+    
+    Resource Owner Password Credentials: used with trusted Applications, such as those owned by the service itself
+    
+    Client Credentials: used with Applications API access
+
