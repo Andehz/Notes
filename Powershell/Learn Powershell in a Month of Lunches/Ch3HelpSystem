@@ -123,3 +123,8 @@ Cmdlets named via singular nouns, not plural.
 Useful commands:
 
 Get-Content: read in data from another source.
+
+------------------------------
+Full Help
+
+-Full switch gives all help info for a command.
