@@ -1,0 +1,70 @@
+Public Cloud Model
+---------------------------------------
+
+Multi-tenant implementation. Multiple customers are sharing storage and servers on the same machine.
+Owned and operated by service provider. Bound by multi-tenant data management policies.
+Similar self-service and automation as private cloud.
+
+Pros:
+    No upfront capex
+    No maintenance
+    high reliability
+    easy scalability
+
+Cons:
+    less customizable
+    potential latency
+    potential governance issues. Some industries have more restrictions than others.
+
+Much cheaper for Microsoft to put multiple customers on one servers
+
+
+
+Private Cloud Model
+---------------------------------------
+
+Private cloud consists of computing resources used exclusively by one business or organization.
+Single tenant implementation. Owned and operated by IT org. Define your own data management policies.
+Self-service and automation capabilities provide new agility.
+
+Pros:
+    Fully customizable
+    Higher level of security
+    Better performance
+
+Cons
+    Higher upfront capex
+    Risk under-utilization of resources
+    Higher ongoing costs
+    More maintenance
+
+
+
+Hybrid Cloud Model
+---------------------------------------
+
+Combination for private & one or more public clouds.  Allows IT organizations to become brokers for services. 
+On-prem + Azure combo is considered a hybrid cloud.
+
+Pros:
+    Greater flexibility
+    Resilience to outages
+    No capacity ceiling
+    Manageable security
+
+Cons:
+    High up-front capex
+    Risk under-utilization of resources
+    Higher ongoing costs
+    More maintenance
+    Risk of less compatibility
+
+
+
+Comparing and Contrasting the Three Cloud Models
+---------------------------------------
+
+Public - When you don't need much customization and don't need as much governance
+
+Hybrid - When you're transitioning to cloud or need more security than public
+
