@@ -1,0 +1,49 @@
+High Availability, Fault Tolerance, and Disaster Recovery
+---------------------------------------
+
+High availability - Maintaining acceptable continuous performance despite temporary load fluctuations or failures in services, hardware, or data centers
+    Achieved by:
+        - Data center redundancies - Power, Cooling, Networking, etc.
+
+        - Availability zone redundancies - 1+ data centers
+
+        - Region redundancies - Multiple availability zones
+
+
+Fault Tolerance - System's ability to continue operating properly when one or more of its components fails.
+    Can be done proactively or reactively:
+        Proactive:
+            - Regular backups
+            - Deploy to multiple availability zones/regions
+            - Loan balance across multiple zones/regions
+            - Monitoring
+
+        Reactive:
+            - Restore data/apps/resources to different zones/regions
+            - Deploy to different zones/regions if one goes down
+
+Disaster Recovery - System's ability to back up and restore data/apps/resources when needed.
+    Azure can restore in multiple different ways:
+        - On-prem to On-prem with Azure being a middleman
+        - On-prem to Azure
+        - Other cloud to Azure
+        - Azure to Azure
+
+
+Scalability and Elasticity
+---------------------------------------
+
+Scalability - Ability to increase the size/instance count of existing resources
+    Scaling Out - Increase instance count of resources. Non-disruptive
+    Scaling Up - Increase instance size of existing resources. Disruptive
+
+
+Elasticity - Abiity to increase/decrease instance count/size of existing resources based on traffic fluctuations, load, or resource workload.
+    - Ability to scale in both directions. In + Out, Up + down
+    - Can be manual or auto.
+    - Pay for only what you use.
+    - Based on changes in load or workload.
+
+
+Business Agility
+---------------------------------------
