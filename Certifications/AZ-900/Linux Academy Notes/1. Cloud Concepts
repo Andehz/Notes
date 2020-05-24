@@ -30,6 +30,7 @@ Disaster Recovery - System's ability to back up and restore data/apps/resources 
         - Azure to Azure
 
 
+
 Scalability and Elasticity
 ---------------------------------------
 
@@ -45,5 +46,51 @@ Elasticity - Abiity to increase/decrease instance count/size of existing resourc
     - Based on changes in load or workload.
 
 
+
 Business Agility
 ---------------------------------------
+An organization's ability to rapidly adapt to market and 
+environmental changes in productive and 
+cost-effective ways while 
+taking advantage of available resources to meet customer demands
+
+    Time to Value - Get new products to market ASAP with shorter feedback cycles. Faster return on investment
+    Innovation - Always look for better way of doing things using newer and better tech
+    Low latency - Sooner a decision can be acted upon, sooner business knows whether decision was right and what else needs to be done.
+   
+    Economic effectiveness - Cost-effective processes and use of resources
+    Rapid adaptation - Continually monitoring and adapting to changing market conditions
+    Flexibility - Move quickly to take advantage of new opportunities
+
+
+
+Economies of scale
+---------------------------------------
+
+The more you buy, the less it costs. Microsoft has more buying power than smaller companies, so companies can take advantage of this through Azure than doing it themselves.
+
+
+
+CapEx and OpEx
+---------------------------------------
+
+CapEx - Up-front investment. Creates benefits over a long period of time. Usually non-recurring and related to perchase of permanent assets.
+
+OpEx - No up-front investment. Creates immediate benefits, recurring cost of doing business. Not usually related to purchase of permanent assets.
+
+Azure shifts infrastructure from a CapEx model to an OpEx one.
+
+
+
+Consumptionb-Based Model
+---------------------------------------
+
+"Pay as you go" - This is Azure's purchase model. Only purchase the resources that you need, when you need it.
+
+With on-prem, you may experience significant lag time before you can meet customer demand in order to provision new servers.
+This can mean customer dissatisfaction during this time while servers are being purchased and set up.
+
+Azure can prevent this by always being available to meet demand.
+
+Only pay what you use in Azure, instead of spikes and pits that on-prem may have.
+
