@@ -1,3 +1,79 @@
 IaaS - Infrastructure as a Service
 ---------------------------------------
 
+VMs, VNETs.
+
+On-Prem, you must manage everything.
+
+Iaas - Microsoft will manage Networking, Storage, servers, virtualization. You'll only have to manage OS, middleware, runtime, data, and apps.
+This is the most control you can have in Azure over your resources. Microsoft handles the infrastructure. You handle the software part.
+
+Pros:
+    Total control over a good portion of resources.
+    No up-front costs.
+    No physical infrastructure to manage.
+    Easy way to transition, manage, and scaling options.
+
+Cons:
+    More management and administration.
+    More staff
+    Higher cost
+
+Pretty convenenient way to manage, and already how a lot of organizations run anyway.
+
+
+
+PaaS - Platform as a Service
+---------------------------------------
+
+Microsoft will manage everything up to Runtime. You'll only need to manage data and applications.
+
+Azure Storage, Azure Search, Azure Sql, Azure app service are PaaS models. For example, you wouldn't even need to know how to config IIS with PaaS models in Azure.
+
+Pros:
+    Less management and administration
+    No up-front costs, pay as you go.
+    No OS/Middleware to manage
+    Easier to replicate environments
+    Easy scaling
+    Quicker development and deployment
+
+Cons:
+    Less control over resources
+    Data is stored off-site, must consider security and compliance.
+
+
+
+SaaS - Software as a Service
+---------------------------------------
+
+Microsoft will manage everything. This includes the application as well. For a monthly fee, you can consume the software.
+Not many SaaS options in Azure.
+
+
+Pros:
+    No management and administration
+    No up-front costs.
+    No physical infra to manage
+    Fast setup
+    Anyone can use infrastructure
+
+Cons:
+    Much less customizable.
+    No constrol over software or infrastructure
+    Integration with other software may be difficult
+    Vendor may have access to customer data. (Consider your compliance needs.)
+
+
+
+Compare and Contrast
+---------------------------------------
+
+Each service delegates a certain amount of resources to Microsoft for them to manage. On-prem is the opposite of the mentioned three where you must manage everything in the stack.
+
+IaaS - Most generic approach, and most customizable. Consider management and administration costs.
+PaaS - For more generic boilerplate applications, like web servers and web apps. Everything should be built with the cloud in mind, aka cloud-native.
+SaaS - Don't need to set anything up. Great when management and control isn't needed very much. Email, Facebook, Google Docs, etc. All SaaS models.
+    Least used model as there aren't as many offerings.
+
+Comes down to how much you want or need.
