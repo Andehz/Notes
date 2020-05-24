@@ -1,0 +1,72 @@
+Regions
+---------------------------------------
+
+Regions - Group of multiple azure data centers. Within a certain distance of each other, latency defined.
+
+Multi-region deployment - deploy to multiple regions.
+
+    Active/passive - Fail over to another region instantly if another region goes bad. Comes at a higher cost though.
+    Should be transparent to end user. Best when all users are in the same region.
+
+    Active/active - Distribute traffic/load across regions. Resilience to outages in entire regions.
+    Best when users are in different regions.
+
+
+
+Availability Zones
+---------------------------------------
+
+Unique area of physical locations made up of one or more data centers
+Allow for high-availability by protecting your apps and data from data center failures.
+Some Azure services can be deployed to two or more availability zones within an Azure region.
+
+Always 2+ availability zones within a region.
+
+Deploy to multiple availability zones to prevent localised disasters from crippling operations.
+
+
+
+Resource Groups
+---------------------------------------
+
+Container of related Azure services grouped together. Administrative group created by users.
+
+All resources in the group should share the same lifecycle, deployed, updated, and deleted together.
+
+Resources can exist in only one resource group.
+
+Resource roup can contain resources that are located in different regions.
+
+Resource group can be used to scope access control for admin actions.
+
+Resource can interact with resources in other resource groups. Just for managing resource lifecycle.
+
+
+
+Azure Resource Center (ARM)
+---------------------------------------
+
+Deployment and Management services. Provides consistent management layer that enables you to create, update, and delete resources, including templates.
+Single pane of glass for management of Azure.
+
+Can use its access control, auditing, and tagging features to gain better insight into your organization and resource usage after deployment.
+
+Repeatedly deploy solution throughout development lifecycle and have confidence resources are deployed in a consistent state.
+
+Can even set up dependencies so they're deployed in correct order through declarative templates. templates in JSON.
+
+Resource manager is the single central API to manage Azure resources. Everything goes through ARM.
+
+
+
+Azure Usage and Benefits
+---------------------------------------
+
+Availability Zones - Allow for high availability by protecting your app and data from data center failures
+
+Regions - Deploying your apps/systems to multiple regions allows for high availability and resiliency to region-wide outages.
+
+Resource groups - Containers of related Azure services grouped together for administrative and access control actions
+
+ARM - single, centralized deployment and management service that enables you to create, update, and delete resources in your Azure sub.
+
