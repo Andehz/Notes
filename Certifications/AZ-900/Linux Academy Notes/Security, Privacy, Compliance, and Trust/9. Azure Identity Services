@@ -1,0 +1,39 @@
+Authentication and Authorization
+---------------------------------------
+
+Authentication - Who are you. AuthN
+
+Authorization - What you can do. AuthZ
+Claims used in Azure AD security tokens. Piece of text that tells you what kind of access they have, and other info about the session. Very customizable.
+Web App can use a claim to determine what kind of access to give a user.
+
+Many different ways to handle these in Azure.
+
+
+
+MFA
+---------------------------------------
+
+Requires two or more of the following authn methods:
+    - Something you know (typically a p/w)
+    - Something you have (A trusted device that's not easily duplicated, like a phone)
+    - Something you are (biometrics)
+
+Step up from regular authentication. Use two or more different means to authn a user.
+
+Make it harder for an attacker to compromise your identity.
+
+Give ourselves additional security online.
+
+
+
+Azure Active Directory (AAD)
+---------------------------------------
+
+Comprehensive, highly available identity and access management cloud solution
+Fully managed identity service. Main objects are user (pay per user) and groups (free)
+Users are assigned a license based on which edition of Azure AD they should have.
+Groups can be assigned multiple licenses, which are inherited by all Users in the Group
+
+Use Azure AD Sync to sync Azure AD and on-prem AD.
+
