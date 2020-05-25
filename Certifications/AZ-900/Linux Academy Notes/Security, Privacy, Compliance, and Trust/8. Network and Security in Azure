@@ -1,0 +1,56 @@
+Azure Firewall
+---------------------------------------
+
+Managed, cloud-based network security service that protects your Azure VN resources.
+Centrally create, enforce, and log app and network connectivity policies across subs and VNs.
+Fully integrated with monitor for logging and analytics.
+
+Spoke Net (From hub and spoke network topologies)
+
+All traffic is denied by default.
+
+Can also filter on-prem  traffic to Azure as well.
+
+High availability is built in, so no additional load balancers are requred and nothing to config.
+
+Threat intelligence - uses machine learning and analytics to automatically deny traffic to and from known malicious IPs and domains.
+
+
+
+Network Security Groups (NSGs)
+---------------------------------------
+
+Enforce and control network traffic rules at the networking level.
+Security rules allow or deny inbound or outbound network to and from several types of Azure resources.
+Each rule, can specify source, destination, port, and protocol.
+
+Collection of a set of rules is an NSG. Specify Name, region, etc.
+
+Rules are evaluated as traffic comes in to Azure.
+
+Priority can be set as well to evaluate which rules run first. 1 is first, anything higher than that comes after.
+
+NSGs and firewalls don't encrypt your traffic.
+
+
+
+Azure DDoS Protection
+---------------------------------------
+
+Two types of Azure DDoS Protection   
+    Basic 
+    Standard
+
+
+
+Choosing an Azure Security Solution
+---------------------------------------
+
+Isolation - Use different VNs, subnets, to segment your network or isolate your resources when required.
+
+Principle of Least Privilege - Limit each user's access rights to bare minimum permissions they need to perform their work.
+
+User NSGs for Bare Minimum Network Connectivity - use NSGs to enforce rules allowing only the min network access needed.
+
+Use Azure Firewall and Azure DDoS Protection - Use Azure Firewall and Azure DDoS Protection to protect your resources and prevent large unanticipated costs.
+
