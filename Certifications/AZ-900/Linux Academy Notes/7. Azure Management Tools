@@ -1,0 +1,23 @@
+The Azure CLI, Azure Powershell, and the Azure Portal
+---------------------------------------
+
+Azure CLI - Command line experience for managing Azure resources. You can use it in browser Azure Cloud Shell.
+Runs Bash or PowerShell.
+Can install this as well.
+
+Azure PowerShell - Set of PoSh cmdlets for managing Azure resources.
+You can use it in browser with Azure Cloud Shell.
+Uses .NET standard. Available in all major OS.
+
+Azure Portal - Build, manage, and monitor every Azure resource in a single, unified console.
+Browse active resources, modify settings, provision new resources, and view basic monitoring data from all your Azure products and services.
+
+
+
+Azure Advisor
+---------------------------------------
+
+Personalized cloud consultant that helps you follow best practices to optimize Azure deployments.
+Analyzes resource config and usage telemetry.
+Recommends solutions to help improve cost effectiveness, performance, security, and availability of your resources.
+
