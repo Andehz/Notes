@@ -17,3 +17,66 @@ Azure IoT Hub:
 
     This is the behind-the-scenes solution IoT Central uses.
 
+
+
+Big Data and Analytics: Azure SQL Data Warehouse, HDInsight, and Data Lake Analytics
+---------------------------------------
+
+Storing data to later use to review for the busienss in the future in some manner.
+
+Azure SQL Data Warehouse - Cloud-based enterprise data warehouse. EDW
+
+Azure HDInsight - Open-source framework for distributed processing and analysis of Big Data sets on clusters.
+Process massive amounts of data.
+
+Azure Data Lake - On-demand analytics job service. Process data on demand, pay only per job.
+
+
+Everything generates data, and we want to save it for future analytics in some way. 
+Store results of analytics into a data warehouse to reference later.
+
+
+Artificial Intelligence (AI): Azure Machine Learning Service and Machine Learning Studio
+---------------------------------------
+
+Machine Learning - data science technique that allows computers to use existing data to forecast future behaviors, outcomes, and trends.
+Computers learn without being explicitly programmed to do it. Programs use pattern recognition to perform predictive behaviors.
+
+
+Azure Machine Learning Services - Provides a cloud-based environment you can use to prep data and train, test, deploy, manage, and track machine learning models.
+Python environment, if you want more control over your machine learning algorthims, or use open-source machine learning libraries.
+
+Azure Machine Learning Studio - Collaborative drag-and-drop visual workspace version.
+Uses prebuilt and preconfigured machine learning algorithms and data handling modules.
+Use this if you want pre-built solutions and the built-in algorithms are sufficient for you.
+
+
+
+Serverless Computing: Azure Functions, Logic Apps, and Event Grid
+---------------------------------------
+
+Don't need to worry about any underlying infrastructure to deploy and run code. Only charged for compute time.
+Much less administration and management.
+
+
+Azure Functions - Configure your code to load and run only when triggered. More for single, simple tasks.
+Can be triggered with HTTP requests, dasta from other Azure services, etc.
+Can return data or call other Azure services.
+
+Azure Logic Apps - visual designer for automating and orchestrating tasks, processes, and workflows. More for full-on workflows.
+100+ Azure and 3rd party services.
+For integrating apps/data/systems for B2B integrations.
+
+Azure Event Grid - fully managed event routing service.
+Greatly simplifies the development of event-based apps and serverless workflows.
+Handles all event routing from any source, to any destination for any app.
+
+
+Benefits of Azure Solutions
+---------------------------------------
+
+Use pre-built or pre-packages solutions reduces costs and shortens the time it takes to set up, configure, and deploy your apps.
+Lower skill level needed to set up and administer solutions. Hire general practitioners rather than needed SMEs.
+Spend more time focusing on your business and apps, not connecting various Azure services together.
+
+Designed to be very scalable, manage resources simply, faster time to market, lower costs overall.
