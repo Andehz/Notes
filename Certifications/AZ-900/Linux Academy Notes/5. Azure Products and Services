@@ -1,0 +1,47 @@
+Compute: Azure Virtual Machines, Virtual Machine Scale Sets, App Service, and Functions
+---------------------------------------
+
+VMs - On-demand scalable computing resource.
+Choose CPU/RAM ou need. Most control over server.
+
+VM Scale Sets - Auto-scalig pool of VMs. Centrally manage, config, and update a large number of them.
+
+App service - On-demand, autoscaling, web/mobile/api app hosting. Linux and Windows platforms. Don't need to manage infrastructure.
+
+Serverless - Event-driven, serverless compute resources. Auto-scale on demand. Pay only for what you consume.
+Closest to true pay for what you consume. Least amount of control.
+
+
+
+Networking: Azure Virtual Network, Load Balancer, VPN Gateway, Application Gateway, and Content Delivery Network
+---------------------------------------
+
+Azure Virtual Network - A network within Azure, that can securely talk to its own group of resources, not other organizations' resources.
+Let you isolate networks based on needed security.
+
+Azure VPN Gateway - Used to send encrypted traffic between an Azure virtual network and an on-prem location over public internet or between Azure virtual networks overs Microsoft network
+
+Azure load balancer - balance incoming internet traffic to your VMs
+
+Azure app gateway - web traffic load balancer that's even more customizable than Azure LBs
+More fine-tuned load balancer.
+
+Azure CDN - Efficiently delivers web content from locations that are close to end users to minimize latency.
+Minimize load times and latency for static content.
+
+
+Azure Blob Storage, Files, and Archive Storage
+---------------------------------------
+
+IaaS:
+    Disks - usually VHDs. Premium options have SSD options.
+    Files - Full scale file system to manage files. Can also store VHDs as well. Supports SMB, and rest api.
+
+PaaS:
+    Blobs - Object store. Can store basically any kind of data. Usually used to store unstructured data, like JSON. Can't really query data. Pull data based on endpoint ID.
+    Tables - NoSQL database. More closely resembles a database than blobs. Massive autoscalin capabilities. Can support Petabytes of data.
+    Queues - FIFO messages stored there. First one saved, first one processed. Takes data in, processes it when you're ready.
+
+Hot Tier - Highest cost, but fastest access for data.
+Cold Tier - Less than hot, speed decreases, but cheaper than hot tier.
+Archive tier - substantially lower price point. Can take up to four hours to get data back for. Cheapest.
