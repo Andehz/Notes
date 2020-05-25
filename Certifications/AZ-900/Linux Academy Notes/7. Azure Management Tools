@@ -21,3 +21,9 @@ Personalized cloud consultant that helps you follow best practices to optimize A
 Analyzes resource config and usage telemetry.
 Recommends solutions to help improve cost effectiveness, performance, security, and availability of your resources.
 
+Recommendations divided into four categories:
+    High availability
+    Security
+    Performance
+    Cost
+
