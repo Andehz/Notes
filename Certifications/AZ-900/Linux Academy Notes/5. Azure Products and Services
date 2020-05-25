@@ -45,3 +45,34 @@ PaaS:
 Hot Tier - Highest cost, but fastest access for data.
 Cold Tier - Less than hot, speed decreases, but cheaper than hot tier.
 Archive tier - substantially lower price point. Can take up to four hours to get data back for. Cheapest.
+
+
+
+Databases: Azure CosmosDB, SQL Database, Database Migration Service, and SQL Data Warehouse
+---------------------------------------
+
+Azure Cosmos DB - Newest offering in Azure as of LA video. NoSQL database. Globally distributed, multi-model.
+Auto-scalable across multiple regions. Supports multiple APIs, including SQL, MongoDB, etc. Write queries in those languages, Cosmos is OK with it.
+Analytics via Apachi Spark. 
+
+Azure SQL Database - Can come in IaaS or PaaS option.
+    IaaS - Install SQL on an Azure VM. Pay as you go.
+    PaaS - Fully managed engine by Microsoft. Available as single database, elastic pool, managed instances.
+
+Azure SQL Data Warehouse - Cloud-based enterprise data warehouse. Made for storing large amount of data.
+Leverages massively parallel processing (MPP) to quickly run complex queries across petabytes of data. Key component of a big data solution.
+Data warehouse stores the results of analytics and reporting in a massive store of data so you can reference it in the future.
+
+Azure Database Migration Service - Enables seamless migrations from multiple database sources to Azure data platforms with minimal downtime.
+    Offline migration - Application downtime starts when the migration starts
+    Online migration - Downtime is limited to the time to cut over at the end of the migration.
+
+
+
+Azure Marketplace
+---------------------------------------
+
+An online apps and services marketplace with over 8,000 listings. Like the app store for Azure.
+Made by Microsoft and Microsoft partners.
+
+Can have offerins like VMs, SaaS applications, solutions templates, and Azure Managed Apps.

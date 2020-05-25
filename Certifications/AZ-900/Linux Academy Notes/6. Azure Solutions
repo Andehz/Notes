@@ -1,0 +1,19 @@
+Internet of Things (IoT): Azure IoT Hub and IoT Central
+---------------------------------------
+
+IoT solution is made of 1+ IoT devices and 1+ back-end services running in cloud that communicate with each other.
+Usually have sensors and connect to the net.
+
+Azure IoT Central:
+    - Fully managed SaaS solution
+    - Easily connect, monitor, and manage your IoT devices/assets at scale.
+    - Collaborative, drag-n-drop visual workspace where you can build, test, and deploy IoT solutions without needing to write code.
+
+    Preconfigured solutions for common IoT scenarios.
+
+Azure IoT Hub:
+    - Core Azure PaaS messaging service used by Azure IoT Central.
+    - Enables reliable and secure bidirectional communications between millions of IoT devices and cloud solution
+
+    This is the behind-the-scenes solution IoT Central uses.
+
