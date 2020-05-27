@@ -1,0 +1,21 @@
+Security in Azure
+---------------------------------------
+
+Secure foundation - Security in data centers. Integrated security controls in Azure hardware and firmware components,m protection against threats such as DDoS
+
+Simplify security with built-in Services - Easily manage identity and access control along with other aspects of your infrastructure.
+
+Detect threats early with unique intelligence - identify new threats and respond quickly with services that are informed by real-time intel.
+
+
+
+Azure Security Center
+---------------------------------------
+
+Protects Azure and non-Azure servers and VMs when the monitoring agent is installed.
+
+Events collected from Azure and the agents are sent to security analytics engine, provides threat detection alerts and tailored recommendations for securing workloads.
+
+Azure PaaS services - automatically monitored and protected by Azure security center. Includes SQL databases.
+
+Can check for policy and compliance as well.
