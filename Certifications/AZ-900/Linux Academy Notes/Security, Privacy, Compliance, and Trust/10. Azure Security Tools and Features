@@ -19,3 +19,19 @@ Events collected from Azure and the agents are sent to security analytics engine
 Azure PaaS services - automatically monitored and protected by Azure security center. Includes SQL databases.
 
 Can check for policy and compliance as well.
+
+
+
+Azure Key Vault
+---------------------------------------
+
+Encrypt and safeguard secrets. Data protected by hardware security modules (HSMs)
+
+Control access to keys using AAD
+
+Grant access to indivudal users or to apps and systems
+
+
+
+Azure Information Protection (AIP)
+---------------------------------------
