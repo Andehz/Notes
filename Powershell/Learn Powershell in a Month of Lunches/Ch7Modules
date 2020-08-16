@@ -1,6 +1,6 @@
 Adding commands
 
-All about extensibility. Yo. Like MMC but for scripting. Product-specific shell shortcuts are still the same powershell. Not limited to a single product!
+All about extensibility. Yo. Like MMC but for scripting. Product-specific shell shortcuts are still the same Powershell. Not limited to a single product!
 
 Snapins are like modules, but require DLLs. Microsoft moving away from them.
 Modular management tools. One shell can open multiple.
@@ -41,7 +41,7 @@ PowerShell modules with same cmdlet names have the last loaded cmdlet run. To sp
 
 Microsoft recommends adding a produect-specific prefix, like AD or SQL to the noun of each command to prevent these kinds of conflicts.
 
-Remove-pssnapin or remove modulke - unloads an extension.
+Remove-pssnapin or remove-module - unloads an extension.
 
 -----------------------
 Export-Console [-Path] : Export PoSh console with snapins so you don't need to manually load them all again next time.

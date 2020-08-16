@@ -15,7 +15,9 @@ Diff is an alias for compare-object. Designed to take two sets of info and compa
 
 Get-Service | ConvertTo-HTML | Out-File services.html
 
-> is basically piped out-file cmdlet under the hood.
+> is basically piped out-file cmdlet under the hood. eg.; dir | Out-file DirectoryList.txt.
+
+Out-Default - Default output type PoSh uses when an Out- cmdlet isn't specified. eg.; running dir is the same as running dir | Out-Default
 
 Out-gridview - fancy UI output. Needs PoSH ISE and .NET framework v3.5
 
@@ -24,9 +26,12 @@ ConvertTo- commands don't save, only output in their respective formats. Keep th
 ----------------------------------------
 6.5 Using cmdlets that modify the System
 
-Cmdlets that modify the system in some way have a preset impact level by PoSh devs. These levels can't be changed.
+Cmdlets that modify the system in some way have a preset impact level mandated by PoSh devs. These levels can't be changed.
 
 $confirmpreference - cmdlets that are at this impact level will prompt a confirmation message when running in PoSh.
 Use -confirm switch to automatically ok prompt.
 
-get-content only reads in text file and PoSH doesn't try to parse or interpret data in any way.
+get-content only reads in text file and PoSH doesn't try to parse or interpret data in any way. 
+    Note the noticeable formatting differences between import-csv and get-content
+
+Import commands pays attention to formatting in PoSh.
