@@ -48,7 +48,7 @@ NOTE: Aliases cannot come bundled with parameters, only the cmdlet itself.
 
 Parameters can also have aliases, but they can be hard to find. Use the following example to see how to find aliases for parameters:
 
-PS C:\> (get-command get-eventlog | select -ExpandProperty parameters) .computername.aliases
+PS C:\> (get-command get-eventlog | select -ExpandProperty parameters).computername.aliases
 
 
 Show-Command: Delivers a graphical UI to help show available parameters for a particular command.
@@ -59,4 +59,4 @@ PowerShell can also execute Cmd.exe-native commands as well, like ping. It'll ex
 & - Invocation character to get PowerShell to run an external command more cleanly. Sometimes the native PowerShell parser just doesn't cut it.
 
 --% - Powershell won't even try to parse command, will just pass the command off to cmd.exe
-  ex.; C:\windows\system32\sc.exe --% qc $n
+  ex.; C:\windows\system32\sc.exe --% qc bits

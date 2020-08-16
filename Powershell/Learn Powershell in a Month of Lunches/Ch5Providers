@@ -2,7 +2,7 @@ Working with Providers
 
 PSProvider is an adapter. Designed to take some kind of data storage and make it look like a disk drive.
 
-Capabilities - Describes how a provvider may be used
+Capabilities - Describes how a provider may be used
   ShouldProcess - Provider supports the use of -Whatif and -Confirm parameters. Allows you to "test" before a commit.
   Filter - Supports -Filter parameter on cmdlets that manipulate providers' content.
   Credentials - Provider permits you to specify alternate credentials when connecting to data stores.
@@ -27,7 +27,7 @@ Windows filesystem is organized around three object types: drives, folders, and 
   Files -  Not a container, more of an endpoint object.
 
 
-Files and folders in Powershell are referred to as items.
+Files and folders in Powershell are referred to as items as providers can be mapped to things other than a filesystem.
 
 
 Items can have properties.
@@ -43,6 +43,7 @@ Environment psprovider doesn't support item properties. There are a few psprovid
 set-location - Change the shell's current location to a different container-type item, like a folder.
 
 Remember that while many data stores have some broad similarities, once you drill down into details they're wildly different. Note this.
+Think about what kind of access and abilities each provider will give you.
 
 -------------------------------------------
 Using wildcards and literal paths
