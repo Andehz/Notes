@@ -1,0 +1,20 @@
+https://docs.microsoft.com/en-us/mem/intune/fundamentals/high-level-architecture
+
+Intune handles MDM and MAM
+    MDM - Mobile Device Management - Enforce configs and settings.
+    MAM - Mobile Application Management - Applications coded to work with Intune
+
+Integrates with O365, AAD, AIP
+
+Can be configured as:
+    100% intune
+    Co-managed with Config manager
+
+Microsoft Endpoint Manager - Co-management between SCCM and Intune
+    Decide which solution is responsible for which activity.
+
+Intune licenses bundled with a lot of other Enterprise-type licenses.
+Can also do a standalone sub.
+Can also do device only sub. For IOT type devices
+
+License may let you use SCCM as well.

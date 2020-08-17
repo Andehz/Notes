@@ -35,3 +35,22 @@ Grant access to indivudal users or to apps and systems
 
 Azure Information Protection (AIP)
 ---------------------------------------
+
+Works on documents and emails and works to classify and protects them.
+
+Manually or automatically classify sensitive data using 80+ data types.
+
+Enforce policies on classified data., like require numbers to be encrypted.
+
+Can be retroactively appled to existing docuements and emails
+
+
+
+Azure Information Protection (AIP)
+---------------------------------------
+
+Built-in threat detection using data from Azure AD to detect advanced threats, compromised identities, and malicious insider actions.
+
+Can monitor and establish user behaviors as well.
+
+Bubbles up security recommendations and events.
