@@ -44,3 +44,11 @@ Select-Object - Accepts objects from the pipeline, and you can specify the prope
 Select-Object creates a new kind of custom object called a PSObject when modifying an object. It can't just remove objects from a cmdlet with a specific object type. Otherwise it wouldn't be that object type anymore.
 
 Once a PSObject object has been created, any further usage of that object is now under rules of PSObject, not the original piped object.
+
+Sort-object lets you sort objects based on a property with -property.
+
+-----------------------------------------------------
+
+Use get-member on any process that produces results.
+
+When piping objects, pay attention to the object type as well.
