@@ -1,0 +1,61 @@
+WMI - Windows Management Instrumentation
+
+About WMI
+
+--------------------
+WMI is organzied into namespaces, which is a sort of folder that ties to a specific product or tech.
+    ex.; root\CIMv2 namespace contains all of the Windows OS and pc hardware info.
+
+Class - represents a management component that WMI knows how to query.
+
+Can show some of the WMI namespaces by using the WMI Control snap-in from MMC.
+
+Just because a namespace exists in WMI, doesn't mean there's actually any info in it. Some there by default.
+
+Every WMI component means you'll have an equivalent number of instances of WMI to manage each piece on the pc.
+
+All instances and classes live in the WMI repository. Sometimes repo could be corrupted and would need to be rebuilt.
+Less common in newer versions of Windows.
+
+Not a lot of standardization with WMI between product groups. IIS team implemented parallel classes. One class that's read-only, another that was writable. Confusing
+Not much good documentation on the4se classes. Not originally for wide-spread adoption outside of team.
+Since IIS 7.5, they've moved to PowerShell cmdlets and PSProvider
+
+No rules stating a product must use WMI. Not everything has WMI.
+
+WMI not searchable.
+
+Use a WMI explorer tool to play around with WMI and see what pc has. Tools come and go like the seasons though.
+
+CIM_ classes are often bases classes and you don't use them directly. Win32_ versions are Windows-specific.
+
+
+Choose your weapon: WMI or CIM
+---------------------------------------
+
+Get-WMIobject and Invoke-Wmimethod are legacy cmdlets. Uses RPC. Can pass through firewalls only if the firewall supports stateful inspection.
+
+Get-CimInstance and Invoke-CimMethod - Newer, much more supported cmdlets. Runs over WS-MAN, or WinRM.
+
+These all use WMI in the backend though. From 2012 R2 and on, the old WMI cmdlets are disabled by default.
+CIM cmdlets can also connect using RPC or DCOM protocols if necessary.
+
+
+
+Using Get-WMIObject
+-----------------------------------
+
+-filter parameter lets you specify criteria for retrieving specific instances.
+
+Must use double quotation marks for filters.
+
+Also uses traditional programming operators for comparisons.
+
+Must add % for comparison values with LIKE
+
+String comparison values are enclosed in single quotation marks
+
+
+
+Using Get-CimInstance
+-----------------------------------
