@@ -1,0 +1,77 @@
+Keeping the Shell Secure
+
+Each product team is required to have a security buddy (security software expert) during meetings.
+PowerShell was created after the Trustworthy Computing Initiative
+
+Windows PowerShell Security Goals
+---------------------------------------
+
+PowerShell doesn't apply any additional layers of permissions on anything it touches.
+Only enables to do only what you already have permission to do.
+AKA.; another means of exercising permissions you already have.
+
+PowerShell cannot bypass any existing permissions. Users cannot run scripts that they don't have permission to run.
+
+Most of PowerShells security is designed to stop a user from unintentionally running a script.
+
+PowerShell can't defend against malware. Not a second line of defense.
+
+
+Execution Policy and Code Signing
+---------------------------------------
+
+First security measure is that PowerShell includes an execution policy
+
+    Execution policy - machine-wide setting governs the types of scripts PoSh will execute.
+
+Default setting is Restricted - Prevents scripts from being executed at all.
+
+Set-ExecutionPolicy - Command that changes the HKEY_LOCAL_MACHINE policy setting. Must be run by admin.
+
+Can also set via GPO.
+
+Can manally override local and GPO by executing powershell with -ExecutionPolicy parameter
+
+ExecutionPolicy Parameters:
+    Restricted - Default setting. Scripts not executed other than a few Microsoft-supplied ones.
+    AllSigned - Execute any script that has been digitally signed using a code-signing cert issued by a trusted CA.
+    RemoteSigned - Execute any local script, and execute remote scripts if they've been digitally signed by a trusted CA.
+        Remote scripts = scripts that are on a remote pc and are accessed via UNC. Internet scripts also remote.
+
+Microsoft recommends that RemoteSigned is used.
+
+
+
+Execution Policy and Code Signing
+---------------------------------------
+
+Code signing - process of applying cryptographic signature to a text file.
+
+Signature contains the identity of company/org that signed the script. Also includes encrypted copy of script.
+
+Digital code-signed certs are known as class 3 certs. Available from commercial CAs, or company PKI.
+
+Issued to companies/orgs, not to individuals.
+
+Trust is configured in Windows Internet Properties control panel, or in GPO.
+
+Once cert is obtained (authenticode cert), install it on pc.
+
+Use Set-AuthenticodeSignature to apply a digital sig to script.
+
+When a PoSh script runs, uses author's pub key to decrypt sig. If decrypt fails, it was tampered with.
+
+
+
+Other Security Measures
+---------------------------------------
+
+.ps1 extension not an executable file type. 
+
+Cannot scripts from within shell based on name alone. Must be absolute or relative path.
+
+
+Security Recommendations
+---------------------------------------
+
+Run Makecert.exe to create certs trusted by your local pc only.
