@@ -1,0 +1,50 @@
+Input and Output
+
+
+Prompting for, and displaying, information
+---------------------------------------------------
+
+console host - command-line console you see when running powershell.exe
+
+You interact with the hosting application, and it passes your commands through to the engine.
+
+
+Write-Host
+---------------------------------------------------
+
+Read-Host - cmdlet designed to display tempt prompt and then collect text input from user.
+
+Use Write-Verbose to output status messages and general messaging to user over Write-Host.
+Must manually enable Write-Verbose to console in order to see any output.
+    $VerbosePreference = "Continue" - Enables Write-Verbose
+    $Verbose-Preference = "SilentlyContinue" - Surpress output.
+
+
+Write-Host output can't be captured. If a script is run remotely or unnattended, this could be an issue.
+
+Write-host bypasses pipeline and writes directly to the hosting applications display.
+
+
+Write-Output
+---------------------------------------------------
+
+Write-Output can send objects into the pipeline. Shell's default cmdlet.
+
+
+Other Ways to Write
+---------------------------------------------------
+
+These other cmdlets work like write-host, don't put anything into pipeline and output directly.
+
+    Write-Warning - Displays warning text, in yellow by default.
+        $WarningPreference = Set to Continue by default.
+    
+    Write-Verbose - Displays additional informative text, yellow by default.
+        $VerbosePreference - Set to SilentlyContinue by default.
+    
+    Write-Debuug - Displays a debugging text, in yellow by default.
+        $DebugPreference - SilentlyContinue bu default.
+
+    Write-Error - Produces an error message. Also writes to PoSh's error stream.
+        $ErrorActionPreference - Continue by default.
+
