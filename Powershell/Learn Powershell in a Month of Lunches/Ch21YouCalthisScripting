@@ -1,0 +1,60 @@
+Scripts work similarly to batch files. 
+
+Highlight a portion of script and press F8 to run just that portion of the script in ISE.
+
+
+` = tells PoSh that next line is part of the same command.
+
+param($computername ='localhost') = Constructor to run $computername='localhost' as the default variable.
+
+Can specify paramater like you would any other parameter in a custom cmdlet.
+
+
+
+Documenting your Script
+---------------------------------------------------
+
+Use # per line to comment it, or <# <script body> #> to comment out a block.
+
+In comments, can specify the following to populate help:
+    .SYNOPSIS
+    summary of what cmdlet does.
+
+    .DESCRIPTION
+    detailed explainaition of cmdlet.
+
+    .PARAMETER <paramater>
+    specify what a particular parameter does.
+
+    .EXAMPLE
+    Give an example of cmdlet in action.
+
+This must appear at the beginning at your cmdlet.
+
+
+
+One Script, One Pipeline
+---------------------------------------------------
+
+Cmdlets placed in the same script will go through same pipeline.
+
+Look at executing Get-Process and Get-Service in shell vs executing them at once in ISE.
+
+Only one pipeline to work with in a script.
+
+
+
+A Quick Look at Scope
+---------------------------------------------------
+
+Global scope = script itself
+
+Script scope = new scope created when a script is run. Subsidiary to global scope, child of global.
+
+Scope lasts only as long as needed to run whatever is in that scope.
+Once it stops running, scope vanishes, taking everything in it with it.
+
+PowerShell looks for scope by expanding outward from current scope. 
+If it doesn't find variable in current scope, it expands to next parent scope till it does find one.
+
+Locally defined versions of a variable lose access to parent scope's version.
