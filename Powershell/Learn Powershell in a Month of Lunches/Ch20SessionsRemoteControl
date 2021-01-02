@@ -1,3 +1,69 @@
 Sessions: Remote Control with Less Work
 
 
+There are other, more reusable ways to remotely connect to a PC: reusable sessions.
+
+
+
+Creating and using reusable sessions
+---------------------------------------------------
+
+Session - persistent connection between local instance of PoSh and a remote copy of PoSh.
+
+New-PSSession - Creates a new session.
+PS C:\> new-pssession -computername server-r2,server17,dc5
+
+To retrieve sessions, use get-pssession
+
+Closing shell will automatically close session. Can also use remove-pssession to close a session.
+
+Close all sessions:
+    get-pssession | remove-pssession
+
+Remember that remoting must be enabled on a server before you can remotely access it.
+
+Special syntax for saving multiple variables for multiple remote sessions:
+    $s_server1,$s_server2 = new-pssession -computer server-r2,dc01
+
+    server-r2 SHOULD goes into $s_server1, and dc01 goes into $s_server2. Order may change so please double check.
+
+
+Using Sessions with Enter-PSSession
+---------------------------------------------------
+
+Enter-PSSession only lets you remote into a single PC. If you have an object with multiple sessions, you must specify which one you're using.
+    PS C:\> enter-pssession -session $sessions[0]
+
+Exit-PSSession to exit the session.
+
+More elegant way of accessing an active session:
+Get-PSSession -ComputerName SERVER-R2 | Enter-PSSession
+
+
+
+Using Sessions with Invoke-Command
+---------------------------------------------------
+
+Remoting works over a single-predefined port; WMI doesn't. Remoting is easier to use with firewalled pcs.
+
+Invoke-Command can't retrieve sessions from pipeline.
+
+
+
+Implicit Remoting: Importing a Session
+---------------------------------------------------
+
+Import-PSSession -session $session -module activedirectory -prefix rem
+
+Imported PSSession data is deserialized.
+
+
+
+Using Disconnnected Sessions
+---------------------------------------------------
+
+Disconnect-PSSession -Id 4
+
+Disconnects session on remote PC, but keeps powershell running on that computer. Be careful not to leave a bunch of active PoSh sessions switching around.
+
+However, if you Get-PSSession on yet another pc into the disconnected PC, you can see that disconnected session and jump back into it as long as you're the right user.
